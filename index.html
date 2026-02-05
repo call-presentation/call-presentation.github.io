@@ -710,6 +710,81 @@
             animation: rays-pulse 3s ease-in-out infinite;
         }
 
+        /* Dual Figures for Islamic Section */
+        .dual-figures {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+            flex-wrap: wrap;
+        }
+
+        .figure-item {
+            text-align: center;
+            flex: 0 0 auto;
+        }
+
+        .figure-svg {
+            width: 160px;
+            height: 220px;
+            filter: drop-shadow(0 0 20px rgba(196, 169, 98, 0.25));
+            transition: all 0.3s ease;
+        }
+
+        .figure-item:hover .figure-svg {
+            filter: drop-shadow(0 0 30px rgba(196, 169, 98, 0.4));
+            transform: scale(1.02);
+        }
+
+        .figure-label {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--primary-gold);
+            margin-top: 0.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .figure-sublabel {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .figure-connector {
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .figure-connector span {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .connector-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem !important;
+            color: var(--primary-gold) !important;
+            margin-top: 0.3rem;
+        }
+
+        @media (max-width: 600px) {
+            .dual-figures {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .figure-connector {
+                padding: 1rem 0;
+            }
+            
+            .figure-svg {
+                width: 140px;
+                height: 190px;
+            }
+        }
+
         .hidden-light-caption {
             font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
@@ -1202,13 +1277,80 @@
     </section>
 
     <!-- Islamic Interpretation Section -->
-    <section id="islamic" class="section-dark">
+    <section id="islamic" class="section-dark islamic-section">
         <div class="container reveal">
             <div class="section-header">
                 <span class="section-number">CHAPTER IV</span>
                 <h2 class="section-title">How Islam Interprets This Promise</h2>
                 <div class="section-divider"></div>
             </div>
+            
+            <!-- Two Figures: Imam Mahdi and Jesus -->
+            <div class="dual-figures">
+                <div class="figure-item">
+                    <svg class="figure-svg" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="mahdiGlow" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                                <stop offset="40%" style="stop-color:#F5E6B8;stop-opacity:0.8" />
+                                <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
+                            </radialGradient>
+                            <linearGradient id="greenCloak" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#2a5a3a" />
+                                <stop offset="100%" style="stop-color:#1a3a22" />
+                            </linearGradient>
+                        </defs>
+                        <ellipse cx="100" cy="100" rx="90" ry="90" fill="rgba(196,169,98,0.1)" />
+                        <g opacity="0.5">
+                            <polygon points="100,50 85,0 90,0 100,45" fill="url(#rayGradient)" />
+                            <polygon points="100,50 115,0 110,0 100,45" fill="url(#rayGradient)" />
+                            <polygon points="100,50 50,20 55,25 100,48" fill="url(#rayGradient)" />
+                            <polygon points="100,50 150,20 145,25 100,48" fill="url(#rayGradient)" />
+                        </g>
+                        <path d="M100,95 C75,95 55,110 50,140 L40,200 L35,280 L165,280 L160,200 L150,140 C145,110 125,95 100,95Z" fill="url(#greenCloak)" stroke="#C4A962" stroke-width="0.5"/>
+                        <ellipse cx="100" cy="105" rx="30" ry="14" fill="#2a5a3a" stroke="#C4A962" stroke-width="0.3"/>
+                        <ellipse cx="100" cy="70" rx="25" ry="30" fill="#1a4a2a" stroke="#C4A962" stroke-width="0.3"/>
+                        <ellipse cx="100" cy="68" rx="20" ry="24" fill="url(#mahdiGlow)"/>
+                        <ellipse cx="100" cy="68" rx="12" ry="15" fill="#fff" opacity="0.5"/>
+                    </svg>
+                    <p class="figure-label">Imam Mahdi</p>
+                    <p class="figure-sublabel">The Awaited Leader</p>
+                </div>
+                <div class="figure-connector">
+                    <span>Together in</span>
+                    <span class="connector-text">Divine Mission</span>
+                </div>
+                <div class="figure-item">
+                    <svg class="figure-svg" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="jesusGlow" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                                <stop offset="40%" style="stop-color:#F5E6B8;stop-opacity:0.8" />
+                                <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
+                            </radialGradient>
+                            <linearGradient id="whiteCloak" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4a5568" />
+                                <stop offset="100%" style="stop-color:#2d3748" />
+                            </linearGradient>
+                        </defs>
+                        <ellipse cx="100" cy="100" rx="90" ry="90" fill="rgba(196,169,98,0.1)" />
+                        <g opacity="0.5">
+                            <polygon points="100,50 85,0 90,0 100,45" fill="url(#rayGradient)" />
+                            <polygon points="100,50 115,0 110,0 100,45" fill="url(#rayGradient)" />
+                            <polygon points="100,50 50,20 55,25 100,48" fill="url(#rayGradient)" />
+                            <polygon points="100,50 150,20 145,25 100,48" fill="url(#rayGradient)" />
+                        </g>
+                        <path d="M100,95 C75,95 55,110 50,140 L40,200 L35,280 L165,280 L160,200 L150,140 C145,110 125,95 100,95Z" fill="url(#whiteCloak)" stroke="#C4A962" stroke-width="0.5"/>
+                        <ellipse cx="100" cy="105" rx="30" ry="14" fill="#4a5568" stroke="#C4A962" stroke-width="0.3"/>
+                        <ellipse cx="100" cy="70" rx="25" ry="30" fill="#3a4a5a" stroke="#C4A962" stroke-width="0.3"/>
+                        <ellipse cx="100" cy="68" rx="20" ry="24" fill="url(#jesusGlow)"/>
+                        <ellipse cx="100" cy="68" rx="12" ry="15" fill="#fff" opacity="0.5"/>
+                    </svg>
+                    <p class="figure-label">Prophet Jesus</p>
+                    <p class="figure-sublabel">Returning in the End Times</p>
+                </div>
+            </div>
+            
             <p class="content-text">
                 After reviewing Jewish and Christian sources, the book turns to Islam. Islamic belief presents a continuation of this divine promise through its own framework.
             </p>
