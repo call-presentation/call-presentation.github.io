@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scriptural References - The Promised Savior in Judaism, Christianity, and Islam">
+    <title>Scriptural References | The Promised Savior</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #C4A962;
+            --primary-dark: #1a1a2e;
+            --primary-blue: #16213e;
+            --accent-blue: #0f3460;
+            --text-light: #f5f5f5;
+            --text-muted: #b8b8b8;
+            --gradient-start: #1a1a2e;
+            --gradient-end: #16213e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.7rem 2rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-gold);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: all 0.3s ease;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 50%, var(--accent-blue) 100%);
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C4A962' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .page-header h1 span {
+            color: var(--primary-gold);
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .header-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            margin: 1.5rem auto;
+        }
+
+        /* Table of Contents */
+        .toc-section {
+            background: var(--primary-blue);
+            padding: 3rem 2rem;
+            border-bottom: 1px solid rgba(196, 169, 98, 0.1);
+        }
+
+        .toc-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .toc-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .toc-item {
+            display: block;
+            padding: 0.8rem 1.2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(196, 169, 98, 0.1);
+            border-radius: 5px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .toc-item:hover {
+            background: rgba(196, 169, 98, 0.1);
+            border-color: var(--primary-gold);
+            color: var(--text-light);
+        }
+
+        .toc-item .toc-icon {
+            margin-right: 0.5rem;
+            color: var(--primary-gold);
+        }
+
+        /* Main Content */
+        .content-section {
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Scripture Sections */
+        .scripture-section {
+            margin-bottom: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(196, 169, 98, 0.15);
+        }
+
+        .scripture-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .book-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .book-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(196, 169, 98, 0.2), rgba(196, 169, 98, 0.05));
+            border: 1px solid rgba(196, 169, 98, 0.3);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .book-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+        }
+
+        .book-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        /* Scripture Quote */
+        .scripture-quote {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--primary-gold);
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .scripture-quote blockquote {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.9;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .scripture-quote blockquote p {
+            margin-bottom: 0.8rem;
+        }
+
+        .scripture-quote blockquote p:last-child {
+            margin-bottom: 0;
+        }
+
+        .scripture-reference {
+            color: var(--primary-gold);
+            font-size: 0.95rem;
+            font-style: normal;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .scripture-reference::before {
+            content: '—';
+        }
+
+        /* Section Headers */
+        .section-divider {
+            text-align: center;
+            margin: 4rem 0 3rem;
+            position: relative;
+        }
+
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(196, 169, 98, 0.2);
+        }
+
+        .section-divider h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            background: var(--primary-dark);
+            padding: 0 2rem;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-divider .section-number {
+            display: block;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Commentary Box */
+        .commentary-box {
+            background: linear-gradient(135deg, rgba(196, 169, 98, 0.08) 0%, rgba(196, 169, 98, 0.02) 100%);
+            border: 1px solid rgba(196, 169, 98, 0.15);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .commentary-box h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .commentary-box p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .commentary-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Note Box */
+        .note-box {
+            background: rgba(15, 52, 96, 0.5);
+            border: 1px solid rgba(196, 169, 98, 0.2);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .note-box strong {
+            color: var(--primary-gold);
+        }
+
+        /* Quranic Reference */
+        .quran-reference {
+            background: linear-gradient(135deg, rgba(39, 125, 76, 0.15) 0%, rgba(39, 125, 76, 0.05) 100%);
+            border-left: 3px solid #4CAF50;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .quran-reference h4 {
+            font-family: 'Playfair Display', serif;
+            color: #81C784;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .quran-reference blockquote {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.9;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .quran-reference .scripture-reference {
+            color: #81C784;
+        }
+
+        /* Author Conclusion */
+        .author-conclusion {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--primary-dark) 100%);
+            border: 1px solid rgba(196, 169, 98, 0.2);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .author-conclusion h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .author-conclusion p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            max-width: 700px;
+            margin: 0 auto 1rem;
+        }
+
+        .author-conclusion p:last-child {
+            margin-bottom: 0;
+        }
+
+        .author-conclusion .highlight {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 45px;
+            height: 45px;
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(196, 169, 98, 0.3);
+        }
+
+        .back-to-top svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(196, 169, 98, 0.1);
+        }
+
+        .footer-nav {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-nav a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.95rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            opacity: 0.7;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Navigation */
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--primary-dark);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2.5rem;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .content-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .page-header {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .scripture-quote {
+                padding: 1.2rem 1.5rem;
+            }
+
+            .book-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .book-title {
+                font-size: 1.5rem;
+            }
+
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .back-to-top {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">The Promised Savior</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="references.html" class="active">References</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-overlay"></div>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-content">
+            <h1>Scriptural <span>References</span></h1>
+            <div class="header-divider"></div>
+            <p>A collection of passages from the Torah, Psalms, Prophets, and Daniel concerning the promised era of justice and the coming savior.</p>
+        </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <section class="toc-section">
+        <div class="toc-container">
+            <h3 class="toc-title">Navigate to Scripture</h3>
+            <div class="toc-grid">
+                <a href="#torah" class="toc-item"><span class="toc-icon">📜</span> Torah (Genesis, Numbers, Deuteronomy)</a>
+                <a href="#psalms" class="toc-item"><span class="toc-icon">🎵</span> Psalms (Zabur)</a>
+                <a href="#isaiah" class="toc-item"><span class="toc-icon">📖</span> Book of Isaiah</a>
+                <a href="#daniel" class="toc-item"><span class="toc-icon">✨</span> Book of Daniel</a>
+                <a href="#prophets" class="toc-item"><span class="toc-icon">🔥</span> Minor Prophets</a>
+                <a href="#conclusion" class="toc-item"><span class="toc-icon">📝</span> Author's Conclusion</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="content-section">
+        <div class="container">
+
+            <!-- Section One: Introduction -->
+            <div class="section-divider reveal">
+                <h2>
+                    <span class="section-number">SECTION ONE</span>
+                    Expectation of the Messiah
+                </h2>
+            </div>
+
+            <div class="commentary-box reveal">
+                <p>The glad tidings of the coming of the era of justice and divine rule are abundantly found in the sacred texts of the Jews and are among their core beliefs. According to Ernest Renan, any research into Judaism that ignores belief in the appearance of the Messiah remains incomplete. The belief in the appearance of the Messiah is inseparably tied to repentance.</p>
+                <p>When all people repent, the era of the Messiah arrives. According to Maimonides, in that era there will be no hunger, war, envy, or rivalry; all human needs will be easily fulfilled, and people will devote themselves solely to knowing God and worshipping Him.</p>
+            </div>
+
+            <div class="commentary-box reveal">
+                <h4>Messiah (Mashiach)</h4>
+                <p>A savior figure whose name appears in the sayings of prophets and in Jewish religious, legal, and philosophical literature. It is stated in detail that in the future, for the Jewish people, a leader will arise who is called the "True Messiah" (Mashiach Tzidki) and also "Son of David" (Mashiach ben David).</p>
+                <p><em>— Jewish Cultural Dictionary</em></p>
+            </div>
+
+            <!-- Section Two: Selected Evidence -->
+            <div class="section-divider reveal">
+                <h2>
+                    <span class="section-number">SECTION TWO</span>
+                    Selected Evidence from Scripture
+                </h2>
+            </div>
+
+            <!-- Torah Section -->
+            <section id="torah" class="scripture-section reveal">
+                <div class="book-header">
+                    <div class="book-icon">📜</div>
+                    <div>
+                        <h2 class="book-title">The Torah</h2>
+                        <p class="book-subtitle">Genesis, Numbers, Deuteronomy</p>
+                    </div>
+                </div>
+
+                <h3 style="font-family: 'Playfair Display', serif; color: var(--text-light); margin: 2rem 0 1rem; font-size: 1.3rem;">Book of Genesis</h3>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"…From you I will make a great nation, and I will bless you…<br>
+                        I will bless those who bless you…<br>
+                        And in you all the families of the earth shall be blessed."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Genesis 12:1–3</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"I will greatly multiply your descendants so that they cannot be numbered for multitude…<br>
+                        You shall bear a son and call his name Ishmael."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Genesis 16:10–11</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"Indeed, I have heard you concerning Ishmael. Behold, I have blessed him, and will make him fruitful and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Genesis 17:20</span>
+                </div>
+
+                <h3 style="font-family: 'Playfair Display', serif; color: var(--text-light); margin: 2rem 0 1rem; font-size: 1.3rem;">Book of Numbers</h3>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"But truly, as I live, all the earth shall be filled with the glory of the LORD."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Numbers 14:21</span>
+                </div>
+
+                <div class="note-box">
+                    <strong>Note:</strong> The verse regarding "My covenant of life and peace" is found in <strong>Malachi 2:5</strong>, not Numbers 14:21. The corrected Numbers verse is shown above.
+                </div>
+
+                <h3 style="font-family: 'Playfair Display', serif; color: var(--text-light); margin: 2rem 0 1rem; font-size: 1.3rem;">Book of Deuteronomy</h3>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"If you faithfully observe all these commandments which I command you, to love the Lord your God, to walk in all His ways, and to cling to Him, then you shall conquer nations greater and mightier than yourselves…</p>
+                        <p>No one shall be able to stand against you; the Lord your God will put the fear and dread of you upon all the land on which you tread."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Deuteronomy 11:22–25</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"If you carefully obey all these commandments which I command you… then the Lord your God will set you high above all the nations of the earth…</p>
+                        <p>Your enemies who rise up against you shall be defeated before you…</p>
+                        <p>All the peoples of the earth shall see that the name of the Lord is called upon you, and they shall fear you."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Deuteronomy 28:1, 7, 10</span>
+                </div>
+            </section>
+
+            <!-- Psalms Section -->
+            <section id="psalms" class="scripture-section reveal">
+                <div class="book-header">
+                    <div class="book-icon">🎵</div>
+                    <div>
+                        <h2 class="book-title">Psalms (Zabur of David)</h2>
+                        <p class="book-subtitle">The Songs and Prayers of David</p>
+                    </div>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"Why do the nations rage,<br>
+                        and the peoples plot in vain?<br>
+                        The kings of the earth set themselves,<br>
+                        and the rulers take counsel together…<br>
+                        He who sits in heaven shall laugh…</p>
+                        <p>You shall break them with a rod of iron,<br>
+                        and dash them in pieces like a potter's vessel."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Psalms 2:1–4, 9</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"Who is the one who fears the Lord?<br>
+                        He shall dwell in prosperity, and his offspring shall inherit the earth."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Psalms 25:12–13</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"The humble shall inherit the earth…<br>
+                        Trust in the Lord and do good…<br>
+                        Commit your way to the Lord…<br>
+                        He shall bring forth your righteousness like the light…<br>
+                        Those who wait for the Lord shall inherit the earth."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Psalms 37:3–11</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"The arms of the wicked shall be broken,<br>
+                        but God upholds the righteous."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Psalms 37:17</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"The wicked shall perish…<br>
+                        but the righteous shall inherit the land,<br>
+                        and dwell in it forever."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Psalms 37:20, 29</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"He put a new song in my mouth…<br>
+                        Blessed is the one who trusts in the Lord."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Psalms 40:3–4</span>
+                </div>
+
+                <h3 style="font-family: 'Playfair Display', serif; color: var(--text-light); margin: 2rem 0 1rem; font-size: 1.3rem;">Royal and Messianic Imagery</h3>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"Gird your sword upon your thigh, O mighty one…<br>
+                        Ride forth victoriously in the cause of truth, humility, and justice…<br>
+                        Your arrows are sharp; the peoples fall under you…<br>
+                        Your throne, O God, is forever and ever;<br>
+                        a scepter of righteousness is the scepter of your kingdom."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Psalms 45:3–6</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"He shall judge the people with righteousness,<br>
+                        and the poor with justice…<br>
+                        He shall rescue the needy when he cries…<br>
+                        He shall have pity on the weak and the needy,<br>
+                        and save the lives of the poor…</p>
+                        <p>In his days the righteous shall flourish,<br>
+                        and abundance of peace till the moon is no more.</p>
+                        <p>From sea to sea, and from the river to the ends of the earth,<br>
+                        his dominion shall extend."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Psalms 72:2–8</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"He shall crush the oppressor and humble his enemies,<br>
+                        and they shall lick the dust.</p>
+                        <p>He shall organize all nations and all communities,<br>
+                        because he will free the poor and the destitute who have no helper.<br>
+                        He shall save human life from oppression and injustice,<br>
+                        and their blood shall be precious in his sight.</p>
+                        <p>They shall pray for him continually,<br>
+                        and bless him every day.</p>
+                        <p>His name shall endure forever;<br>
+                        his name shall be blessed as long as the sun remains."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Psalms 72:9–17</span>
+                </div>
+            </section>
+
+            <!-- Isaiah Section -->
+            <section id="isaiah" class="scripture-section reveal">
+                <div class="book-header">
+                    <div class="book-icon">📖</div>
+                    <div>
+                        <h2 class="book-title">Book of Isaiah</h2>
+                        <p class="book-subtitle">The Prophet of Justice and Redemption</p>
+                    </div>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"And a shoot shall come forth from the stump of Jesse,<br>
+                        and a branch shall grow out of his roots;<br>
+                        and the Spirit of God shall rest upon him,<br>
+                        the Spirit of wisdom and understanding…</p>
+                        <p>He shall be endowed with wisdom and might, and with the spirit of knowledge and the fear of God.<br>
+                        He shall delight in the fear of the Lord.<br>
+                        He shall not judge by what his eyes see, nor decide by what his ears hear;<br>
+                        but he shall judge the poor with justice, and decide with fairness for the oppressed of the earth…</p>
+                        <p>Righteousness shall be the belt of his waist, and faithfulness the belt of his loins.<br>
+                        The wolf shall dwell with the lamb, and the leopard shall lie down with the young goat;<br>
+                        the calf and the lion and the fatling together, and a little child shall lead them.<br>
+                        The cow and the bear shall graze; their young shall lie down together;<br>
+                        and the lion shall eat straw like the ox.<br>
+                        The nursing child shall play over the hole of the cobra,<br>
+                        and the weaned child shall put his hand on the adder's den.</p>
+                        <p>They shall not hurt nor destroy in all My holy mountain;<br>
+                        for the earth shall be full of the knowledge of God,<br>
+                        as the waters cover the sea."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Isaiah 11:1–9</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"The oppressed shall hear God's call…<br>
+                        Justice is near, and salvation shall soon appear.<br>
+                        God will redeem the nations through judgment…<br>
+                        Justice shall remain forever, and salvation shall extend from generation to generation."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Isaiah 51:4–8</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"The Spirit of God is upon me, because God has anointed me<br>
+                        to give glad tidings to the poor,<br>
+                        to bind up the brokenhearted,<br>
+                        to proclaim freedom to the captives,<br>
+                        and release to the prisoners…</p>
+                        <p>to proclaim the year of God's favor<br>
+                        and the day of vengeance of our God…</p>
+                        <p>I will grant them a double portion in their land;<br>
+                        everlasting joy shall be theirs,<br>
+                        and their honor shall be known among the nations."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Isaiah 61:1–9</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"All of you shall bow before Me,<br>
+                        for you have no answer and you cannot speak…<br>
+                        I brought what I desired and executed it;<br>
+                        I brought what I planned and fulfilled it.</p>
+                        <p>God shall grant you victory over your enemies…<br>
+                        Whoever sheds blood upon the earth shall have his blood repaid by God…<br>
+                        I shall create new heavens and a new earth…</p>
+                        <p>I shall bring Jerusalem to joy,<br>
+                        and My people to gladness…</p>
+                        <p>Before they call, I will answer them;<br>
+                        before they speak, I will hear them.</p>
+                        <p>The wolf and the lamb shall graze together,<br>
+                        the lion shall eat straw like the ox,<br>
+                        and the serpent's food shall be dust.<br>
+                        They shall neither harm nor destroy<br>
+                        on all My holy mountain."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Isaiah 65:12–25</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"God will make His servants known,<br>
+                        but He will show wrath against His enemies…</p>
+                        <p>God says: I shall gather all nations and tongues;<br>
+                        they shall come and see My glory…<br>
+                        They shall bow before Me."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Isaiah 66:14, 18, 23</span>
+                </div>
+
+                <div class="note-box">
+                    <strong>Correction:</strong> The reference originally cited as "Psalms 66:14–18, 23" is actually from <strong>Isaiah 66</strong>. The content describes the gathering of nations and divine glory, which appears in Isaiah's prophecy about the new heavens and new earth.
+                </div>
+
+                <div class="note-box">
+                    <strong>Correction:</strong> The verse citing "Psalms 26:8–9" regarding God's judgments upon the earth is from <strong>Isaiah 26:8–9</strong>: "Yes, in the way of Your judgments, O LORD, we have waited for You… For when Your judgments are in the earth, the inhabitants of the world will learn righteousness."
+                </div>
+            </section>
+
+            <!-- Daniel Section -->
+            <section id="daniel" class="scripture-section reveal">
+                <div class="book-header">
+                    <div class="book-icon">✨</div>
+                    <div>
+                        <h2 class="book-title">Book of Daniel</h2>
+                        <p class="book-subtitle">Visions of the End Times</p>
+                    </div>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"In night visions I saw one like a son of man,<br>
+                        coming with the clouds of heaven…<br>
+                        Dominion, glory, and kingship were given to him,<br>
+                        that all peoples, nations, and languages should serve him.</p>
+                        <p>His dominion is an everlasting dominion<br>
+                        which shall not pass away,<br>
+                        and his kingdom shall not be destroyed."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Daniel 7:13–14</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"But the saints of the Most High shall receive the kingdom<br>
+                        and possess the kingdom forever."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Daniel 7:18</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"At that time, every people shall be delivered<br>
+                        whose name is written in the Book…<br>
+                        Many of those who sleep in the dust of the earth shall awake,<br>
+                        some to everlasting life…"</p>
+                    </blockquote>
+                    <span class="scripture-reference">Daniel 12:1–2</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"But you, Daniel, conceal the words<br>
+                        and seal the book until the time of the end;<br>
+                        many shall run to and fro,<br>
+                        and knowledge shall increase."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Daniel 12:4</span>
+                </div>
+            </section>
+
+            <!-- Minor Prophets Section -->
+            <section id="prophets" class="scripture-section reveal">
+                <div class="book-header">
+                    <div class="book-icon">🔥</div>
+                    <div>
+                        <h2 class="book-title">The Minor Prophets</h2>
+                        <p class="book-subtitle">Zephaniah and Malachi</p>
+                    </div>
+                </div>
+
+                <h3 style="font-family: 'Playfair Display', serif; color: var(--text-light); margin: 2rem 0 1rem; font-size: 1.3rem;">Book of Zephaniah</h3>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"The great day of God is near…<br>
+                        It is a day of wrath…</p>
+                        <p>I shall gather the nations,<br>
+                        pour out My indignation upon them…<br>
+                        The whole earth shall be consumed<br>
+                        by the fire of My zeal."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Zephaniah 1:14–18; 3:8</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"I shall remove all idols from the land…<br>
+                        I shall purify the lips of the peoples<br>
+                        that all of them may call upon the name of God<br>
+                        and serve Him with one accord."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Zephaniah 3:9</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"In that day, I shall gather the afflicted and the poor…<br>
+                        I shall save the lame and gather the outcast…<br>
+                        I shall make them renowned and praised<br>
+                        in every land where they were put to shame."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Zephaniah 3:12, 19</span>
+                </div>
+
+                <h3 style="font-family: 'Playfair Display', serif; color: var(--text-light); margin: 2rem 0 1rem; font-size: 1.3rem;">Book of Malachi</h3>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"The day is coming, burning like an oven,<br>
+                        when all the arrogant and all evildoers shall be stubble…</p>
+                        <p>But for you who fear My name,<br>
+                        the sun of justice shall rise with healing in its wings,<br>
+                        and you shall trample the wicked.</p>
+                        <p>On that day, they shall be ashes beneath the soles of your feet…</p>
+                        <p>Before the coming of the great and terrible day,<br>
+                        I will send Elijah the prophet…</p>
+                        <p>He shall turn the hearts of fathers to their children,<br>
+                        and the hearts of children to their fathers."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Malachi 4:1–6</span>
+                </div>
+
+                <div class="scripture-quote">
+                    <blockquote>
+                        <p>"My covenant with him was one of life and peace, and I gave them to him. It was a covenant of fear, and he feared me. He stood in awe of my name."</p>
+                    </blockquote>
+                    <span class="scripture-reference">Malachi 2:5</span>
+                </div>
+
+                <div class="note-box">
+                    <strong>Note:</strong> The "covenant of life and peace" verse was originally cited as Numbers 14:21 but is correctly found in Malachi 2:5.
+                </div>
+            </section>
+
+            <!-- Quranic Parallel -->
+            <div class="section-divider reveal">
+                <h2>
+                    <span class="section-number">QURANIC PARALLEL</span>
+                    Connection to Islamic Scripture
+                </h2>
+            </div>
+
+            <div class="quran-reference reveal">
+                <h4>☪ Surah al-Anbiya (The Prophets)</h4>
+                <blockquote>
+                    <p>"We have written in the Psalms, after the Reminder, that the earth shall be inherited by My righteous servants."</p>
+                </blockquote>
+                <span class="scripture-reference">Quran 21:105</span>
+            </div>
+
+            <div class="commentary-box reveal">
+                <p>The final words of Psalms 37 regarding the righteous inheriting the earth correspond to Surah al-Anbiya, verse 105. This connection demonstrates the continuity of the promise across the Abrahamic scriptures.</p>
+                <p>After the Torah, it is written in the Psalms that the righteous shall inherit the earth—a theme that resonates through Jewish, Christian, and Islamic expectations of divine justice.</p>
+            </div>
+
+            <!-- Terminology Note -->
+            <div class="commentary-box reveal">
+                <h4>Explanation of "Rabb al-Junud"</h4>
+                <p>The Arabic expression "Rabb al-Junud" means <em>Commander and Leader of the Armies</em>.</p>
+                <p><em>Sources: Arabic Torah translation, p. 107; Hastings' Dictionary of the Bible, p. 409</em></p>
+            </div>
+
+            <!-- Author's Conclusion -->
+            <section id="conclusion" class="reveal">
+                <div class="author-conclusion">
+                    <h3>Author's Concluding Observation</h3>
+                    <p>What is observed in the selected passages from the Jewish sacred books is the announcement of <span class="highlight">the end of corruption, the purification of the world, and the final salvation of humanity</span> through a divine government of justice.</p>
+                    <p>Christians have claimed that the Promised One is none other than Jesus son of Mary. However, Jewish scriptures never speak of a local or temporary rule, but of a <span class="highlight">global and everlasting dominion</span>.</p>
+                    <p>The truth is this: Some of these signs refer to Jesus Christ, others to Muhammad (peace be upon him and his family), and others clearly point to Imam Mahdi.</p>
+                    <p>According to Islamic narrations, the global uprising of Imam Mahdi will coincide with <span class="highlight">the return of Jesus Christ</span>, and at that time the promises of justice and salvation will reach their fulfillment.</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="references.html">References</a>
+        </div>
+        <p>The Promised Savior — Judaism, Christianity & Islam</p>
+        <p style="margin-top: 0.5rem; opacity: 0.6;">A study of shared messianic expectations</p>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+
+        function toggleMenu() {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        navToggle.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Reveal animations on scroll
+        const reveals = document.querySelectorAll('.reveal');
+
+        function checkReveal() {
+            const windowHeight = window.innerHeight;
+            reveals.forEach(reveal => {
+                const revealTop = reveal.getBoundingClientRect().top;
+                const revealPoint = 150;
+
+                if (revealTop < windowHeight - revealPoint) {
+                    reveal.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('load', checkReveal);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
