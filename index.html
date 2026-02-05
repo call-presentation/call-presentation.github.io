@@ -139,8 +139,20 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C4A962' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C4A962' stroke-width='0.5' opacity='0.15'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z'/%3E%3Cpath d='M40 10 L70 40 L40 70 L10 40 Z'/%3E%3Cpath d='M40 20 L60 40 L40 60 L20 40 Z'/%3E%3Ccircle cx='40' cy='40' r='15'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3C/g%3E%3C/svg%3E");
+            opacity: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(196, 169, 98, 0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .hero-content {
@@ -150,10 +162,31 @@
         }
 
         .hero-ornament {
-            width: 80px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            width: 120px;
+            height: 120px;
             margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .hero-ornament svg {
+            width: 100%;
+            height: 100%;
+            animation: rotate-slow 60s linear infinite;
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-ornament::after {
+            content: '✦';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5rem;
+            color: var(--primary-gold);
         }
 
         .hero h1 {
@@ -333,6 +366,14 @@
         .card-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(196, 169, 98, 0.2) 0%, rgba(196, 169, 98, 0.05) 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(196, 169, 98, 0.2);
         }
 
         .card h3 {
@@ -363,6 +404,19 @@
             border: 1px solid rgba(196, 169, 98, 0.1);
             border-radius: 8px;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tradition-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C4A962' stroke-width='0.3' opacity='0.1'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z'/%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
         }
 
         .tradition-card:hover {
@@ -373,6 +427,18 @@
         .tradition-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(196, 169, 98, 0.15) 0%, rgba(196, 169, 98, 0.05) 100%);
+            border: 1px solid rgba(196, 169, 98, 0.2);
         }
 
         .tradition-card h3 {
@@ -433,6 +499,19 @@
             padding: 1.5rem 2rem;
             margin: 2rem 0;
             border-radius: 0 8px 8px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '❝';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 4rem;
+            color: var(--primary-gold);
+            opacity: 0.15;
+            font-family: serif;
         }
 
         .highlight-box p {
@@ -446,12 +525,171 @@
         .conclusion-section {
             background: linear-gradient(135deg, var(--accent-blue) 0%, var(--primary-dark) 100%);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conclusion-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C4A962' stroke-width='0.3' opacity='0.08'%3E%3Ccircle cx='50' cy='50' r='45'/%3E%3Ccircle cx='50' cy='50' r='35'/%3E%3Ccircle cx='50' cy='50' r='25'/%3E%3Cpolygon points='50,5 95,50 50,95 5,50'/%3E%3Cpolygon points='50,20 80,50 50,80 20,50'/%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .conclusion-section .container {
+            position: relative;
+            z-index: 1;
         }
 
         .conclusion-section .content-text {
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        /* Decorative Banner Section */
+        .decorative-banner {
+            background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-blue) 50%, var(--primary-dark) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .decorative-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C4A962' stroke-width='0.3' opacity='0.06'%3E%3Cpath d='M60 0 L120 60 L60 120 L0 60 Z'/%3E%3Ccircle cx='60' cy='60' r='50'/%3E%3Ccircle cx='60' cy='60' r='35'/%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .geometric-frame {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            position: relative;
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(196, 169, 98, 0.2)); }
+            50% { filter: drop-shadow(0 0 25px rgba(196, 169, 98, 0.4)); }
+        }
+
+        .geometric-frame svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .frame-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .arabic-text {
+            display: block;
+            font-size: 2rem;
+            color: var(--primary-gold);
+            font-family: 'Times New Roman', serif;
+            margin-bottom: 0.3rem;
+        }
+
+        .translation {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .banner-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-style: italic;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 480px) {
+            .geometric-frame {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .arabic-text {
+                font-size: 1.5rem;
+            }
+            
+            .banner-quote {
+                font-size: 1rem;
+            }
+        }
+
+        /* Light Imagery for Occultation */
+        .occultation-section {
+            position: relative;
+        }
+
+        .light-imagery {
+            text-align: center;
+            margin: 2rem 0 3rem;
+        }
+
+        .light-rays {
+            width: 250px;
+            height: 180px;
+            margin: 0 auto;
+            animation: gentle-pulse 3s ease-in-out infinite;
+        }
+
+        .light-rays svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes gentle-pulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+
+        .light-caption {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: var(--primary-gold);
+            font-style: italic;
+            margin-top: 1rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 480px) {
+            .light-rays {
+                width: 200px;
+                height: 140px;
+            }
+            
+            .light-caption {
+                font-size: 0.9rem;
+            }
         }
 
         /* Footer */
@@ -627,7 +865,33 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
-            <div class="hero-ornament"></div>
+            <div class="hero-ornament">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#C4A962;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#E8D5A3;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <g fill="none" stroke="url(#goldGrad)" stroke-width="0.5">
+                        <!-- Outer octagon -->
+                        <polygon points="50,2 79,15 93,44 93,56 79,85 50,98 21,85 7,56 7,44 21,15" />
+                        <!-- Inner geometric pattern -->
+                        <polygon points="50,15 72,28 82,50 72,72 50,85 28,72 18,50 28,28" />
+                        <polygon points="50,28 62,35 68,50 62,65 50,72 38,65 32,50 38,35" />
+                        <!-- Cross lines -->
+                        <line x1="50" y1="2" x2="50" y2="98" />
+                        <line x1="7" y1="50" x2="93" y2="50" />
+                        <line x1="21" y1="15" x2="79" y2="85" />
+                        <line x1="79" y1="15" x2="21" y2="85" />
+                        <!-- Circles -->
+                        <circle cx="50" cy="50" r="45" />
+                        <circle cx="50" cy="50" r="35" />
+                        <circle cx="50" cy="50" r="20" />
+                    </g>
+                </svg>
+            </div>
             <h1>The Promised Savior in<br><span>Judaism, Christianity & Islam</span></h1>
             <p class="hero-subtitle">Jesus, the Messiah, and the Islamic view of Imam Mahdi</p>
             <p class="hero-description">
@@ -641,6 +905,44 @@
             </svg>
         </div>
     </header>
+
+    <!-- Decorative Banner Section -->
+    <section class="decorative-banner">
+        <div class="banner-content">
+            <div class="geometric-frame">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="bannerGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#C4A962;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#E8D5A3;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <g fill="none" stroke="url(#bannerGold)" stroke-width="0.5">
+                        <!-- Outer frame -->
+                        <circle cx="100" cy="100" r="95" />
+                        <circle cx="100" cy="100" r="88" />
+                        <!-- 8-pointed star -->
+                        <polygon points="100,10 115,85 190,85 130,125 150,195 100,150 50,195 70,125 10,85 85,85" />
+                        <!-- Inner circles -->
+                        <circle cx="100" cy="100" r="60" />
+                        <circle cx="100" cy="100" r="45" />
+                        <circle cx="100" cy="100" r="25" />
+                        <!-- Cross pattern -->
+                        <line x1="100" y1="5" x2="100" y2="195" stroke-width="0.3" />
+                        <line x1="5" y1="100" x2="195" y2="100" stroke-width="0.3" />
+                        <line x1="25" y1="25" x2="175" y2="175" stroke-width="0.3" />
+                        <line x1="175" y1="25" x2="25" y2="175" stroke-width="0.3" />
+                    </g>
+                </svg>
+                <div class="frame-text">
+                    <span class="arabic-text">ٱلْمَهْدِي</span>
+                    <span class="translation">Al-Mahdi</span>
+                </div>
+            </div>
+            <p class="banner-quote">"The earth shall be filled with justice and equity, as it was filled with oppression and tyranny."</p>
+        </div>
+    </section>
 
     <!-- Introduction Section -->
     <section id="introduction" class="section-light">
@@ -834,13 +1136,46 @@
     </section>
 
     <!-- Occultation Section -->
-    <section class="section-light">
+    <section class="section-light occultation-section">
         <div class="container reveal">
             <div class="section-header">
                 <span class="section-number">CHAPTER VII</span>
                 <h2 class="section-title">The Concept of Occultation</h2>
                 <div class="section-divider"></div>
             </div>
+            
+            <!-- Light Imagery -->
+            <div class="light-imagery">
+                <div class="light-rays">
+                    <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="lightGlow" cx="50%" cy="100%" r="70%" fx="50%" fy="100%">
+                                <stop offset="0%" style="stop-color:#C4A962;stop-opacity:0.4" />
+                                <stop offset="50%" style="stop-color:#C4A962;stop-opacity:0.1" />
+                                <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
+                            </radialGradient>
+                            <linearGradient id="rayGrad" x1="50%" y1="100%" x2="50%" y2="0%">
+                                <stop offset="0%" style="stop-color:#C4A962;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
+                            </linearGradient>
+                        </defs>
+                        <ellipse cx="150" cy="200" rx="150" ry="40" fill="url(#lightGlow)" />
+                        <g stroke="url(#rayGrad)" stroke-width="0.5" opacity="0.6">
+                            <line x1="150" y1="200" x2="50" y2="0" />
+                            <line x1="150" y1="200" x2="80" y2="0" />
+                            <line x1="150" y1="200" x2="110" y2="0" />
+                            <line x1="150" y1="200" x2="150" y2="0" />
+                            <line x1="150" y1="200" x2="190" y2="0" />
+                            <line x1="150" y1="200" x2="220" y2="0" />
+                            <line x1="150" y1="200" x2="250" y2="0" />
+                        </g>
+                        <circle cx="150" cy="200" r="8" fill="#C4A962" opacity="0.4" />
+                        <circle cx="150" cy="200" r="4" fill="#C4A962" opacity="0.6" />
+                    </svg>
+                </div>
+                <p class="light-caption">The Hidden Light — Awaiting the Appointed Time</p>
+            </div>
+            
             <p class="content-text">
                 Islam introduces the concept that Imam Mahdi was born but is hidden until the right time. This idea, called <em>occultation</em>, is unique to Islamic theology.
             </p>
