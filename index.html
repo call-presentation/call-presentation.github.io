@@ -579,6 +579,35 @@
         }
 
         /* Radiant Figure Styles */
+        .mahdi-image-container {
+            position: relative;
+            width: 300px;
+            height: 350px;
+            margin: 0 auto 2rem;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .mahdi-main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 2px solid rgba(196, 169, 98, 0.4);
+            box-shadow: 0 0 40px rgba(196, 169, 98, 0.3);
+        }
+
+        .image-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 15px;
+            box-shadow: inset 0 0 60px rgba(196, 169, 98, 0.2);
+            pointer-events: none;
+        }
+
         .radiant-figure-container {
             width: 280px;
             height: 350px;
@@ -621,6 +650,17 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             font-weight: 300;
+        }
+
+        @media (max-width: 480px) {
+            .mahdi-image-container {
+                width: 250px;
+                height: 300px;
+            }
+            
+            .arabic-text-large {
+                font-size: 2.2rem;
+            }
         }
 
         .geometric-frame {
@@ -1075,95 +1115,10 @@
     <!-- Decorative Banner Section -->
     <section class="decorative-banner">
         <div class="banner-content">
-            <!-- Radiant Figure Illustration -->
-            <div class="radiant-figure-container">
-                <svg class="radiant-figure" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <!-- Radial glow for head -->
-                        <radialGradient id="headGlow" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-                            <stop offset="30%" style="stop-color:#F5E6B8;stop-opacity:0.9" />
-                            <stop offset="60%" style="stop-color:#C4A962;stop-opacity:0.5" />
-                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
-                        </radialGradient>
-                        
-                        <!-- Outer aura glow -->
-                        <radialGradient id="auraGlow" cx="50%" cy="40%" r="60%">
-                            <stop offset="0%" style="stop-color:#C4A962;stop-opacity:0.3" />
-                            <stop offset="50%" style="stop-color:#C4A962;stop-opacity:0.1" />
-                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
-                        </radialGradient>
-                        
-                        <!-- Ray gradient -->
-                        <linearGradient id="rayGradient" x1="50%" y1="0%" x2="50%" y2="100%">
-                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
-                            <stop offset="50%" style="stop-color:#C4A962;stop-opacity:0.4" />
-                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
-                        </linearGradient>
-                        
-                        <!-- Robe gradient -->
-                        <linearGradient id="robeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:#2a4a3a;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#1a2a22;stop-opacity:1" />
-                        </linearGradient>
-                        
-                        <!-- Filter for glow effect -->
-                        <filter id="glowFilter" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur stdDeviation="8" result="blur" />
-                            <feMerge>
-                                <feMergeNode in="blur" />
-                                <feMergeNode in="SourceGraphic" />
-                            </feMerge>
-                        </filter>
-                    </defs>
-                    
-                    <!-- Background aura -->
-                    <ellipse cx="200" cy="180" rx="180" ry="180" fill="url(#auraGlow)" />
-                    
-                    <!-- Light rays emanating from head -->
-                    <g class="light-rays-group" opacity="0.7">
-                        <polygon points="200,80 160,0 170,0 200,70" fill="url(#rayGradient)" />
-                        <polygon points="200,80 240,0 230,0 200,70" fill="url(#rayGradient)" />
-                        <polygon points="200,80 100,20 110,25 200,75" fill="url(#rayGradient)" />
-                        <polygon points="200,80 300,20 290,25 200,75" fill="url(#rayGradient)" />
-                        <polygon points="200,80 50,80 55,85 200,85" fill="url(#rayGradient)" />
-                        <polygon points="200,80 350,80 345,85 200,85" fill="url(#rayGradient)" />
-                        <polygon points="200,80 70,150 80,145 200,90" fill="url(#rayGradient)" />
-                        <polygon points="200,80 330,150 320,145 200,90" fill="url(#rayGradient)" />
-                        <polygon points="200,80 130,10 138,15 200,72" fill="url(#rayGradient)" />
-                        <polygon points="200,80 270,10 262,15 200,72" fill="url(#rayGradient)" />
-                    </g>
-                    
-                    <!-- Robe/cloak silhouette -->
-                    <path d="M200,160 
-                             C160,160 130,180 120,220
-                             L100,350 L90,500 L310,500 L300,350
-                             L280,220 C270,180 240,160 200,160Z" 
-                          fill="url(#robeGradient)" 
-                          stroke="#C4A962" 
-                          stroke-width="1" 
-                          opacity="0.9"/>
-                    
-                    <!-- Shoulder detail -->
-                    <ellipse cx="200" cy="175" rx="55" ry="25" fill="#2a4a3a" stroke="#C4A962" stroke-width="0.5" opacity="0.9"/>
-                    
-                    <!-- Turban/head covering silhouette -->
-                    <ellipse cx="200" cy="120" rx="45" ry="50" fill="#1a3a2a" stroke="#C4A962" stroke-width="0.5" opacity="0.8"/>
-                    
-                    <!-- Radiant face area (light instead of face) -->
-                    <ellipse cx="200" cy="115" rx="35" ry="40" fill="url(#headGlow)" filter="url(#glowFilter)"/>
-                    
-                    <!-- Inner bright core -->
-                    <ellipse cx="200" cy="115" rx="20" ry="25" fill="#ffffff" opacity="0.6"/>
-                    
-                    <!-- Decorative border on robe -->
-                    <path d="M140,250 L140,400" stroke="#C4A962" stroke-width="1" opacity="0.5"/>
-                    <path d="M260,250 L260,400" stroke="#C4A962" stroke-width="1" opacity="0.5"/>
-                    
-                    <!-- Hands in prayer position -->
-                    <ellipse cx="175" cy="320" rx="15" ry="25" fill="#d4a574" opacity="0.7"/>
-                    <ellipse cx="225" cy="320" rx="15" ry="25" fill="#d4a574" opacity="0.7"/>
-                </svg>
+            <!-- Decorative Mosque Image -->
+            <div class="mahdi-image-container">
+                <img src="images/dome.jpg" alt="Mosque dome representing divine guidance" class="mahdi-main-image" onerror="this.style.display='none'">
+                <div class="image-glow"></div>
             </div>
             
             <div class="banner-text">
@@ -1285,69 +1240,15 @@
                 <div class="section-divider"></div>
             </div>
             
-            <!-- Two Figures: Imam Mahdi and Jesus -->
-            <div class="dual-figures">
-                <div class="figure-item">
-                    <svg class="figure-svg" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <radialGradient id="mahdiGlow" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-                                <stop offset="40%" style="stop-color:#F5E6B8;stop-opacity:0.8" />
-                                <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
-                            </radialGradient>
-                            <linearGradient id="greenCloak" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#2a5a3a" />
-                                <stop offset="100%" style="stop-color:#1a3a22" />
-                            </linearGradient>
-                        </defs>
-                        <ellipse cx="100" cy="100" rx="90" ry="90" fill="rgba(196,169,98,0.1)" />
-                        <g opacity="0.5">
-                            <polygon points="100,50 85,0 90,0 100,45" fill="url(#rayGradient)" />
-                            <polygon points="100,50 115,0 110,0 100,45" fill="url(#rayGradient)" />
-                            <polygon points="100,50 50,20 55,25 100,48" fill="url(#rayGradient)" />
-                            <polygon points="100,50 150,20 145,25 100,48" fill="url(#rayGradient)" />
-                        </g>
-                        <path d="M100,95 C75,95 55,110 50,140 L40,200 L35,280 L165,280 L160,200 L150,140 C145,110 125,95 100,95Z" fill="url(#greenCloak)" stroke="#C4A962" stroke-width="0.5"/>
-                        <ellipse cx="100" cy="105" rx="30" ry="14" fill="#2a5a3a" stroke="#C4A962" stroke-width="0.3"/>
-                        <ellipse cx="100" cy="70" rx="25" ry="30" fill="#1a4a2a" stroke="#C4A962" stroke-width="0.3"/>
-                        <ellipse cx="100" cy="68" rx="20" ry="24" fill="url(#mahdiGlow)"/>
-                        <ellipse cx="100" cy="68" rx="12" ry="15" fill="#fff" opacity="0.5"/>
-                    </svg>
-                    <p class="figure-label">Imam Mahdi</p>
-                    <p class="figure-sublabel">The Awaited Leader</p>
+            <!-- Image Gallery -->
+            <div class="islamic-images">
+                <div class="image-card">
+                    <img src="images/calligraphy.jpg" alt="Islamic Calligraphy Art" class="section-image">
+                    <p class="image-caption">Islamic calligraphy representing divine names</p>
                 </div>
-                <div class="figure-connector">
-                    <span>Together in</span>
-                    <span class="connector-text">Divine Mission</span>
-                </div>
-                <div class="figure-item">
-                    <svg class="figure-svg" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <radialGradient id="jesusGlow" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-                                <stop offset="40%" style="stop-color:#F5E6B8;stop-opacity:0.8" />
-                                <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
-                            </radialGradient>
-                            <linearGradient id="whiteCloak" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#4a5568" />
-                                <stop offset="100%" style="stop-color:#2d3748" />
-                            </linearGradient>
-                        </defs>
-                        <ellipse cx="100" cy="100" rx="90" ry="90" fill="rgba(196,169,98,0.1)" />
-                        <g opacity="0.5">
-                            <polygon points="100,50 85,0 90,0 100,45" fill="url(#rayGradient)" />
-                            <polygon points="100,50 115,0 110,0 100,45" fill="url(#rayGradient)" />
-                            <polygon points="100,50 50,20 55,25 100,48" fill="url(#rayGradient)" />
-                            <polygon points="100,50 150,20 145,25 100,48" fill="url(#rayGradient)" />
-                        </g>
-                        <path d="M100,95 C75,95 55,110 50,140 L40,200 L35,280 L165,280 L160,200 L150,140 C145,110 125,95 100,95Z" fill="url(#whiteCloak)" stroke="#C4A962" stroke-width="0.5"/>
-                        <ellipse cx="100" cy="105" rx="30" ry="14" fill="#4a5568" stroke="#C4A962" stroke-width="0.3"/>
-                        <ellipse cx="100" cy="70" rx="25" ry="30" fill="#3a4a5a" stroke="#C4A962" stroke-width="0.3"/>
-                        <ellipse cx="100" cy="68" rx="20" ry="24" fill="url(#jesusGlow)"/>
-                        <ellipse cx="100" cy="68" rx="12" ry="15" fill="#fff" opacity="0.5"/>
-                    </svg>
-                    <p class="figure-label">Prophet Jesus</p>
-                    <p class="figure-sublabel">Returning in the End Times</p>
+                <div class="image-card">
+                    <img src="images/mosque.jpg" alt="Historic Mosque" class="section-image">
+                    <p class="image-caption">Mosque architecture — a symbol of faith and devotion</p>
                 </div>
             </div>
             
