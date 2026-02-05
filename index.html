@@ -578,6 +578,51 @@
             margin: 0 auto;
         }
 
+        /* Radiant Figure Styles */
+        .radiant-figure-container {
+            width: 280px;
+            height: 350px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .radiant-figure {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 30px rgba(196, 169, 98, 0.4));
+        }
+
+        .light-rays-group {
+            animation: rays-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes rays-pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.9; }
+        }
+
+        .banner-text {
+            margin-bottom: 1.5rem;
+        }
+
+        .arabic-text-large {
+            display: block;
+            font-size: 3rem;
+            color: var(--primary-gold);
+            font-family: 'Times New Roman', serif;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(196, 169, 98, 0.5);
+        }
+
+        .translation-text {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
         .geometric-frame {
             width: 200px;
             height: 200px;
@@ -650,6 +695,30 @@
             position: relative;
         }
 
+        .hidden-light-figure {
+            text-align: center;
+            margin: 2rem 0 3rem;
+        }
+
+        .radiant-figure-small {
+            width: 220px;
+            height: 300px;
+            filter: drop-shadow(0 0 25px rgba(196, 169, 98, 0.3));
+        }
+
+        .occult-rays {
+            animation: rays-pulse 3s ease-in-out infinite;
+        }
+
+        .hidden-light-caption {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--primary-gold);
+            font-style: italic;
+            margin-top: 1.5rem;
+            opacity: 0.9;
+        }
+
         .light-imagery {
             text-align: center;
             margin: 2rem 0 3rem;
@@ -682,6 +751,28 @@
         }
 
         @media (max-width: 480px) {
+            .radiant-figure-container {
+                width: 220px;
+                height: 280px;
+            }
+            
+            .radiant-figure-small {
+                width: 180px;
+                height: 250px;
+            }
+            
+            .arabic-text-large {
+                font-size: 2.2rem;
+            }
+            
+            .translation-text {
+                font-size: 0.95rem;
+            }
+            
+            .hidden-light-caption {
+                font-size: 0.95rem;
+            }
+            
             .light-rays {
                 width: 200px;
                 height: 140px;
@@ -909,36 +1000,100 @@
     <!-- Decorative Banner Section -->
     <section class="decorative-banner">
         <div class="banner-content">
-            <div class="geometric-frame">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Radiant Figure Illustration -->
+            <div class="radiant-figure-container">
+                <svg class="radiant-figure" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                        <linearGradient id="bannerGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#C4A962;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#E8D5A3;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:1" />
+                        <!-- Radial glow for head -->
+                        <radialGradient id="headGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                            <stop offset="30%" style="stop-color:#F5E6B8;stop-opacity:0.9" />
+                            <stop offset="60%" style="stop-color:#C4A962;stop-opacity:0.5" />
+                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
+                        </radialGradient>
+                        
+                        <!-- Outer aura glow -->
+                        <radialGradient id="auraGlow" cx="50%" cy="40%" r="60%">
+                            <stop offset="0%" style="stop-color:#C4A962;stop-opacity:0.3" />
+                            <stop offset="50%" style="stop-color:#C4A962;stop-opacity:0.1" />
+                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
+                        </radialGradient>
+                        
+                        <!-- Ray gradient -->
+                        <linearGradient id="rayGradient" x1="50%" y1="0%" x2="50%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+                            <stop offset="50%" style="stop-color:#C4A962;stop-opacity:0.4" />
+                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
                         </linearGradient>
+                        
+                        <!-- Robe gradient -->
+                        <linearGradient id="robeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2a4a3a;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1a2a22;stop-opacity:1" />
+                        </linearGradient>
+                        
+                        <!-- Filter for glow effect -->
+                        <filter id="glowFilter" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="8" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
                     </defs>
-                    <g fill="none" stroke="url(#bannerGold)" stroke-width="0.5">
-                        <!-- Outer frame -->
-                        <circle cx="100" cy="100" r="95" />
-                        <circle cx="100" cy="100" r="88" />
-                        <!-- 8-pointed star -->
-                        <polygon points="100,10 115,85 190,85 130,125 150,195 100,150 50,195 70,125 10,85 85,85" />
-                        <!-- Inner circles -->
-                        <circle cx="100" cy="100" r="60" />
-                        <circle cx="100" cy="100" r="45" />
-                        <circle cx="100" cy="100" r="25" />
-                        <!-- Cross pattern -->
-                        <line x1="100" y1="5" x2="100" y2="195" stroke-width="0.3" />
-                        <line x1="5" y1="100" x2="195" y2="100" stroke-width="0.3" />
-                        <line x1="25" y1="25" x2="175" y2="175" stroke-width="0.3" />
-                        <line x1="175" y1="25" x2="25" y2="175" stroke-width="0.3" />
+                    
+                    <!-- Background aura -->
+                    <ellipse cx="200" cy="180" rx="180" ry="180" fill="url(#auraGlow)" />
+                    
+                    <!-- Light rays emanating from head -->
+                    <g class="light-rays-group" opacity="0.7">
+                        <polygon points="200,80 160,0 170,0 200,70" fill="url(#rayGradient)" />
+                        <polygon points="200,80 240,0 230,0 200,70" fill="url(#rayGradient)" />
+                        <polygon points="200,80 100,20 110,25 200,75" fill="url(#rayGradient)" />
+                        <polygon points="200,80 300,20 290,25 200,75" fill="url(#rayGradient)" />
+                        <polygon points="200,80 50,80 55,85 200,85" fill="url(#rayGradient)" />
+                        <polygon points="200,80 350,80 345,85 200,85" fill="url(#rayGradient)" />
+                        <polygon points="200,80 70,150 80,145 200,90" fill="url(#rayGradient)" />
+                        <polygon points="200,80 330,150 320,145 200,90" fill="url(#rayGradient)" />
+                        <polygon points="200,80 130,10 138,15 200,72" fill="url(#rayGradient)" />
+                        <polygon points="200,80 270,10 262,15 200,72" fill="url(#rayGradient)" />
                     </g>
+                    
+                    <!-- Robe/cloak silhouette -->
+                    <path d="M200,160 
+                             C160,160 130,180 120,220
+                             L100,350 L90,500 L310,500 L300,350
+                             L280,220 C270,180 240,160 200,160Z" 
+                          fill="url(#robeGradient)" 
+                          stroke="#C4A962" 
+                          stroke-width="1" 
+                          opacity="0.9"/>
+                    
+                    <!-- Shoulder detail -->
+                    <ellipse cx="200" cy="175" rx="55" ry="25" fill="#2a4a3a" stroke="#C4A962" stroke-width="0.5" opacity="0.9"/>
+                    
+                    <!-- Turban/head covering silhouette -->
+                    <ellipse cx="200" cy="120" rx="45" ry="50" fill="#1a3a2a" stroke="#C4A962" stroke-width="0.5" opacity="0.8"/>
+                    
+                    <!-- Radiant face area (light instead of face) -->
+                    <ellipse cx="200" cy="115" rx="35" ry="40" fill="url(#headGlow)" filter="url(#glowFilter)"/>
+                    
+                    <!-- Inner bright core -->
+                    <ellipse cx="200" cy="115" rx="20" ry="25" fill="#ffffff" opacity="0.6"/>
+                    
+                    <!-- Decorative border on robe -->
+                    <path d="M140,250 L140,400" stroke="#C4A962" stroke-width="1" opacity="0.5"/>
+                    <path d="M260,250 L260,400" stroke="#C4A962" stroke-width="1" opacity="0.5"/>
+                    
+                    <!-- Hands in prayer position -->
+                    <ellipse cx="175" cy="320" rx="15" ry="25" fill="#d4a574" opacity="0.7"/>
+                    <ellipse cx="225" cy="320" rx="15" ry="25" fill="#d4a574" opacity="0.7"/>
                 </svg>
-                <div class="frame-text">
-                    <span class="arabic-text">ٱلْمَهْدِي</span>
-                    <span class="translation">Al-Mahdi</span>
-                </div>
+            </div>
+            
+            <div class="banner-text">
+                <span class="arabic-text-large">ٱلْمَهْدِي</span>
+                <span class="translation-text">Al-Mahdi — The Guided One</span>
             </div>
             <p class="banner-quote">"The earth shall be filled with justice and equity, as it was filled with oppression and tyranny."</p>
         </div>
@@ -1144,36 +1299,76 @@
                 <div class="section-divider"></div>
             </div>
             
-            <!-- Light Imagery -->
-            <div class="light-imagery">
-                <div class="light-rays">
-                    <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <radialGradient id="lightGlow" cx="50%" cy="100%" r="70%" fx="50%" fy="100%">
-                                <stop offset="0%" style="stop-color:#C4A962;stop-opacity:0.4" />
-                                <stop offset="50%" style="stop-color:#C4A962;stop-opacity:0.1" />
-                                <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
-                            </radialGradient>
-                            <linearGradient id="rayGrad" x1="50%" y1="100%" x2="50%" y2="0%">
-                                <stop offset="0%" style="stop-color:#C4A962;stop-opacity:0.3" />
-                                <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
-                            </linearGradient>
-                        </defs>
-                        <ellipse cx="150" cy="200" rx="150" ry="40" fill="url(#lightGlow)" />
-                        <g stroke="url(#rayGrad)" stroke-width="0.5" opacity="0.6">
-                            <line x1="150" y1="200" x2="50" y2="0" />
-                            <line x1="150" y1="200" x2="80" y2="0" />
-                            <line x1="150" y1="200" x2="110" y2="0" />
-                            <line x1="150" y1="200" x2="150" y2="0" />
-                            <line x1="150" y1="200" x2="190" y2="0" />
-                            <line x1="150" y1="200" x2="220" y2="0" />
-                            <line x1="150" y1="200" x2="250" y2="0" />
-                        </g>
-                        <circle cx="150" cy="200" r="8" fill="#C4A962" opacity="0.4" />
-                        <circle cx="150" cy="200" r="4" fill="#C4A962" opacity="0.6" />
-                    </svg>
-                </div>
-                <p class="light-caption">The Hidden Light — Awaiting the Appointed Time</p>
+            <!-- Radiant Figure - Hidden Light Theme -->
+            <div class="hidden-light-figure">
+                <svg class="radiant-figure-small" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="headGlow2" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                            <stop offset="40%" style="stop-color:#F5E6B8;stop-opacity:0.8" />
+                            <stop offset="70%" style="stop-color:#C4A962;stop-opacity:0.4" />
+                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
+                        </radialGradient>
+                        <radialGradient id="auraGlow2" cx="50%" cy="35%" r="65%">
+                            <stop offset="0%" style="stop-color:#C4A962;stop-opacity:0.25" />
+                            <stop offset="60%" style="stop-color:#C4A962;stop-opacity:0.08" />
+                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
+                        </radialGradient>
+                        <linearGradient id="rayGrad2" x1="50%" y1="0%" x2="50%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.7" />
+                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
+                        </linearGradient>
+                        <linearGradient id="cloakGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#1a3a2a;stop-opacity:0.9" />
+                            <stop offset="100%" style="stop-color:#0a1a12;stop-opacity:0.95" />
+                        </linearGradient>
+                        <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+                            <feGaussianBlur stdDeviation="6" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- Background aura -->
+                    <ellipse cx="150" cy="140" rx="140" ry="140" fill="url(#auraGlow2)" />
+                    
+                    <!-- Light rays -->
+                    <g class="occult-rays" opacity="0.6">
+                        <polygon points="150,70 125,0 135,0 150,60" fill="url(#rayGrad2)" />
+                        <polygon points="150,70 175,0 165,0 150,60" fill="url(#rayGrad2)" />
+                        <polygon points="150,70 80,15 88,20 150,65" fill="url(#rayGrad2)" />
+                        <polygon points="150,70 220,15 212,20 150,65" fill="url(#rayGrad2)" />
+                        <polygon points="150,70 40,70 45,75 150,75" fill="url(#rayGrad2)" />
+                        <polygon points="150,70 260,70 255,75 150,75" fill="url(#rayGrad2)" />
+                        <polygon points="150,70 55,120 62,115 150,75" fill="url(#rayGrad2)" />
+                        <polygon points="150,70 245,120 238,115 150,75" fill="url(#rayGrad2)" />
+                    </g>
+                    
+                    <!-- Cloak -->
+                    <path d="M150,130 
+                             C115,130 90,150 85,185
+                             L70,280 L60,400 L240,400 L230,280
+                             L215,185 C210,150 185,130 150,130Z" 
+                          fill="url(#cloakGrad)" 
+                          stroke="#C4A962" 
+                          stroke-width="0.8"/>
+                    
+                    <!-- Shoulders -->
+                    <ellipse cx="150" cy="142" rx="42" ry="18" fill="#1a3a2a" stroke="#C4A962" stroke-width="0.5"/>
+                    
+                    <!-- Head covering -->
+                    <ellipse cx="150" cy="95" rx="35" ry="40" fill="#122a1e" stroke="#C4A962" stroke-width="0.5"/>
+                    
+                    <!-- Radiant face -->
+                    <ellipse cx="150" cy="92" rx="28" ry="32" fill="url(#headGlow2)" filter="url(#softGlow)"/>
+                    <ellipse cx="150" cy="92" rx="16" ry="20" fill="#ffffff" opacity="0.5"/>
+                    
+                    <!-- Veil/mist effect at bottom -->
+                    <rect x="0" y="320" width="300" height="80" fill="url(#auraGlow2)" opacity="0.5"/>
+                </svg>
+                <p class="hidden-light-caption">The Hidden Imam — Present Yet Unseen</p>
             </div>
             
             <p class="content-text">
