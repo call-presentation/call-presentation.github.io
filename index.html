@@ -578,34 +578,23 @@
             margin: 0 auto;
         }
 
-        /* Radiant Figure Styles */
-        .mahdi-image-container {
-            position: relative;
-            width: 300px;
-            height: 350px;
+        /* Banner Geometric Ornament */
+        .banner-ornament {
+            width: 200px;
+            height: 200px;
             margin: 0 auto 2rem;
-            border-radius: 15px;
-            overflow: hidden;
+            animation: pulse-glow 4s ease-in-out infinite;
         }
 
-        .mahdi-main-image {
+        .banner-ornament svg {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            border-radius: 15px;
-            border: 2px solid rgba(196, 169, 98, 0.4);
-            box-shadow: 0 0 40px rgba(196, 169, 98, 0.3);
+            filter: drop-shadow(0 0 15px rgba(196, 169, 98, 0.3));
         }
 
-        .image-glow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 15px;
-            box-shadow: inset 0 0 60px rgba(196, 169, 98, 0.2);
-            pointer-events: none;
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(196, 169, 98, 0.2)); }
+            50% { filter: drop-shadow(0 0 25px rgba(196, 169, 98, 0.5)); }
         }
 
         .radiant-figure-container {
@@ -653,9 +642,9 @@
         }
 
         @media (max-width: 480px) {
-            .mahdi-image-container {
-                width: 250px;
-                height: 300px;
+            .banner-ornament {
+                width: 150px;
+                height: 150px;
             }
             
             .arabic-text-large {
@@ -1115,10 +1104,31 @@
     <!-- Decorative Banner Section -->
     <section class="decorative-banner">
         <div class="banner-content">
-            <!-- Decorative Mosque Image -->
-            <div class="mahdi-image-container">
-                <img src="images/dome.jpg" alt="Mosque dome representing divine guidance" class="mahdi-main-image" onerror="this.style.display='none'">
-                <div class="image-glow"></div>
+            <!-- Decorative Geometric Ornament -->
+            <div class="banner-ornament">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="bannerGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#C4A962;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#E8D5A3;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <g fill="none" stroke="url(#bannerGold)" stroke-width="0.8">
+                        <circle cx="100" cy="100" r="95" />
+                        <circle cx="100" cy="100" r="80" />
+                        <circle cx="100" cy="100" r="60" />
+                        <polygon points="100,5 195,100 100,195 5,100" />
+                        <polygon points="100,25 175,100 100,175 25,100" />
+                        <polygon points="100,45 155,100 100,155 45,100" />
+                        <line x1="100" y1="5" x2="100" y2="195" />
+                        <line x1="5" y1="100" x2="195" y2="100" />
+                        <line x1="30" y1="30" x2="170" y2="170" />
+                        <line x1="170" y1="30" x2="30" y2="170" />
+                        <!-- 8-pointed star -->
+                        <polygon points="100,20 115,75 170,65 130,100 170,135 115,125 100,180 85,125 30,135 70,100 30,65 85,75" />
+                    </g>
+                </svg>
             </div>
             
             <div class="banner-text">
@@ -1238,18 +1248,6 @@
                 <span class="section-number">CHAPTER IV</span>
                 <h2 class="section-title">How Islam Interprets This Promise</h2>
                 <div class="section-divider"></div>
-            </div>
-            
-            <!-- Image Gallery -->
-            <div class="islamic-images">
-                <div class="image-card">
-                    <img src="images/calligraphy.jpg" alt="Islamic Calligraphy Art" class="section-image">
-                    <p class="image-caption">Islamic calligraphy representing divine names</p>
-                </div>
-                <div class="image-card">
-                    <img src="images/mosque.jpg" alt="Historic Mosque" class="section-image">
-                    <p class="image-caption">Mosque architecture — a symbol of faith and devotion</p>
-                </div>
             </div>
             
             <p class="content-text">
