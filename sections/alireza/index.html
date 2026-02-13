@@ -155,38 +155,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../../index.html" class="nav-logo">
-                <img src="../../Logo.webp" alt="Logo" class="nav-logo-img">
-                <span class="nav-divider"></span>
-                Imam Mahdi
-            </a>
-            <ul class="nav-menu">
-                <li><a href="../../index.html">Home</a></li>
-                <li class="nav-dropdown">
-                    <a href="../../index.html#topics" class="dropdown-trigger">Topics <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="chevron"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></a>
-                    <div class="dropdown-menu">
-                        <a href="../amirhossein/promised-savior.html">The Promised Savior</a>
-                        <a href="../parsa/index.html">The Twelve Imams</a>
-                        <a href="../baqer/index.html">The Final Proof</a>
-                        <a href="../amirreza/index.html">Divine Guidance</a>
-                        <a href="../alireza/index.html">Justice &amp; Retribution</a>
-                        <a href="../mohamadhossein/index.html">Identifying the True Mahdi</a>
-                        <a href="../taha/index.html">The Báb</a>
-                        <a href="../ali/index.html">NT Critique</a>
-                    </div>
-                </li>
-                <li><a href="../../about.html">About</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-    <div class="nav-overlay"></div>
+    <div id="navbar-placeholder"></div>
 
     <!-- Page Header -->
     <header class="page-hero">
@@ -426,26 +395,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-ornament">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40"/>
-            </svg>
-        </div>
-        <div class="footer-nav">
-            <a href="../../index.html">Home</a>
-            <a href="../amirhossein/promised-savior.html">The Promised Savior</a>
-            <a href="../taha/index.html">The Báb</a>
-            <a href="../ali/index.html">NT Critique</a>
-            <a href="../amirreza/index.html">Divine Guidance</a>
-            <a href="../alireza/index.html">Justice &amp; Retribution</a>
-            <a href="../parsa/index.html">The Twelve Imams</a>
-            <a href="../baqer/index.html">The Final Proof</a>
-            <a href="../../about.html">About</a>
-        </div>
-        <p>Imam Mahdi (عج) — Studies on the Awaited Savior</p>
-        <p class="footer-subtitle">اللهم عجّل لوليّك الفرج</p>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" aria-label="Back to top">
@@ -453,46 +403,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
         </svg>
     </button>
+    <!-- Load components -->
+    <script src="../../js/components.js"></script>
 
     <script>
-        // Mobile navigation toggle
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        const navOverlay = document.querySelector('.nav-overlay');
-        const navLinks = document.querySelectorAll('.nav-menu a');
+        
 
-        function closeNav() {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            navOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            navOverlay.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-        });
-
-        navOverlay.addEventListener('click', closeNav);
-        navLinks.forEach(link => link.addEventListener('click', closeNav));
-
-        // Navbar scroll behavior
-        const navbar = document.querySelector('.navbar');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-            
-            lastScroll = currentScroll;
-        });
+        
 
         // Back to top button
         const backToTopButton = document.querySelector('.back-to-top');
