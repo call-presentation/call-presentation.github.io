@@ -10,451 +10,575 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* ===== Landing Page Specific Styles ===== */
+        /* ===== Landing Page ===== */
 
-        /* Hero */
-        .landing-hero {
+        /* Hero — elegant gradient with decorative elements */
+        .lp-hero {
             position: relative;
-            min-height: 100vh;
+            min-height: 92vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: var(--bg-dark);
             overflow: hidden;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, #3A2820 50%, var(--bg-dark) 100%);
         }
 
-        .hero-content {
+        .lp-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 40%, rgba(220, 132, 96, 0.10) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 80% 20%, rgba(196, 160, 96, 0.06) 0%, transparent 60%);
+        }
+
+        /* Subtle geometric pattern */
+        .lp-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(240,168,128,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(240,168,128,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-inner {
             position: relative;
             z-index: 2;
             text-align: center;
-            padding: 8rem 2rem 4rem;
-            max-width: 860px;
+            padding: 6rem 2rem 4rem;
+            max-width: 780px;
         }
 
-        .hero-badge {
-            display: inline-block;
-            padding: 0.4rem 1.4rem;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 2.5px;
+        .hero-arabic {
+            font-size: clamp(2.8rem, 7vw, 4.5rem);
+            color: var(--accent-coral-light);
+            font-family: 'Traditional Arabic', 'Amiri', 'Playfair Display', serif;
+            margin-bottom: 0.3rem;
+            opacity: 0.85;
+            text-shadow: 0 0 40px rgba(240, 168, 128, 0.25);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-arabic-sub {
+            font-size: 0.85rem;
+            color: var(--text-on-dark-muted);
+            letter-spacing: 4px;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            opacity: 0.7;
+            animation: fadeInUp 1s ease-out 0.15s both;
         }
 
-        .hero-title {
+        .hero-h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.4rem, 6vw, 4.2rem);
+            font-size: clamp(2.2rem, 5.5vw, 3.8rem);
             font-weight: 700;
             color: #fff;
             line-height: 1.15;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1.2rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
         }
 
-        .hero-title .accent {
+        .hero-h1 em {
+            font-style: italic;
             color: var(--accent-coral-light);
-            display: block;
         }
 
-        .hero-desc {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            color: rgba(255, 255, 255, 0.85);
-            max-width: 620px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.8;
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: var(--text-on-dark-muted);
+            max-width: 560px;
+            margin: 0 auto 2.8rem;
+            line-height: 1.85;
             font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.45s both;
         }
 
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 2.4rem;
+            background: var(--accent-coral);
+            color: #fff;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all var(--transition-base);
+            box-shadow: 0 4px 20px rgba(220, 132, 96, 0.3);
+            animation: fadeInUp 1s ease-out 0.6s both;
         }
 
-        .hero-actions .btn {
-            min-width: 160px;
+        .hero-cta:hover {
+            background: var(--accent-terracotta);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(220, 132, 96, 0.4);
         }
 
-        .hero-scroll {
+        .hero-cta svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 2;
+            transition: transform var(--transition-base);
+        }
+
+        .hero-cta:hover svg {
+            transform: translateX(3px);
+        }
+
+        .hero-scroll-hint {
             position: absolute;
-            bottom: 2.5rem;
+            bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
         }
 
-        .hero-scroll svg {
-            width: 26px;
-            height: 26px;
-            stroke: rgba(255, 255, 255, 0.6);
+        .hero-scroll-hint svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--accent-coral-light);
             stroke-width: 2;
+            opacity: 0.5;
             animation: bounce 2s infinite;
         }
 
-        /* Overview Section */
-        .overview-section {
-            padding: 6rem 2rem;
-            background: var(--bg-cream);
+        /* Faiths strip */
+        .faiths-strip {
+            background: var(--bg-warm);
+            padding: 2.5rem 2rem;
+            border-bottom: 1px solid var(--border-warm);
         }
 
-        .overview-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+        .faiths-row {
+            display: flex;
+            justify-content: center;
             align-items: center;
-            max-width: 1100px;
+            gap: 3rem;
+            max-width: 600px;
             margin: 0 auto;
-        }
-
-        .overview-text {
-            max-width: 500px;
-        }
-
-        .overview-text .section-label {
-            text-align: left;
-        }
-
-        .overview-text h2 {
-            text-align: left;
-            margin-bottom: 1.5rem;
-        }
-
-        .overview-visual {
-            display: flex;
-            justify-content: center;
-        }
-
-        .traditions-trio {
-            display: flex;
-            gap: 1.2rem;
             flex-wrap: wrap;
-            justify-content: center;
         }
 
-        .tradition-pill {
+        .faith-tag {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            padding: 1rem 1.6rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-warm);
-            border-radius: 50px;
-            box-shadow: 0 2px 12px var(--shadow-warm);
+            gap: 0.5rem;
+            font-size: 0.95rem;
             font-weight: 500;
             color: var(--text-dark);
-            font-size: 1rem;
-            transition: all var(--transition-base);
         }
 
-        .tradition-pill:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px var(--shadow-strong);
-        }
-
-        .tradition-pill .icon {
-            font-size: 1.3rem;
-            width: 40px;
-            height: 40px;
+        .faith-tag .fi {
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--bg-peach);
+            font-size: 1.1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-warm);
             border-radius: 50%;
         }
 
-        @media (max-width: 768px) {
-            .overview-grid {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-                text-align: center;
-            }
-
-            .overview-text .section-label,
-            .overview-text h2 {
-                text-align: center;
-            }
+        /* Topics — the main event */
+        .topics-section {
+            padding: 5rem 2rem 6rem;
+            background: var(--bg-cream);
         }
 
-        /* Explore Section — Navigation Cards */
-        .explore-section {
-            padding: 6rem 2rem;
-            background: var(--bg-warm);
+        .topics-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
         }
 
-        .explore-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 1100px;
+        .topics-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            color: var(--text-dark);
+            margin-bottom: 0.6rem;
+        }
+
+        .topics-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 500px;
             margin: 0 auto;
         }
 
-        .explore-card {
-            display: flex;
-            flex-direction: column;
+        /* Highlight card — main study */
+        .topic-highlight {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            max-width: 960px;
+            margin: 0 auto 2.5rem;
             background: var(--bg-card);
             border: 1px solid var(--border-warm);
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 20px var(--shadow-warm);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 24px var(--shadow-warm);
             text-decoration: none;
             color: inherit;
+            transition: all 0.4s ease;
         }
 
-        .explore-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 48px var(--shadow-strong);
+        .topic-highlight:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px var(--shadow-strong);
             border-color: var(--accent-coral-light);
             color: inherit;
         }
 
-        .explore-card-visual {
-            height: 180px;
+        .topic-hl-visual {
+            background: linear-gradient(135deg, #2C1E14, #3A2820);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 3rem 2rem;
             position: relative;
             overflow: hidden;
         }
 
-        .explore-card-visual.visual-study {
-            background: linear-gradient(135deg, #2C1E14 0%, #3A2820 50%, #1E1410 100%);
-        }
-
-        .explore-card-visual.visual-references {
-            background: linear-gradient(135deg, #1E2A20 0%, #2A3A2C 50%, #162018 100%);
-        }
-
-        .explore-card-visual.visual-about {
-            background: linear-gradient(135deg, #1E2030 0%, #2A3040 50%, #161828 100%);
-        }
-
-        .explore-card-visual .card-emblem {
-            font-size: 3.5rem;
-            opacity: 0.9;
-            transition: transform 0.4s ease;
-        }
-
-        .explore-card:hover .card-emblem {
-            transform: scale(1.1);
-        }
-
-        .explore-card-visual::after {
+        .topic-hl-visual::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at center, rgba(240, 168, 128, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle at 30% 70%, rgba(240,168,128,0.08) 0%, transparent 60%);
         }
 
-        .explore-card-body {
-            padding: 1.8rem;
-            flex: 1;
+        .topic-hl-visual .hl-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .topic-hl-visual .hl-label {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-coral-light);
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .topic-hl-body {
+            padding: 2.5rem;
             display: flex;
             flex-direction: column;
+            justify-content: center;
         }
 
-        .explore-card-body h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.6rem;
+        .topic-hl-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
             color: var(--text-dark);
+            margin-bottom: 0.8rem;
         }
 
-        .explore-card-body p {
+        .topic-hl-body p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            line-height: 1.7;
-            flex: 1;
+            line-height: 1.75;
             margin-bottom: 1.2rem;
         }
 
-        .card-link-text {
+        .topic-hl-body .presenter {
+            font-size: 0.8rem;
+            color: var(--accent-coral);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .topic-hl-body .link-arrow {
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
             font-weight: 600;
             font-size: 0.9rem;
             color: var(--accent-coral);
-            transition: gap var(--transition-base);
         }
 
-        .explore-card:hover .card-link-text {
-            gap: 0.7rem;
-        }
-
-        .card-link-text svg {
+        .topic-hl-body .link-arrow svg {
             width: 16px;
             height: 16px;
             stroke: currentColor;
             stroke-width: 2.5;
+            transition: transform var(--transition-base);
         }
 
-        @media (max-width: 900px) {
-            .explore-grid {
+        .topic-highlight:hover .link-arrow svg {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 700px) {
+            .topic-highlight {
                 grid-template-columns: 1fr;
-                max-width: 480px;
+            }
+            .topic-hl-visual {
+                padding: 2rem;
             }
         }
 
-        /* Themes Section */
-        .themes-section {
-            padding: 6rem 2rem;
-            background: var(--bg-cream);
-        }
-
-        .themes-grid {
+        /* Topic grid — compact cards */
+        .topics-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            max-width: 1100px;
+            max-width: 960px;
             margin: 0 auto;
         }
 
-        .theme-item {
-            text-align: center;
-            padding: 2rem 1.2rem;
+        .topic-card {
+            display: flex;
+            flex-direction: column;
             background: var(--bg-card);
             border: 1px solid var(--border-warm);
             border-radius: 14px;
+            padding: 1.8rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.35s ease;
             box-shadow: 0 2px 12px var(--shadow-warm);
-            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
         }
 
-        .theme-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 28px var(--shadow-strong);
+        .topic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-coral), var(--accent-gold));
+            opacity: 0;
+            transition: opacity var(--transition-base);
         }
 
-        .theme-icon {
-            width: 56px;
-            height: 56px;
-            margin: 0 auto 1rem;
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 36px var(--shadow-strong);
+            border-color: var(--accent-coral-light);
+            color: inherit;
+        }
+
+        .topic-card:hover::before {
+            opacity: 1;
+        }
+
+        .tc-icon {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
             background: linear-gradient(135deg, var(--bg-peach), var(--bg-warm));
-            border-radius: 50%;
+            border-radius: 12px;
             border: 1px solid var(--border-warm);
         }
 
-        .theme-item h4 {
+        .topic-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: var(--text-dark);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
         }
 
-        .theme-item p {
+        .topic-card p {
             color: var(--text-muted);
             font-size: 0.88rem;
-            line-height: 1.5;
-            margin: 0;
+            line-height: 1.65;
+            flex: 1;
+            margin-bottom: 1rem;
+        }
+
+        .tc-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .tc-presenter {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .tc-arrow {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--bg-warm);
+            transition: all var(--transition-base);
+        }
+
+        .tc-arrow svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--accent-coral);
+            stroke-width: 2.5;
+            transition: transform var(--transition-base);
+        }
+
+        .topic-card:hover .tc-arrow {
+            background: var(--accent-coral);
+        }
+
+        .topic-card:hover .tc-arrow svg {
+            stroke: #fff;
+            transform: translateX(2px);
         }
 
         @media (max-width: 900px) {
-            .themes-grid {
+            .topics-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @media (max-width: 480px) {
-            .themes-grid {
+        @media (max-width: 560px) {
+            .topics-grid {
                 grid-template-columns: 1fr;
+                max-width: 400px;
             }
         }
 
-        /* Quote Banner */
-        .quote-banner {
-            padding: 5rem 2rem;
+        /* Secondary links row */
+        .secondary-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 960px;
+            margin: 2rem auto 0;
+            flex-wrap: wrap;
+        }
+
+        .sec-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-warm);
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--text-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all var(--transition-base);
+            box-shadow: 0 2px 8px var(--shadow-warm);
+        }
+
+        .sec-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--shadow-strong);
+            border-color: var(--accent-coral-light);
+            color: var(--accent-coral);
+        }
+
+        .sec-link .sl-icon {
+            font-size: 1rem;
+        }
+
+        /* Quote section */
+        .lp-quote {
+            padding: 4.5rem 2rem;
             background: var(--bg-dark);
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .quote-banner::before {
+        .lp-quote::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at center, rgba(240, 168, 128, 0.06) 0%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(240,168,128,0.06) 0%, transparent 65%);
         }
 
-        .quote-banner-content {
+        .lp-quote blockquote {
             position: relative;
             z-index: 1;
-            max-width: 700px;
+            max-width: 640px;
             margin: 0 auto;
         }
 
-        .quote-arabic {
-            font-size: clamp(2rem, 5vw, 3.2rem);
+        .lp-quote .q-mark {
+            font-size: 4rem;
             color: var(--accent-coral-light);
-            font-family: 'Times New Roman', 'Playfair Display', serif;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 30px rgba(240, 168, 128, 0.3);
-        }
-
-        .quote-translation {
-            font-size: 0.95rem;
-            color: var(--text-on-dark-muted);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 300;
-            margin-bottom: 2rem;
-        }
-
-        .quote-text {
+            opacity: 0.3;
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: var(--text-on-dark-muted);
+            line-height: 1;
+            margin-bottom: -0.5rem;
+        }
+
+        .lp-quote .q-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            color: var(--text-on-dark);
             font-style: italic;
             line-height: 1.9;
+            margin-bottom: 1.2rem;
         }
 
-        /* CTA Section */
-        .cta-section {
+        .lp-quote .q-source {
+            font-size: 0.85rem;
+            color: var(--text-on-dark-muted);
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        /* Poster showcase */
+        .poster-showcase {
             padding: 5rem 2rem;
-            background: linear-gradient(135deg, var(--bg-peach) 0%, var(--bg-warm) 50%, var(--bg-cream) 100%);
+            background: var(--bg-warm);
+        }
+
+        .poster-showcase-inner {
+            max-width: 1000px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .cta-content {
-            max-width: 600px;
-            margin: 0 auto;
+        .poster-showcase-inner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
         }
 
-        .cta-content h2 {
-            margin-bottom: 1rem;
-        }
-
-        .cta-content p {
+        .poster-showcase-inner > p {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
         }
 
-        /* Poster Section */
-        .poster-section {
-            padding: 4rem 2rem;
-            background: var(--bg-cream);
-        }
-
-        .poster-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            border-radius: 12px;
+        .poster-frame {
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 8px 40px var(--shadow-strong);
+            box-shadow:
+                0 8px 40px var(--shadow-strong),
+                0 0 0 1px var(--border-warm);
         }
 
-        .poster-container img {
+        .poster-frame img {
             width: 100%;
             height: auto;
             display: block;
@@ -469,7 +593,6 @@
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="sections/amirhossein/promised-savior.html">The Study</a></li>
-                <li><a href="sections/amirhossein/references.html">References</a></li>
                 <li><a href="sections/taha/index.html">The Báb</a></li>
                 <li><a href="sections/ali/index.html">NT Critique</a></li>
                 <li><a href="sections/amirreza/index.html">Divine Guidance</a></li>
@@ -487,252 +610,146 @@
     </nav>
     <div class="nav-overlay"></div>
 
-    <!-- Hero Section -->
-    <header class="landing-hero">
-        <div class="hero-content">
-            <span class="hero-badge">Interfaith Study</span>
-            <h1 class="hero-title">
-                The Promised Savior
-                <span class="accent">Across Abrahamic Faiths</span>
-            </h1>
-            <p class="hero-desc">
-                Explore how Judaism, Christianity, and Islam share a profound hope for a divinely guided era of justice, peace, and redemption — tracing the promise from ancient scriptures to living belief.
+    <!-- Hero -->
+    <header class="lp-hero">
+        <div class="hero-inner">
+            <div class="hero-arabic">ٱلْمَهْدِي</div>
+            <div class="hero-arabic-sub">Al-Mahdi — The Guided One</div>
+            <h1 class="hero-h1">The Promised Savior<br><em>Across Abrahamic Faiths</em></h1>
+            <p class="hero-sub">
+                How Judaism, Christianity, and Islam share a profound hope for a divinely guided era of justice, peace, and redemption.
             </p>
-            <div class="hero-actions">
-                <a href="sections/amirhossein/promised-savior.html" class="btn btn-primary">Read the Study</a>
-                <a href="#explore" class="btn btn-outline-light">Explore Sections</a>
-            </div>
+            <a href="#topics" class="hero-cta">
+                Explore Topics
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"/></svg>
+            </a>
         </div>
-        <div class="hero-scroll">
+        <div class="hero-scroll-hint">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
             </svg>
         </div>
     </header>
 
-    <!-- Overview Section -->
-    <section class="overview-section">
-        <div class="overview-grid">
-            <div class="overview-text reveal">
-                <span class="section-label">About This Project</span>
-                <h2>A Shared Hope for Humanity</h2>
-                <p class="content-text">
-                    Throughout history, the great Abrahamic religions have spoken of a coming age when injustice ends and divine justice prevails. This study traces that shared expectation across sacred texts.
-                </p>
-                <p class="content-text">
-                    Beginning with Jewish prophecies, through Christian teachings about Jesus as the Messiah, and into Islam's understanding of Imam Mahdi, we discover a remarkable thread of continuity.
-                </p>
-            </div>
-            <div class="overview-visual reveal">
-                <div class="traditions-trio">
-                    <div class="tradition-pill">
-                        <span class="icon">✡</span>
-                        <span>Judaism</span>
-                    </div>
-                    <div class="tradition-pill">
-                        <span class="icon">✝</span>
-                        <span>Christianity</span>
-                    </div>
-                    <div class="tradition-pill">
-                        <span class="icon">☪</span>
-                        <span>Islam</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Three faiths strip -->
+    <div class="faiths-strip">
+        <div class="faiths-row">
+            <div class="faith-tag"><span class="fi">✡</span> Judaism</div>
+            <div class="faith-tag"><span class="fi">✝</span> Christianity</div>
+            <div class="faith-tag"><span class="fi">☪</span> Islam</div>
         </div>
-    </section>
+    </div>
 
-    <!-- Quote Banner -->
-    <section class="quote-banner">
-        <div class="quote-banner-content reveal">
-            <div class="quote-arabic">ٱلْمَهْدِي</div>
-            <div class="quote-translation">Al-Mahdi — The Guided One</div>
-            <p class="quote-text">
-                "The earth shall be filled with justice and equity, as it was filled with oppression and tyranny."
-            </p>
+    <!-- Topics -->
+    <section id="topics" class="topics-section">
+        <div class="topics-header reveal">
+            <h2>Explore the Topics</h2>
+            <p>Each section is an independent study — start wherever interests you most.</p>
         </div>
-    </section>
 
-    <!-- Explore Section -->
-    <section id="explore" class="explore-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Explore</span>
-                <h2 class="section-title">Discover the Study</h2>
-                <div class="section-divider-line"></div>
-                <p class="section-subtitle">Navigate through the different dimensions of this interfaith exploration.</p>
+        <!-- Featured: Main Study -->
+        <a href="sections/amirhossein/promised-savior.html" class="topic-highlight reveal">
+            <div class="topic-hl-visual">
+                <div class="hl-icon">📖</div>
+                <div class="hl-label">Core Study</div>
             </div>
+            <div class="topic-hl-body">
+                <div class="presenter">Presented by Amirhossein</div>
+                <h3>The Promised Savior</h3>
+                <p>A comprehensive study tracing messianic expectations across Judaism, Christianity, and Islam — from ancient prophecy to shared hope.</p>
+                <span class="link-arrow">
+                    Read the Study
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </span>
+            </div>
+        </a>
+
+        <!-- Grid of topics -->
+        <div class="topics-grid">
+            <a href="sections/taha/index.html" class="topic-card reveal">
+                <div class="tc-icon">🔍</div>
+                <h3>The Báb: Examining His Claims</h3>
+                <p>A critical overview of the Báb's life, evolving claims, and theological inconsistencies.</p>
+                <div class="tc-meta">
+                    <span class="tc-presenter">Taha</span>
+                    <span class="tc-arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span>
+                </div>
+            </a>
+            <a href="sections/ali/index.html" class="topic-card reveal">
+                <div class="tc-icon">📚</div>
+                <h3>NT Eschatology Critique</h3>
+                <p>A historical-critical analysis of New Testament eschatological texts and their interpretive challenges.</p>
+                <div class="tc-meta">
+                    <span class="tc-presenter">Ali</span>
+                    <span class="tc-arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span>
+                </div>
+            </a>
+            <a href="sections/amirreza/index.html" class="topic-card reveal">
+                <div class="tc-icon">🕌</div>
+                <h3>Divine Guidance</h3>
+                <p>An exploration of Imam Mahdi's role in conveying and establishing divine meaning.</p>
+                <div class="tc-meta">
+                    <span class="tc-presenter">Amirreza</span>
+                    <span class="tc-arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span>
+                </div>
+            </a>
+            <a href="sections/alireza/index.html" class="topic-card reveal">
+                <div class="tc-icon">⚖️</div>
+                <h3>Justice & Retribution</h3>
+                <p>The promise of divine justice and the settling of every blood-right of the oppressed.</p>
+                <div class="tc-meta">
+                    <span class="tc-presenter">Alireza</span>
+                    <span class="tc-arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span>
+                </div>
+            </a>
+            <a href="sections/parsa/index.html" class="topic-card reveal">
+                <div class="tc-icon">🕋</div>
+                <h3>The Twelve Imams</h3>
+                <p>Hadith evidence on the divinely appointed successors and the Seal of the Imams.</p>
+                <div class="tc-meta">
+                    <span class="tc-presenter">Parsa</span>
+                    <span class="tc-arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span>
+                </div>
+            </a>
+            <a href="sections/baqer/index.html" class="topic-card reveal">
+                <div class="tc-icon">📜</div>
+                <h3>The Final Proof</h3>
+                <p>Understanding Imam Mahdi as the remaining Hujjah and the completion of divine guidance.</p>
+                <div class="tc-meta">
+                    <span class="tc-presenter">Baqer</span>
+                    <span class="tc-arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span>
+                </div>
+            </a>
         </div>
-        <div class="explore-grid">
-            <a href="sections/amirhossein/promised-savior.html" class="explore-card reveal">
-                <div class="explore-card-visual visual-study">
-                    <span class="card-emblem">📖</span>
-                </div>
-                <div class="explore-card-body">
-                    <h3>The Promised Savior</h3>
-                    <p>A comprehensive study tracing messianic expectations across Judaism, Christianity, and Islam — from ancient prophecy to shared hope.</p>
-                    <span class="card-link-text">
-                        Read the Study
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                    </span>
-                </div>
+
+        <!-- Secondary links -->
+        <div class="secondary-links reveal">
+            <a href="sections/amirhossein/references.html" class="sec-link">
+                <span class="sl-icon">📑</span> Scriptural References
             </a>
-            <a href="sections/amirhossein/references.html" class="explore-card reveal">
-                <div class="explore-card-visual visual-references">
-                    <span class="card-emblem">📜</span>
-                </div>
-                <div class="explore-card-body">
-                    <h3>Scriptural References</h3>
-                    <p>A curated collection of passages from the Torah, Psalms, Prophets, Isaiah, Daniel, and the Quran — the textual foundation of the study.</p>
-                    <span class="card-link-text">
-                        View References
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                    </span>
-                </div>
-            </a>
-            <a href="sections/taha/index.html" class="explore-card reveal">
-                <div class="explore-card-visual visual-about">
-                    <span class="card-emblem">🔍</span>
-                </div>
-                <div class="explore-card-body">
-                    <h3>The Báb: Examining His Claims</h3>
-                    <p>A critical overview of the Báb’s life, evolving claims, and theological inconsistencies — presented by Taha.</p>
-                    <span class="card-link-text">
-                        Explore
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                    </span>
-                </div>
-            </a>
-            <a href="sections/ali/index.html" class="explore-card reveal">
-                <div class="explore-card-visual visual-about">
-                    <span class="card-emblem">📚</span>
-                </div>
-                <div class="explore-card-body">
-                    <h3>NT Eschatology Critique</h3>
-                    <p>A historical-critical analysis of New Testament eschatological texts and their interpretive challenges — presented by Ali.</p>
-                    <span class="card-link-text">
-                        Read Analysis
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                    </span>
-                </div>
-            </a>
-            <a href="sections/amirreza/index.html" class="explore-card reveal">
-                <div class="explore-card-visual visual-about">
-                    <span class="card-emblem">🕌</span>
-                </div>
-                <div class="explore-card-body">
-                    <h3>Divine Guidance</h3>
-                    <p>An exploration of Imam Mahdi's role in conveying and establishing divine meaning — presented by Amirreza.</p>
-                    <span class="card-link-text">
-                        Read Study
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                    </span>
-                </div>
-            </a>
-            <a href="sections/alireza/index.html" class="explore-card reveal">
-                <div class="explore-card-visual visual-about">
-                    <span class="card-emblem">⚖️</span>
-                </div>
-                <div class="explore-card-body">
-                    <h3>Justice & Retribution</h3>
-                    <p>The promise of divine justice and the settling of every blood-right of the oppressed — presented by Alireza.</p>
-                    <span class="card-link-text">
-                        Explore Justice
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                    </span>
-                </div>
-            </a>
-            <a href="sections/parsa/index.html" class="explore-card reveal">
-                <div class="explore-card-visual visual-about">
-                    <span class="card-emblem">🕋</span>
-                </div>
-                <div class="explore-card-body">
-                    <h3>The Twelve Imams</h3>
-                    <p>Hadith evidence on the divinely appointed successors and the Seal of the Imams — presented by Parsa.</p>
-                    <span class="card-link-text">
-                        Explore Tradition
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                    </span>
-                </div>
-            </a>
-            <a href="sections/baqer/index.html" class="explore-card reveal">
-                <div class="explore-card-visual visual-about">
-                    <span class="card-emblem">📜</span>
-                </div>
-                <div class="explore-card-body">
-                    <h3>The Final Proof</h3>
-                    <p>Understanding Imam Mahdi as the remaining Hujjah and the completion of divine guidance — presented by Baqer.</p>
-                    <span class="card-link-text">
-                        Discover Truth
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                    </span>
-                </div>
-            </a>
-            <a href="about.html" class="explore-card reveal">
-                <div class="explore-card-visual visual-about">
-                    <span class="card-emblem">✦</span>
-                </div>
-                <div class="explore-card-body">
-                    <h3>About the Project</h3>
-                    <p>Learn about the purpose, methodology, and vision behind this interfaith study of shared eschatological expectations.</p>
-                    <span class="card-link-text">
-                        Learn More
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                    </span>
-                </div>
+            <a href="about.html" class="sec-link">
+                <span class="sl-icon">ℹ️</span> About this Project
             </a>
         </div>
     </section>
 
-    <!-- Key Themes Section -->
-    <section class="themes-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Key Themes</span>
-                <h2 class="section-title">What Connects These Traditions</h2>
-                <div class="section-divider-line"></div>
-            </div>
-        </div>
-        <div class="themes-grid">
-            <div class="theme-item reveal">
-                <div class="theme-icon">🌍</div>
-                <h4>Signs of the End</h4>
-                <p>Widespread injustice preceding the final age</p>
-            </div>
-            <div class="theme-item reveal">
-                <div class="theme-icon">✨</div>
-                <h4>Divine Intervention</h4>
-                <p>God's direct involvement to restore order</p>
-            </div>
-            <div class="theme-item reveal">
-                <div class="theme-icon">👑</div>
-                <h4>Righteous Leader</h4>
-                <p>A divinely guided leader of justice</p>
-            </div>
-            <div class="theme-item reveal">
-                <div class="theme-icon">☮️</div>
-                <h4>Global Peace</h4>
-                <p>Lasting worldwide harmony and justice</p>
-            </div>
-        </div>
+    <!-- Quote -->
+    <section class="lp-quote">
+        <blockquote class="reveal">
+            <div class="q-mark">"</div>
+            <p class="q-text">The earth shall be filled with justice and equity, as it was filled with oppression and tyranny.</p>
+            <div class="q-source">— Prophetic Hadith on the Promised Mahdi</div>
+        </blockquote>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-content reveal">
-            <h2>Begin Your Exploration</h2>
-            <p>Dive into the full study to discover how ancient prophecies speak to shared human hopes for a just and peaceful world.</p>
-            <div class="hero-actions">
-                <a href="sections/amirhossein/promised-savior.html" class="btn btn-primary">Read the Full Study</a>
-                <a href="sections/amirhossein/references.html" class="btn btn-outline">View References</a>
+    <!-- Poster -->
+    <section class="poster-showcase">
+        <div class="poster-showcase-inner reveal">
+            <h2>Project Poster</h2>
+            <p>A visual summary of this interfaith study.</p>
+            <div class="poster-frame">
+                <img src="poster.jpg" alt="The Promised Savior — visual poster" loading="lazy">
             </div>
-        </div>
-    </section>
-
-    <!-- Poster Section -->
-    <section class="poster-section">
-        <div class="poster-container">
-            <img src="poster.jpg" alt="The Promised Savior — visual poster" loading="lazy">
         </div>
     </section>
 
@@ -782,7 +799,7 @@
             });
         });
 
-        // Navbar scroll effect — transparent on hero, solid on scroll
+        // Navbar scroll — transparent on hero, solid on scroll
         const navbar = document.querySelector('.navbar');
         function updateNav() {
             if (window.scrollY > 80) {
@@ -796,9 +813,9 @@
         updateNav();
         window.addEventListener('scroll', updateNav);
 
-        // On hero, make nav text light
-        const style = document.createElement('style');
-        style.textContent = `
+        // Light nav text on dark hero
+        const heroStyle = document.createElement('style');
+        heroStyle.textContent = `
             .navbar:not(.scrolled) .nav-logo { color: #fff; }
             .navbar:not(.scrolled) .nav-menu a { color: rgba(255,255,255,0.85); }
             .navbar:not(.scrolled) .nav-menu a:hover,
@@ -806,14 +823,14 @@
             .navbar:not(.scrolled) .nav-toggle span { background: #fff; }
             .navbar:not(.scrolled) { border-bottom-color: transparent; }
         `;
-        document.head.appendChild(style);
+        document.head.appendChild(heroStyle);
 
-        // Reveal animations on scroll
+        // Reveal on scroll
         const reveals = document.querySelectorAll('.reveal');
         function checkReveal() {
             const wh = window.innerHeight;
             reveals.forEach(el => {
-                if (el.getBoundingClientRect().top < wh - 120) {
+                if (el.getBoundingClientRect().top < wh - 100) {
                     el.classList.add('active');
                 }
             });
