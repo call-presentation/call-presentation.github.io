@@ -147,6 +147,14 @@ p {
     letter-spacing: 0.02em;
 }
 
+.nav-logo .nav-divider {
+    width: 1px;
+    height: 18px;
+    background: currentColor;
+    opacity: 0.3;
+    margin: 0 0.15rem;
+}
+
 .nav-logo:hover {
     color: var(--accent-coral);
 }
