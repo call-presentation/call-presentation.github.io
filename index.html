@@ -3,1035 +3,467 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Promised Savior in Judaism, Christianity, and Islam - A comprehensive study of messianic expectations across Abrahamic faiths">
-    <title>The Promised Savior | Judaism, Christianity & Islam</title>
+    <meta name="description" content="The Promised Savior — A study of messianic expectations across Judaism, Christianity, and Islam. Explore shared scriptural traditions.">
+    <title>The Promised Savior | A Study Across Abrahamic Faiths</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        :root {
-            --primary-gold: #C4A962;
-            --primary-dark: #1a1a2e;
-            --primary-blue: #16213e;
-            --accent-blue: #0f3460;
-            --text-light: #f5f5f5;
-            --text-muted: #b8b8b8;
-            --gradient-start: #1a1a2e;
-            --gradient-end: #16213e;
-        }
+        /* ===== Landing Page Specific Styles ===== */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Source Sans Pro', sans-serif;
-            background: var(--primary-dark);
-            color: var(--text-light);
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            padding: 0.7rem 2rem;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--primary-gold);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-menu a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
+        /* Hero */
+        .landing-hero {
             position: relative;
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gold);
-            transition: width 0.3s ease;
-        }
-
-        .nav-menu a:hover {
-            color: var(--primary-gold);
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .nav-toggle span {
-            width: 25px;
-            height: 2px;
-            background: var(--primary-gold);
-            transition: all 0.3s ease;
-        }
-
-        /* Hero Section */
-        .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 6rem 2rem 4rem;
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 50%, var(--accent-blue) 100%);
-            position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
+        .hero-bg {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C4A962' stroke-width='0.5' opacity='0.15'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z'/%3E%3Cpath d='M40 10 L70 40 L40 70 L10 40 Z'/%3E%3Cpath d='M40 20 L60 40 L40 60 L20 40 Z'/%3E%3Ccircle cx='40' cy='40' r='15'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3C/g%3E%3C/svg%3E");
-            opacity: 1;
+            inset: 0;
+            z-index: 0;
         }
 
-        .hero::after {
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+        }
+
+        .hero-bg::after {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(196, 169, 98, 0.1) 0%, transparent 70%);
-            pointer-events: none;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(30, 20, 16, 0.25) 0%,
+                rgba(30, 20, 16, 0.10) 30%,
+                rgba(30, 20, 16, 0.15) 60%,
+                rgba(30, 20, 16, 0.60) 85%,
+                rgba(30, 20, 16, 0.85) 100%
+            );
         }
 
         .hero-content {
             position: relative;
-            z-index: 1;
-            max-width: 900px;
-        }
-
-        .hero-ornament {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 2rem;
-            position: relative;
-        }
-
-        .hero-ornament svg {
-            width: 100%;
-            height: 100%;
-            animation: rotate-slow 60s linear infinite;
-        }
-
-        @keyframes rotate-slow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .hero-ornament::after {
-            content: '✦';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 1.5rem;
-            color: var(--primary-gold);
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-light);
-            line-height: 1.3;
-        }
-
-        .hero h1 span {
-            color: var(--primary-gold);
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            line-height: 1.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: transparent;
-            border: 2px solid var(--primary-gold);
-            color: var(--primary-gold);
-            text-decoration: none;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            border-radius: 3px;
-        }
-
-        .cta-button:hover {
-            background: var(--primary-gold);
-            color: var(--primary-dark);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        .scroll-indicator svg {
-            width: 30px;
-            height: 30px;
-            stroke: var(--primary-gold);
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .section-header {
+            z-index: 2;
             text-align: center;
-            margin-bottom: 3rem;
+            padding: 8rem 2rem 4rem;
+            max-width: 860px;
         }
 
-        .section-number {
+        .hero-badge {
+            display: inline-block;
+            padding: 0.4rem 1.4rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: 0.9rem;
-            color: var(--primary-gold);
-            letter-spacing: 3px;
-            margin-bottom: 1rem;
+            font-size: clamp(2.4rem, 6vw, 4.2rem);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-title .accent {
+            color: var(--accent-coral-light);
             display: block;
         }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            color: var(--text-light);
-            margin-bottom: 1rem;
-            font-weight: 600;
+        .hero-desc {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 620px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+            font-weight: 300;
         }
 
-        .section-divider {
-            width: 60px;
-            height: 2px;
-            background: var(--primary-gold);
-            margin: 1.5rem auto;
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .content-text {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            line-height: 2;
+        .hero-actions .btn {
+            min-width: 160px;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .hero-scroll svg {
+            width: 26px;
+            height: 26px;
+            stroke: rgba(255, 255, 255, 0.6);
+            stroke-width: 2;
+            animation: bounce 2s infinite;
+        }
+
+        /* Overview Section */
+        .overview-section {
+            padding: 6rem 2rem;
+            background: var(--bg-cream);
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .overview-text {
+            max-width: 500px;
+        }
+
+        .overview-text .section-label {
+            text-align: left;
+        }
+
+        .overview-text h2 {
+            text-align: left;
             margin-bottom: 1.5rem;
         }
 
-        .content-text:last-child {
-            margin-bottom: 0;
+        .overview-visual {
+            display: flex;
+            justify-content: center;
         }
 
-        /* Alternating backgrounds */
-        .section-light {
-            background: linear-gradient(180deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+        .traditions-trio {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .section-dark {
-            background: var(--primary-dark);
+        .tradition-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1rem 1.6rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-warm);
+            border-radius: 50px;
+            box-shadow: 0 2px 12px var(--shadow-warm);
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 1rem;
+            transition: all var(--transition-base);
         }
 
-        /* Feature List */
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 2rem 0;
-        }
-
-        .feature-list li {
-            padding: 1rem 0 1rem 2.5rem;
-            position: relative;
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            border-bottom: 1px solid rgba(196, 169, 98, 0.1);
-        }
-
-        .feature-list li:last-child {
-            border-bottom: none;
-        }
-
-        .feature-list li::before {
-            content: '✦';
-            position: absolute;
-            left: 0;
-            color: var(--primary-gold);
-            font-size: 0.8rem;
-        }
-
-        /* Cards Grid */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(196, 169, 98, 0.15);
-            padding: 2rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(196, 169, 98, 0.3);
+        .tradition-pill:hover {
             transform: translateY(-3px);
+            box-shadow: 0 8px 24px var(--shadow-strong);
         }
 
-        .card-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            width: 60px;
-            height: 60px;
+        .tradition-pill .icon {
+            font-size: 1.3rem;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, rgba(196, 169, 98, 0.2) 0%, rgba(196, 169, 98, 0.05) 100%);
-            border-radius: 12px;
-            border: 1px solid rgba(196, 169, 98, 0.2);
+            background: var(--bg-peach);
+            border-radius: 50%;
         }
 
-        .card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: var(--primary-gold);
-            margin-bottom: 0.8rem;
+        @media (max-width: 768px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                text-align: center;
+            }
+
+            .overview-text .section-label,
+            .overview-text h2 {
+                text-align: center;
+            }
         }
 
-        .card p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            line-height: 1.7;
+        /* Explore Section — Navigation Cards */
+        .explore-section {
+            padding: 6rem 2rem;
+            background: var(--bg-warm);
         }
 
-        /* Three Traditions */
-        .traditions-grid {
+        .explore-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 2.5rem;
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        .tradition-card {
-            text-align: center;
-            padding: 2.5rem 1.5rem;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(196, 169, 98, 0.1);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
+        .explore-card {
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-card);
+            border: 1px solid var(--border-warm);
+            border-radius: 16px;
             overflow: hidden;
+            box-shadow: 0 4px 20px var(--shadow-warm);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            color: inherit;
         }
 
-        .tradition-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C4A962' stroke-width='0.3' opacity='0.1'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z'/%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/svg%3E");
-            pointer-events: none;
+        .explore-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px var(--shadow-strong);
+            border-color: var(--accent-coral-light);
+            color: inherit;
         }
 
-        .tradition-card:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--primary-gold);
-        }
-
-        .tradition-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-            width: 70px;
-            height: 70px;
+        .explore-card-visual {
+            height: 180px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(196, 169, 98, 0.15) 0%, rgba(196, 169, 98, 0.05) 100%);
-            border: 1px solid rgba(196, 169, 98, 0.2);
-        }
-
-        .tradition-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
-
-        .tradition-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* FAQ Section */
-        .faq-container {
-            margin-top: 2rem;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid rgba(196, 169, 98, 0.15);
-            padding: 1.5rem 0;
-        }
-
-        .faq-item:first-child {
-            border-top: 1px solid rgba(196, 169, 98, 0.15);
-        }
-
-        .faq-question {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .faq-question::before {
-            content: 'Q';
-            color: var(--primary-gold);
-            font-size: 0.9rem;
-            font-weight: 600;
-            flex-shrink: 0;
-        }
-
-        .faq-answer {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            padding-left: 1.8rem;
-            line-height: 1.8;
-        }
-
-        /* Highlight Box */
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(196, 169, 98, 0.1) 0%, rgba(196, 169, 98, 0.05) 100%);
-            border-left: 3px solid var(--primary-gold);
-            padding: 1.5rem 2rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
             position: relative;
             overflow: hidden;
         }
 
-        .highlight-box::before {
-            content: '❝';
-            position: absolute;
-            top: -10px;
-            left: 15px;
-            font-size: 4rem;
-            color: var(--primary-gold);
-            opacity: 0.15;
-            font-family: serif;
+        .explore-card-visual.visual-study {
+            background: linear-gradient(135deg, #2C1E14 0%, #3A2820 50%, #1E1410 100%);
         }
 
-        .highlight-box p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            font-style: italic;
+        .explore-card-visual.visual-references {
+            background: linear-gradient(135deg, #1E2A20 0%, #2A3A2C 50%, #162018 100%);
+        }
+
+        .explore-card-visual.visual-about {
+            background: linear-gradient(135deg, #1E2030 0%, #2A3040 50%, #161828 100%);
+        }
+
+        .explore-card-visual .card-emblem {
+            font-size: 3.5rem;
+            opacity: 0.9;
+            transition: transform 0.4s ease;
+        }
+
+        .explore-card:hover .card-emblem {
+            transform: scale(1.1);
+        }
+
+        .explore-card-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(240, 168, 128, 0.08) 0%, transparent 70%);
+        }
+
+        .explore-card-body {
+            padding: 1.8rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .explore-card-body h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-dark);
+        }
+
+        .explore-card-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: 1.2rem;
+        }
+
+        .card-link-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--accent-coral);
+            transition: gap var(--transition-base);
+        }
+
+        .explore-card:hover .card-link-text {
+            gap: 0.7rem;
+        }
+
+        .card-link-text svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 2.5;
+        }
+
+        @media (max-width: 900px) {
+            .explore-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+            }
+        }
+
+        /* Themes Section */
+        .themes-section {
+            padding: 6rem 2rem;
+            background: var(--bg-cream);
+        }
+
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .theme-item {
+            text-align: center;
+            padding: 2rem 1.2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-warm);
+            border-radius: 14px;
+            box-shadow: 0 2px 12px var(--shadow-warm);
+            transition: all var(--transition-base);
+        }
+
+        .theme-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px var(--shadow-strong);
+        }
+
+        .theme-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            background: linear-gradient(135deg, var(--bg-peach), var(--bg-warm));
+            border-radius: 50%;
+            border: 1px solid var(--border-warm);
+        }
+
+        .theme-item h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .theme-item p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.5;
             margin: 0;
         }
 
-        /* Conclusion Section */
-        .conclusion-section {
-            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--primary-dark) 100%);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        @media (max-width: 900px) {
+            .themes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .conclusion-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C4A962' stroke-width='0.3' opacity='0.08'%3E%3Ccircle cx='50' cy='50' r='45'/%3E%3Ccircle cx='50' cy='50' r='35'/%3E%3Ccircle cx='50' cy='50' r='25'/%3E%3Cpolygon points='50,5 95,50 50,95 5,50'/%3E%3Cpolygon points='50,20 80,50 50,80 20,50'/%3E%3C/g%3E%3C/svg%3E");
-            pointer-events: none;
+        @media (max-width: 480px) {
+            .themes-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .conclusion-section .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .conclusion-section .content-text {
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Decorative Banner Section */
-        .decorative-banner {
-            background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-blue) 50%, var(--primary-dark) 100%);
+        /* Quote Banner */
+        .quote-banner {
             padding: 5rem 2rem;
+            background: var(--bg-dark);
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .decorative-banner::before {
+        .quote-banner::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C4A962' stroke-width='0.3' opacity='0.06'%3E%3Cpath d='M60 0 L120 60 L60 120 L0 60 Z'/%3E%3Ccircle cx='60' cy='60' r='50'/%3E%3Ccircle cx='60' cy='60' r='35'/%3E%3C/g%3E%3C/svg%3E");
-            pointer-events: none;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(240, 168, 128, 0.06) 0%, transparent 70%);
         }
 
-        .banner-content {
+        .quote-banner-content {
             position: relative;
             z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .quote-arabic {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            color: var(--accent-coral-light);
+            font-family: 'Times New Roman', 'Playfair Display', serif;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 30px rgba(240, 168, 128, 0.3);
+        }
+
+        .quote-translation {
+            font-size: 0.95rem;
+            color: var(--text-on-dark-muted);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--text-on-dark-muted);
+            font-style: italic;
+            line-height: 1.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--bg-peach) 0%, var(--bg-warm) 50%, var(--bg-cream) 100%);
+            text-align: center;
+        }
+
+        .cta-content {
             max-width: 600px;
             margin: 0 auto;
         }
 
-        /* Banner Geometric Ornament */
-        .banner-ornament {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 2rem;
-            animation: pulse-glow 4s ease-in-out infinite;
+        .cta-content h2 {
+            margin-bottom: 1rem;
         }
 
-        .banner-ornament svg {
-            width: 100%;
-            height: 100%;
-            filter: drop-shadow(0 0 15px rgba(196, 169, 98, 0.3));
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { filter: drop-shadow(0 0 10px rgba(196, 169, 98, 0.2)); }
-            50% { filter: drop-shadow(0 0 25px rgba(196, 169, 98, 0.5)); }
-        }
-
-        .radiant-figure-container {
-            width: 280px;
-            height: 350px;
-            margin: 0 auto 2rem;
-            position: relative;
-        }
-
-        .radiant-figure {
-            width: 100%;
-            height: 100%;
-            filter: drop-shadow(0 0 30px rgba(196, 169, 98, 0.4));
-        }
-
-        .light-rays-group {
-            animation: rays-pulse 3s ease-in-out infinite;
-        }
-
-        @keyframes rays-pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 0.9; }
-        }
-
-        .banner-text {
-            margin-bottom: 1.5rem;
-        }
-
-        .arabic-text-large {
-            display: block;
-            font-size: 3rem;
-            color: var(--primary-gold);
-            font-family: 'Times New Roman', serif;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 20px rgba(196, 169, 98, 0.5);
-        }
-
-        .translation-text {
-            display: block;
+        .cta-content p {
+            color: var(--text-muted);
             font-size: 1.1rem;
-            color: var(--text-light);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 300;
-        }
-
-        @media (max-width: 480px) {
-            .banner-ornament {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .arabic-text-large {
-                font-size: 2.2rem;
-            }
-        }
-
-        .geometric-frame {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 2rem;
-            position: relative;
-            animation: pulse-glow 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { filter: drop-shadow(0 0 10px rgba(196, 169, 98, 0.2)); }
-            50% { filter: drop-shadow(0 0 25px rgba(196, 169, 98, 0.4)); }
-        }
-
-        .geometric-frame svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .frame-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-
-        .arabic-text {
-            display: block;
-            font-size: 2rem;
-            color: var(--primary-gold);
-            font-family: 'Times New Roman', serif;
-            margin-bottom: 0.3rem;
-        }
-
-        .translation {
-            display: block;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .banner-quote {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            font-style: italic;
-            max-width: 500px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        @media (max-width: 480px) {
-            .geometric-frame {
-                width: 160px;
-                height: 160px;
-            }
-            
-            .arabic-text {
-                font-size: 1.5rem;
-            }
-            
-            .banner-quote {
-                font-size: 1rem;
-            }
-        }
-
-        /* Light Imagery for Occultation */
-        .occultation-section {
-            position: relative;
-        }
-
-        .hidden-light-figure {
-            text-align: center;
-            margin: 2rem 0 3rem;
-        }
-
-        .radiant-figure-small {
-            width: 220px;
-            height: 300px;
-            filter: drop-shadow(0 0 25px rgba(196, 169, 98, 0.3));
-        }
-
-        .occult-rays {
-            animation: rays-pulse 3s ease-in-out infinite;
-        }
-
-        /* Dual Figures for Islamic Section */
-        .dual-figures {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            margin: 2rem 0 3rem;
-            flex-wrap: wrap;
-        }
-
-        .figure-item {
-            text-align: center;
-            flex: 0 0 auto;
-        }
-
-        .figure-svg {
-            width: 160px;
-            height: 220px;
-            filter: drop-shadow(0 0 20px rgba(196, 169, 98, 0.25));
-            transition: all 0.3s ease;
-        }
-
-        .figure-item:hover .figure-svg {
-            filter: drop-shadow(0 0 30px rgba(196, 169, 98, 0.4));
-            transform: scale(1.02);
-        }
-
-        .figure-label {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: var(--primary-gold);
-            margin-top: 0.8rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .figure-sublabel {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        .figure-connector {
-            text-align: center;
-            padding: 0 1rem;
-        }
-
-        .figure-connector span {
-            display: block;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        .connector-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem !important;
-            color: var(--primary-gold) !important;
-            margin-top: 0.3rem;
-        }
-
-        @media (max-width: 600px) {
-            .dual-figures {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            .figure-connector {
-                padding: 1rem 0;
-            }
-            
-            .figure-svg {
-                width: 140px;
-                height: 190px;
-            }
-        }
-
-        .hidden-light-caption {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            color: var(--primary-gold);
-            font-style: italic;
-            margin-top: 1.5rem;
-            opacity: 0.9;
-        }
-
-        .light-imagery {
-            text-align: center;
-            margin: 2rem 0 3rem;
-        }
-
-        .light-rays {
-            width: 250px;
-            height: 180px;
-            margin: 0 auto;
-            animation: gentle-pulse 3s ease-in-out infinite;
-        }
-
-        .light-rays svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        @keyframes gentle-pulse {
-            0%, 100% { opacity: 0.8; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.02); }
-        }
-
-        .light-caption {
-            font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            color: var(--primary-gold);
-            font-style: italic;
-            margin-top: 1rem;
-            opacity: 0.8;
-        }
-
-        @media (max-width: 480px) {
-            .radiant-figure-container {
-                width: 220px;
-                height: 280px;
-            }
-            
-            .radiant-figure-small {
-                width: 180px;
-                height: 250px;
-            }
-            
-            .arabic-text-large {
-                font-size: 2.2rem;
-            }
-            
-            .translation-text {
-                font-size: 0.95rem;
-            }
-            
-            .hidden-light-caption {
-                font-size: 0.95rem;
-            }
-            
-            .light-rays {
-                width: 200px;
-                height: 140px;
-            }
-            
-            .light-caption {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(0, 0, 0, 0.3);
-            text-align: center;
-            padding: 3rem 2rem;
-            border-top: 1px solid rgba(196, 169, 98, 0.1);
-        }
-
-        .footer-ornament {
-            width: 40px;
-            height: 40px;
-            margin: 0 auto 1.5rem;
-        }
-
-        .footer-ornament svg {
-            fill: var(--primary-gold);
-            opacity: 0.6;
-        }
-
-        footer p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Mobile Navigation */
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 70%;
-                max-width: 300px;
-                height: 100vh;
-                background: var(--primary-dark);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 2.5rem;
-                transition: right 0.3s ease;
-                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
-            }
-
-            .nav-menu.active {
-                right: 0;
-            }
-
-            .nav-toggle {
-                display: flex;
-                z-index: 1001;
-            }
-
-            .nav-toggle.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            .nav-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .nav-toggle.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
-            }
-
-            .traditions-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
-            }
-
-            .hero {
-                padding: 5rem 1.5rem 3rem;
-            }
-
-            .feature-list li {
-                padding-left: 2rem;
-                font-size: 1rem;
-            }
-
-            .faq-question {
-                font-size: 1.1rem;
-            }
-
-            .faq-answer {
-                padding-left: 1.5rem;
-                font-size: 1rem;
-            }
-
-            .highlight-box {
-                padding: 1.2rem 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.6rem;
-            }
-
-            .card {
-                padding: 1.5rem;
-            }
-
-            .tradition-card {
-                padding: 2rem 1rem;
-            }
-        }
-
-        /* Overlay for mobile menu */
-        .nav-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-
-        .nav-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Smooth reveal animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+            margin-bottom: 2rem;
         }
     </style>
 </head>
@@ -1039,14 +471,12 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">The Promised Savior</a>
+            <a href="index.html" class="nav-logo">The Promised Savior</a>
             <ul class="nav-menu">
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#jewish">Jewish Scriptures</a></li>
-                <li><a href="#christian">Jesus the Messiah</a></li>
-                <li><a href="#islamic">Islamic View</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="promised-savior.html">The Study</a></li>
                 <li><a href="references.html">References</a></li>
+                <li><a href="about.html">About</a></li>
             </ul>
             <div class="nav-toggle">
                 <span></span>
@@ -1058,404 +488,187 @@
     <div class="nav-overlay"></div>
 
     <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <div class="hero-ornament">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#C4A962;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#E8D5A3;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <g fill="none" stroke="url(#goldGrad)" stroke-width="0.5">
-                        <!-- Outer octagon -->
-                        <polygon points="50,2 79,15 93,44 93,56 79,85 50,98 21,85 7,56 7,44 21,15" />
-                        <!-- Inner geometric pattern -->
-                        <polygon points="50,15 72,28 82,50 72,72 50,85 28,72 18,50 28,28" />
-                        <polygon points="50,28 62,35 68,50 62,65 50,72 38,65 32,50 38,35" />
-                        <!-- Cross lines -->
-                        <line x1="50" y1="2" x2="50" y2="98" />
-                        <line x1="7" y1="50" x2="93" y2="50" />
-                        <line x1="21" y1="15" x2="79" y2="85" />
-                        <line x1="79" y1="15" x2="21" y2="85" />
-                        <!-- Circles -->
-                        <circle cx="50" cy="50" r="45" />
-                        <circle cx="50" cy="50" r="35" />
-                        <circle cx="50" cy="50" r="20" />
-                    </g>
-                </svg>
-            </div>
-            <h1>The Promised Savior in<br><span>Judaism, Christianity & Islam</span></h1>
-            <p class="hero-subtitle">Jesus, the Messiah, and the Islamic view of Imam Mahdi</p>
-            <p class="hero-description">
-                Throughout history, religious traditions have spoken about a future time when injustice will end and divine justice will be established. Explore how Jewish, Christian, and Islamic scriptures describe this shared hope for humanity.
-            </p>
-            <a href="#introduction" class="cta-button">Begin Reading</a>
+    <header class="landing-hero">
+        <div class="hero-bg">
+            <img src="poster.jpg" alt="The Promised Savior — visual poster" loading="eager">
         </div>
-        <div class="scroll-indicator">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+        <div class="hero-content">
+            <span class="hero-badge">Interfaith Study</span>
+            <h1 class="hero-title">
+                The Promised Savior
+                <span class="accent">Across Abrahamic Faiths</span>
+            </h1>
+            <p class="hero-desc">
+                Explore how Judaism, Christianity, and Islam share a profound hope for a divinely guided era of justice, peace, and redemption — tracing the promise from ancient scriptures to living belief.
+            </p>
+            <div class="hero-actions">
+                <a href="promised-savior.html" class="btn btn-primary">Read the Study</a>
+                <a href="#explore" class="btn btn-outline-light">Explore Sections</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
             </svg>
         </div>
     </header>
 
-    <!-- Decorative Banner Section -->
-    <section class="decorative-banner">
-        <div class="banner-content">
-            <!-- Decorative Geometric Ornament -->
-            <div class="banner-ornament">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="bannerGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#C4A962;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#E8D5A3;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <g fill="none" stroke="url(#bannerGold)" stroke-width="0.8">
-                        <circle cx="100" cy="100" r="95" />
-                        <circle cx="100" cy="100" r="80" />
-                        <circle cx="100" cy="100" r="60" />
-                        <polygon points="100,5 195,100 100,195 5,100" />
-                        <polygon points="100,25 175,100 100,175 25,100" />
-                        <polygon points="100,45 155,100 100,155 45,100" />
-                        <line x1="100" y1="5" x2="100" y2="195" />
-                        <line x1="5" y1="100" x2="195" y2="100" />
-                        <line x1="30" y1="30" x2="170" y2="170" />
-                        <line x1="170" y1="30" x2="30" y2="170" />
-                        <!-- 8-pointed star -->
-                        <polygon points="100,20 115,75 170,65 130,100 170,135 115,125 100,180 85,125 30,135 70,100 30,65 85,75" />
-                    </g>
-                </svg>
+    <!-- Overview Section -->
+    <section class="overview-section">
+        <div class="overview-grid">
+            <div class="overview-text reveal">
+                <span class="section-label">About This Project</span>
+                <h2>A Shared Hope for Humanity</h2>
+                <p class="content-text">
+                    Throughout history, the great Abrahamic religions have spoken of a coming age when injustice ends and divine justice prevails. This study traces that shared expectation across sacred texts.
+                </p>
+                <p class="content-text">
+                    Beginning with Jewish prophecies, through Christian teachings about Jesus as the Messiah, and into Islam's understanding of Imam Mahdi, we discover a remarkable thread of continuity.
+                </p>
             </div>
-            
-            <div class="banner-text">
-                <span class="arabic-text-large">ٱلْمَهْدِي</span>
-                <span class="translation-text">Al-Mahdi — The Guided One</span>
-            </div>
-            <p class="banner-quote">"The earth shall be filled with justice and equity, as it was filled with oppression and tyranny."</p>
-        </div>
-    </section>
-
-    <!-- Introduction Section -->
-    <section id="introduction" class="section-light">
-        <div class="container reveal">
-            <div class="section-header">
-                <span class="section-number">CHAPTER I</span>
-                <h2 class="section-title">Introduction</h2>
-                <div class="section-divider"></div>
-            </div>
-            <p class="content-text">
-                Throughout history, religious traditions have spoken about a future time when injustice will end and divine justice will be established. Jewish and Christian scriptures contain extensive descriptions of a promised savior who will restore moral order and peace.
-            </p>
-            <p class="content-text">
-                The book discussed here focuses mainly on these Biblical sources, especially their portrayal of Jesus as the Messiah. It then examines how Islam understands these same expectations and connects them to the belief in Imam Mahdi.
-            </p>
-            
-            <div class="traditions-grid">
-                <div class="tradition-card">
-                    <div class="tradition-icon">✡</div>
-                    <h3>Judaism</h3>
-                    <p>Torah, Psalms & Prophets</p>
-                </div>
-                <div class="tradition-card">
-                    <div class="tradition-icon">✝</div>
-                    <h3>Christianity</h3>
-                    <p>Jesus as the Messiah</p>
-                </div>
-                <div class="tradition-card">
-                    <div class="tradition-icon">☪</div>
-                    <h3>Islam</h3>
-                    <p>Imam Mahdi & Jesus's Return</p>
+            <div class="overview-visual reveal">
+                <div class="traditions-trio">
+                    <div class="tradition-pill">
+                        <span class="icon">✡</span>
+                        <span>Judaism</span>
+                    </div>
+                    <div class="tradition-pill">
+                        <span class="icon">✝</span>
+                        <span>Christianity</span>
+                    </div>
+                    <div class="tradition-pill">
+                        <span class="icon">☪</span>
+                        <span>Islam</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Jewish Scriptures Section -->
-    <section id="jewish" class="section-dark">
-        <div class="container reveal">
-            <div class="section-header">
-                <span class="section-number">CHAPTER II</span>
-                <h2 class="section-title">The Promised Savior in Jewish Scriptures</h2>
-                <div class="section-divider"></div>
-            </div>
-            <p class="content-text">
-                Jewish religious texts, including the Torah, Zabur (Psalms), and writings of the Prophets, repeatedly refer to a future righteous leader who will transform the world.
-            </p>
-            
-            <div class="highlight-box">
-                <p>"The righteous will inherit the earth and that God's final judgment will bring lasting peace."</p>
-            </div>
-
-            <p class="content-text">These texts describe a figure who will:</p>
-            
-            <ul class="feature-list">
-                <li>Establish justice and end oppression</li>
-                <li>Restore peace and security</li>
-                <li>Protect the oppressed and faithful</li>
-                <li>Rule with divine guidance</li>
-            </ul>
-
-            <p class="content-text">
-                Books such as Psalms, Isaiah, and Daniel emphasize that the righteous will inherit the earth and that God's final judgment will bring lasting peace.
+    <!-- Quote Banner -->
+    <section class="quote-banner">
+        <div class="quote-banner-content reveal">
+            <div class="quote-arabic">ٱلْمَهْدِي</div>
+            <div class="quote-translation">Al-Mahdi — The Guided One</div>
+            <p class="quote-text">
+                "The earth shall be filled with justice and equity, as it was filled with oppression and tyranny."
             </p>
         </div>
     </section>
 
-    <!-- Jesus as Messiah Section -->
-    <section id="christian" class="section-light">
-        <div class="container reveal">
-            <div class="section-header">
-                <span class="section-number">CHAPTER III</span>
-                <h2 class="section-title">Jesus as the Messiah in Christian Belief</h2>
-                <div class="section-divider"></div>
+    <!-- Explore Section -->
+    <section id="explore" class="explore-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Explore</span>
+                <h2 class="section-title">Discover the Study</h2>
+                <div class="section-divider-line"></div>
+                <p class="section-subtitle">Navigate through the different dimensions of this interfaith exploration.</p>
             </div>
-            <p class="content-text">
-                Christianity identifies this promised figure with Jesus. According to Christian scriptures, Jesus holds a central and defining role in the fulfillment of divine promises.
-            </p>
-
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">📜</div>
-                    <h3>The Promised One</h3>
-                    <p>Jesus is the Messiah promised in earlier Jewish texts, fulfilling ancient prophecies.</p>
+        </div>
+        <div class="explore-grid">
+            <a href="promised-savior.html" class="explore-card reveal">
+                <div class="explore-card-visual visual-study">
+                    <span class="card-emblem">📖</span>
                 </div>
-                <div class="card">
-                    <div class="card-icon">🌅</div>
-                    <h3>The Return</h3>
-                    <p>His mission is completed through his return at the end of time.</p>
+                <div class="explore-card-body">
+                    <h3>The Promised Savior</h3>
+                    <p>A comprehensive study tracing messianic expectations across Judaism, Christianity, and Islam — from ancient prophecy to shared hope.</p>
+                    <span class="card-link-text">
+                        Read the Study
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                    </span>
                 </div>
-                <div class="card">
-                    <div class="card-icon">⚖️</div>
-                    <h3>Divine Justice</h3>
-                    <p>He establishes justice, judges nations, and defeats corruption.</p>
+            </a>
+            <a href="references.html" class="explore-card reveal">
+                <div class="explore-card-visual visual-references">
+                    <span class="card-emblem">📜</span>
                 </div>
-            </div>
-
-            <p class="content-text" style="margin-top: 2rem;">
-                The book gives special attention to passages describing Jesus's return, global authority, and moral leadership, presenting him as the central figure of the final age in Christian belief.
-            </p>
+                <div class="explore-card-body">
+                    <h3>Scriptural References</h3>
+                    <p>A curated collection of passages from the Torah, Psalms, Prophets, Isaiah, Daniel, and the Quran — the textual foundation of the study.</p>
+                    <span class="card-link-text">
+                        View References
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                    </span>
+                </div>
+            </a>
+            <a href="about.html" class="explore-card reveal">
+                <div class="explore-card-visual visual-about">
+                    <span class="card-emblem">✦</span>
+                </div>
+                <div class="explore-card-body">
+                    <h3>About the Project</h3>
+                    <p>Learn about the purpose, methodology, and vision behind this interfaith study of shared eschatological expectations.</p>
+                    <span class="card-link-text">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                    </span>
+                </div>
+            </a>
         </div>
     </section>
 
-    <!-- Islamic Interpretation Section -->
-    <section id="islamic" class="section-dark islamic-section">
-        <div class="container reveal">
-            <div class="section-header">
-                <span class="section-number">CHAPTER IV</span>
-                <h2 class="section-title">How Islam Interprets This Promise</h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <p class="content-text">
-                After reviewing Jewish and Christian sources, the book turns to Islam. Islamic belief presents a continuation of this divine promise through its own framework.
-            </p>
-
-            <p class="content-text">Islam teaches that:</p>
-            
-            <ul class="feature-list">
-                <li>The promise of final justice continues into Islamic belief</li>
-                <li>The ultimate leader of this final age is Imam Mahdi</li>
-                <li>Jesus returns again, but as a supporter of the final divine mission</li>
-            </ul>
-
-            <div class="highlight-box">
-                <p>This is not presented as a rejection of Jesus, but as a different understanding of leadership and fulfillment within the same end-time narrative.</p>
+    <!-- Key Themes Section -->
+    <section class="themes-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Key Themes</span>
+                <h2 class="section-title">What Connects These Traditions</h2>
+                <div class="section-divider-line"></div>
             </div>
         </div>
-    </section>
-
-    <!-- Similarities Section -->
-    <section class="section-light">
-        <div class="container reveal">
-            <div class="section-header">
-                <span class="section-number">CHAPTER V</span>
-                <h2 class="section-title">Similarities Across the Traditions</h2>
-                <div class="section-divider"></div>
+        <div class="themes-grid">
+            <div class="theme-item reveal">
+                <div class="theme-icon">🌍</div>
+                <h4>Signs of the End</h4>
+                <p>Widespread injustice preceding the final age</p>
             </div>
-            <p class="content-text">
-                The book highlights striking similarities across all three traditions, presenting them as evidence of a shared religious expectation rather than coincidence.
-            </p>
-
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">🌍</div>
-                    <h3>Signs of the End</h3>
-                    <p>Expectation of widespread injustice before the final age arrives.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">✨</div>
-                    <h3>Divine Intervention</h3>
-                    <p>God's direct involvement in human history to restore order.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">👑</div>
-                    <h3>Righteous Leader</h3>
-                    <p>A leader guided by God to establish justice and truth.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">☮️</div>
-                    <h3>Global Peace</h3>
-                    <p>Establishment of worldwide justice, harmony, and lasting peace.</p>
-                </div>
+            <div class="theme-item reveal">
+                <div class="theme-icon">✨</div>
+                <h4>Divine Intervention</h4>
+                <p>God's direct involvement to restore order</p>
+            </div>
+            <div class="theme-item reveal">
+                <div class="theme-icon">👑</div>
+                <h4>Righteous Leader</h4>
+                <p>A divinely guided leader of justice</p>
+            </div>
+            <div class="theme-item reveal">
+                <div class="theme-icon">☮️</div>
+                <h4>Global Peace</h4>
+                <p>Lasting worldwide harmony and justice</p>
             </div>
         </div>
     </section>
 
-    <!-- Occultation Section -->
-    <section class="section-light occultation-section">
-        <div class="container reveal">
-            <div class="section-header">
-                <span class="section-number">CHAPTER VI</span>
-                <h2 class="section-title">The Concept of Occultation</h2>
-                <div class="section-divider"></div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content reveal">
+            <h2>Begin Your Exploration</h2>
+            <p>Dive into the full study to discover how ancient prophecies speak to shared human hopes for a just and peaceful world.</p>
+            <div class="hero-actions">
+                <a href="promised-savior.html" class="btn btn-primary">Read the Full Study</a>
+                <a href="references.html" class="btn btn-outline">View References</a>
             </div>
-
-            <div class="hidden-light-figure">
-                <svg class="radiant-figure-small" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <radialGradient id="auraGlow2" cx="50%" cy="35%" r="50%">
-                            <stop offset="0%" style="stop-color:#C4A962;stop-opacity:0.25" />
-                            <stop offset="60%" style="stop-color:#C4A962;stop-opacity:0.08" />
-                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
-                        </radialGradient>
-                        <radialGradient id="headGlow2" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
-                            <stop offset="60%" style="stop-color:#E8D5A3;stop-opacity:0.5" />
-                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0.1" />
-                        </radialGradient>
-                        <linearGradient id="rayGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:#C4A962;stop-opacity:0.6" />
-                            <stop offset="100%" style="stop-color:#C4A962;stop-opacity:0" />
-                        </linearGradient>
-                        <linearGradient id="cloakGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:#1a3a2a;stop-opacity:0.9" />
-                            <stop offset="100%" style="stop-color:#0a1a12;stop-opacity:0.95" />
-                        </linearGradient>
-                        <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
-                            <feGaussianBlur stdDeviation="6" result="blur" />
-                            <feMerge>
-                                <feMergeNode in="blur" />
-                                <feMergeNode in="SourceGraphic" />
-                            </feMerge>
-                        </filter>
-                    </defs>
-                    
-                    <!-- Background aura -->
-                    <ellipse cx="150" cy="140" rx="140" ry="140" fill="url(#auraGlow2)" />
-                    
-                    <!-- Light rays -->
-                    <g class="occult-rays" opacity="0.6">
-                        <polygon points="150,70 125,0 135,0 150,60" fill="url(#rayGrad2)" />
-                        <polygon points="150,70 175,0 165,0 150,60" fill="url(#rayGrad2)" />
-                        <polygon points="150,70 80,15 88,20 150,65" fill="url(#rayGrad2)" />
-                        <polygon points="150,70 220,15 212,20 150,65" fill="url(#rayGrad2)" />
-                        <polygon points="150,70 40,70 45,75 150,75" fill="url(#rayGrad2)" />
-                        <polygon points="150,70 260,70 255,75 150,75" fill="url(#rayGrad2)" />
-                        <polygon points="150,70 55,120 62,115 150,75" fill="url(#rayGrad2)" />
-                        <polygon points="150,70 245,120 238,115 150,75" fill="url(#rayGrad2)" />
-                    </g>
-                    
-                    <!-- Cloak -->
-                    <path d="M150,130 
-                             C115,130 90,150 85,185
-                             L70,280 L60,400 L240,400 L230,280
-                             L215,185 C210,150 185,130 150,130Z" 
-                          fill="url(#cloakGrad)" 
-                          stroke="#C4A962" 
-                          stroke-width="0.8"/>
-                    
-                    <!-- Shoulders -->
-                    <ellipse cx="150" cy="142" rx="42" ry="18" fill="#1a3a2a" stroke="#C4A962" stroke-width="0.5"/>
-                    
-                    <!-- Head covering -->
-                    <ellipse cx="150" cy="95" rx="35" ry="40" fill="#122a1e" stroke="#C4A962" stroke-width="0.5"/>
-                    
-                    <!-- Radiant face -->
-                    <ellipse cx="150" cy="92" rx="28" ry="32" fill="url(#headGlow2)" filter="url(#softGlow)"/>
-                    <ellipse cx="150" cy="92" rx="16" ry="20" fill="#ffffff" opacity="0.5"/>
-                    
-                    <!-- Veil/mist effect at bottom -->
-                    <rect x="0" y="320" width="300" height="80" fill="url(#auraGlow2)" opacity="0.5"/>
-                </svg>
-                <p class="hidden-light-caption">The Hidden Imam — Present Yet Unseen</p>
-            </div>
-            
-            <p class="content-text">
-                Islam introduces the concept that Imam Mahdi was born but is hidden until the right time. This idea, called <em>occultation</em>, is unique to Islamic theology.
-            </p>
-            <p class="content-text">
-                The book does not claim this concept exists explicitly in the Bible, but notes that divine plans unfolding over time are a recurring theme in earlier scriptures.
-            </p>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="section-dark">
-        <div class="container reveal">
-            <div class="section-header">
-                <span class="section-number">CHAPTER VII</span>
-                <h2 class="section-title">Common Questions</h2>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="faq-container">
-                <div class="faq-item">
-                    <h3 class="faq-question">Did Islam simply copy these ideas from earlier scriptures?</h3>
-                    <p class="faq-answer">No. Similarity does not automatically mean copying. Later religions often reaffirm earlier teachings, and Islamic sources reorganize and reinterpret the idea rather than repeating it word for word. The argument is one of continuity and development, not imitation.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Is the book mainly about Islam?</h3>
-                    <p class="faq-answer">No. The book primarily analyzes Jewish and Christian texts and later compares them with Islamic belief.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Does the book deny Jesus's role?</h3>
-                    <p class="faq-answer">No. Jesus is central in Christian belief and is affirmed as returning in Islamic belief.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Are Jesus and Imam Mahdi the same person?</h3>
-                    <p class="faq-answer">No. They are different figures with complementary roles in Islamic belief.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Why do these religions share similar expectations?</h3>
-                    <p class="faq-answer">The book argues this reflects a shared religious heritage and human hope for justice.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Conclusion Section -->
-    <section class="conclusion-section">
-        <div class="container reveal">
-            <div class="section-header">
-                <span class="section-number">CONCLUSION</span>
-                <h2 class="section-title">A Shared Hope</h2>
-                <div class="section-divider"></div>
-            </div>
-            <p class="content-text">
-                The book presents a careful study of Jewish and Christian scriptures about the promised savior, focusing on Jesus as the Messiah. It then explains how Islam understands these same expectations through the belief in Imam Mahdi.
-            </p>
-            <p class="content-text">
-                Rather than presenting competing stories, the book frames these beliefs as connected interpretations of a single hope: that injustice is temporary and that history ultimately moves toward divine justice and peace.
-            </p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="site-footer">
         <div class="footer-ornament">
             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40"/>
             </svg>
         </div>
-        <div style="margin-bottom: 1.5rem;">
-            <a href="references.html" style="color: var(--primary-gold); text-decoration: none; font-size: 1rem; border: 1px solid var(--primary-gold); padding: 0.7rem 1.5rem; border-radius: 3px; transition: all 0.3s ease;">View Scriptural References</a>
+        <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="promised-savior.html">The Study</a>
+            <a href="references.html">References</a>
+            <a href="about.html">About</a>
         </div>
         <p>The Promised Savior — Judaism, Christianity & Islam</p>
-        <p style="margin-top: 0.5rem; opacity: 0.6;">A study of shared messianic expectations</p>
+        <p class="footer-subtitle">A study of shared messianic expectations</p>
     </footer>
 
     <script>
@@ -1477,50 +690,56 @@
 
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (navMenu.classList.contains('active')) {
-                    toggleMenu();
-                }
+                if (navMenu.classList.contains('active')) toggleMenu();
             });
         });
 
-        // Navbar scroll effect
+        // Navbar scroll effect — transparent on hero, solid on scroll
         const navbar = document.querySelector('.navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
+        function updateNav() {
+            if (window.scrollY > 80) {
                 navbar.classList.add('scrolled');
+                navbar.style.background = 'rgba(255,246,238,0.95)';
             } else {
                 navbar.classList.remove('scrolled');
+                navbar.style.background = 'transparent';
             }
-        });
+        }
+        updateNav();
+        window.addEventListener('scroll', updateNav);
+
+        // On hero, make nav text light
+        const style = document.createElement('style');
+        style.textContent = `
+            .navbar:not(.scrolled) .nav-logo { color: #fff; }
+            .navbar:not(.scrolled) .nav-menu a { color: rgba(255,255,255,0.85); }
+            .navbar:not(.scrolled) .nav-menu a:hover,
+            .navbar:not(.scrolled) .nav-menu a.active { color: #F0A880; }
+            .navbar:not(.scrolled) .nav-toggle span { background: #fff; }
+            .navbar:not(.scrolled) { border-bottom-color: transparent; }
+        `;
+        document.head.appendChild(style);
 
         // Reveal animations on scroll
         const reveals = document.querySelectorAll('.reveal');
-
         function checkReveal() {
-            const windowHeight = window.innerHeight;
-            reveals.forEach(reveal => {
-                const revealTop = reveal.getBoundingClientRect().top;
-                const revealPoint = 150;
-
-                if (revealTop < windowHeight - revealPoint) {
-                    reveal.classList.add('active');
+            const wh = window.innerHeight;
+            reveals.forEach(el => {
+                if (el.getBoundingClientRect().top < wh - 120) {
+                    el.classList.add('active');
                 }
             });
         }
-
         window.addEventListener('scroll', checkReveal);
         window.addEventListener('load', checkReveal);
 
-        // Smooth scroll for Safari
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
