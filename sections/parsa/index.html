@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Avenger of the Oppressed - Justice for the friends of Allah through Imam Mahdi">
-    <title>The Avenger of the Oppressed | Presented by Alireza</title>
+    <meta name="description" content="The Final Imam: Al-Qā'im Al-Mahdī - Hadith evidence on the Twelve Imams">
+    <title>The Seal of the Imams | Presented by Parsa</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -35,6 +35,18 @@
             border: 2px solid var(--accent-warm);
         }
 
+        .dua-text {
+            font-size: 1.3rem;
+            text-align: center;
+            direction: rtl;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: var(--bg-cream);
+            border-radius: 12px;
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade', serif;
+            border-left: 4px solid var(--accent-coral);
+        }
+
         .translation-block {
             margin: 1.5rem 0;
             padding: 1.5rem;
@@ -45,39 +57,16 @@
             color: var(--text-muted);
         }
 
-        .verse-reference {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-            font-weight: 500;
-        }
-
-        .imam-quote {
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, var(--bg-peach) 0%, var(--bg-cream) 100%);
-            border-radius: 12px;
-            border-left: 4px solid var(--accent-warm);
-        }
-
-        .imam-quote strong {
-            color: var(--accent-coral);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .lesson-box {
+        .hadith-box {
             margin: 2rem 0;
             padding: 2rem;
-            background: var(--bg-peach);
+            background: linear-gradient(135deg, var(--bg-peach) 0%, var(--bg-cream) 100%);
             border-radius: 12px;
             border: 2px solid var(--accent-warm);
         }
 
-        .lesson-box h3 {
-            margin-top: 0;
-            color: var(--accent-coral);
-            font-family: 'Playfair Display', serif;
+        .hadith-box .arabic-text {
+            background: rgba(255, 255, 255, 0.5);
         }
 
         .highlight-list {
@@ -102,40 +91,25 @@
             font-size: 1.2rem;
         }
 
-        .riddle-box {
+        .imam-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
             margin: 2rem 0;
-            padding: 2rem;
-            background: linear-gradient(135deg, var(--accent-warm) 0%, var(--accent-coral) 100%);
-            border-radius: 12px;
-            color: white;
+        }
+
+        .imam-card {
+            padding: 1rem;
+            background: var(--bg-peach);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-coral);
             text-align: center;
         }
 
-        .riddle-box h3 {
-            margin-top: 0;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-        }
-
-        .riddle-answer {
-            margin-top: 1rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            font-weight: 600;
-        }
-
-        .question-box {
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background: var(--bg-cream);
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-warm);
-        }
-
-        .question-box::before {
-            content: '❓';
-            margin-right: 0.5rem;
+        .imam-card strong {
+            color: var(--accent-coral);
+            display: block;
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
@@ -151,7 +125,8 @@
                 <li><a href="../taha/index.html">The Báb</a></li>
                 <li><a href="../ali/index.html">NT Critique</a></li>
                 <li><a href="../amirreza/index.html">Divine Guidance</a></li>
-                <li><a href="index.html" class="active">Justice & Retribution</a></li>
+                <li><a href="../alireza/index.html">Justice & Retribution</a></li>
+                <li><a href="index.html" class="active">The Twelve Imams</a></li>
                 <li><a href="../../about.html">About</a></li>
             </ul>
             <div class="nav-toggle">
@@ -166,26 +141,20 @@
     <!-- Page Header -->
     <header class="page-hero">
         <div class="container">
-            <div class="presenter-badge">Presented by Alireza</div>
+            <div class="presenter-badge">Presented by Parsa</div>
             
-            <div class="bismillah">
-                بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-            </div>
-
-            <h1 class="page-title">The Avenger of the Oppressed</h1>
-            <p class="page-subtitle">He will attain every blood-right of the friends of Allah</p>
+            <h1 class="page-title">The Final Imam: Al-Qā'im Al-Mahdī</h1>
+            <p class="page-subtitle">Hadith evidence on the Twelve Imams and the Seal among them</p>
             
             <!-- Table of Contents Card -->
             <div class="toc-card">
                 <h3>Contents</h3>
                 <nav class="toc-nav">
-                    <a href="#opening">Opening</a>
-                    <a href="#arabic-translation">Arabic & Translation</a>
-                    <a href="#quranic-foundation">Qur'anic Foundation</a>
-                    <a href="#narrations">Shia Narrations</a>
-                    <a href="#story">Story from the Imams</a>
-                    <a href="#engagement">Reflection</a>
-                    <a href="#takeaway">Takeaway</a>
+                    <a href="#opening">Opening Supplication</a>
+                    <a href="#seal-imams">The Seal of the Imams</a>
+                    <a href="#twelve-imams">The Twelve Imams</a>
+                    <a href="#prophetic-foretelling">Prophetic Foretelling</a>
+                    <a href="#conclusion">Conclusion</a>
                 </nav>
             </div>
         </div>
@@ -195,12 +164,10 @@
     <div class="in-page-nav">
         <div class="container">
             <a href="#opening">Opening</a>
-            <a href="#arabic-translation">Arabic & Translation</a>
-            <a href="#quranic-foundation">Qur'anic Foundation</a>
-            <a href="#narrations">Narrations</a>
-            <a href="#story">Story</a>
-            <a href="#engagement">Reflection</a>
-            <a href="#takeaway">Takeaway</a>
+            <a href="#seal-imams">Seal of Imams</a>
+            <a href="#twelve-imams">Twelve Imams</a>
+            <a href="#prophetic-foretelling">Prophecy</a>
+            <a href="#conclusion">Conclusion</a>
         </div>
     </div>
 
@@ -208,194 +175,169 @@
     <main class="main-content">
         <div class="container">
             
-            <!-- Opening -->
+            <!-- Opening Supplication -->
             <section id="opening" class="content-block reveal">
-                <h2>Opening</h2>
+                <h2>Opening Supplication</h2>
 
-                <div class="arabic-text">
-                    اَلا اِنَّهُ الْمُدْرِكُ بِكُلِّ ثَارٍ لِأَوْلِيَاءِ اللَّهِ
+                <div class="bismillah">
+                    بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                </div>
+
+                <div class="dua-text">
+                    اللهم صلّ على محمد وآل محمد وعجل فرجهم ولعنة الله على أعدائهم أجمعين
                 </div>
 
                 <div class="translation-block">
-                    "Indeed, he will attain every blood-right of the friends of Allah."
+                    O Allah, send blessings upon Muhammad and the Family of Muhammad, and hasten their relief, and may Allah's curse be upon all their enemies.
                 </div>
 
-                <p>Let me ask a painful question:</p>
+                <a href="#top" class="back-link">↑ Back to top</a>
+            </section>
+
+            <!-- The Seal of the Imams -->
+            <section id="seal-imams" class="content-block reveal">
+                <h2>The Seal of the Imams</h2>
+
+                <div class="hadith-box">
+                    <div class="arabic-text">
+                        اَلا اِنَّ خاتَمَ الْاَئِمَّةِ مِنَّا الْقائِمَ الْمَهْدِىَّ
+                    </div>
+
+                    <div class="translation-block">
+                        "Verily, the Seal of the Imāms from among us is al-Qā'im al-Mahdī."
+                    </div>
+                </div>
 
                 <p>
-                    What happens to injustice that history never corrected?<br>
-                    What about:
+                    Just as Prophet Muhammad (ﷺ) is the Seal of the Prophets, Imam al-Mahdi (عج) is the Seal of the Imams. 
+                    He completes the divine succession that began with Imam Ali (ع) and continues through the line of twelve divinely appointed guides.
                 </p>
 
-                <ul class="highlight-list">
-                    <li>Karbala?</li>
-                    <li>Poisoned Imams?</li>
-                    <li>Silenced believers?</li>
-                </ul>
-
-                <p>Does their blood disappear?</p>
-                <p><strong>This sentence says: No.</strong></p>
-
                 <a href="#top" class="back-link">↑ Back to top</a>
             </section>
 
-            <!-- Arabic & Translation -->
-            <section id="arabic-translation" class="content-block reveal">
-                <h2>Arabic & Translation</h2>
+            <!-- The Twelve Imams -->
+            <section id="twelve-imams" class="content-block reveal">
+                <h2>The Twelve Imams</h2>
 
-                <div class="arabic-text">
-                    اَلا اِنَّهُ الْمُدْرِكُ بِكُلِّ ثَارٍ لِأَوْلِيَاءِ اللَّهِ
-                </div>
+                <p>
+                    The twelve divinely appointed leaders from the family of the Prophet Muhammad (ﷺ) are:
+                </p>
 
-                <div class="translation-block">
-                    <strong>Translation:</strong><br>
-                    Behold! He will reach and settle every blood-right of the friends of Allah.
-                </div>
-
-                <p>This is not limited to one event.</p>
-                <p>It includes:</p>
-                <ul class="highlight-list">
-                    <li>Karbala</li>
-                    <li>Every oppressed believer</li>
-                </ul>
-
-                <a href="#top" class="back-link">↑ Back to top</a>
-            </section>
-
-            <!-- Qur'anic Foundation -->
-            <section id="quranic-foundation" class="content-block reveal">
-                <h2>Qur'anic Foundation</h2>
-
-                <p>Allah says:</p>
-
-                <div class="arabic-text">
-                    ﴿وَلَا تَحْسَبَنَّ الَّذِينَ قُتِلُوا فِي سَبِيلِ اللَّهِ أَمْوَاتًا﴾
-                </div>
-
-                <div class="translation-block">
-                    "Do not think those killed in the way of Allah are dead."
-                </div>
-
-                <p class="verse-reference">(Qur'an 3:169)</p>
-
-                <p>And:</p>
-
-                <div class="arabic-text">
-                    ﴿وَمَن قُتِلَ مَظْلُومًا فَقَدْ جَعَلْنَا لِوَلِيِّهِ سُلْطَانًا﴾
-                </div>
-
-                <div class="translation-block">
-                    "Whoever is killed unjustly, We have given authority to his guardian."
-                </div>
-
-                <p class="verse-reference">(Qur'an 17:33)</p>
-
-                <div class="lesson-box">
-                    <h3>Shia Tafsīr</h3>
-                    <p>That ultimate wali (guardian) is Imam al-Mahdi (عج).</p>
-                </div>
-
-                <p>And:</p>
-
-                <div class="arabic-text">
-                    وَعَدَ ٱللَّهُ ٱلَّذِينَ ءَامَنُوا۟ مِنكُمْ وَعَمِلُوا۟ ٱلصَّـٰلِحَـٰتِ لَيَسْتَخْلِفَنَّهُمْ فِى ٱلْأَرْضِ …
-                </div>
-
-                <div class="translation-block">
-                    "Allah has promised those among you who believe and do righteous deeds that He will surely grant them succession upon the earth…"
-                </div>
-
-                <p class="verse-reference">(Qur'an 24:55)</p>
-
-                <div class="lesson-box">
-                    <p>Allah SWT promises that there will be a day on earth when justice is completely fulfilled. This is the mission of Imam Mahdi (عج).</p>
-                </div>
-
-                <a href="#top" class="back-link">↑ Back to top</a>
-            </section>
-
-            <!-- Shia Narrations -->
-            <section id="narrations" class="content-block reveal">
-                <h2>Shia Narrations</h2>
-
-                <div class="imam-quote">
-                    <strong>Imam al-Ṣādiq (عليه السلام):</strong>
-                    "The Mahdi will rise with the shirt of Husayn stained in blood."<br>
-                    <em>— Bihār al-Anwār, vol. 52</em>
-                </div>
-
-                <p>This is symbolic:</p>
-                <ul class="highlight-list">
-                    <li>Karbala is not closed</li>
-                    <li>The case is still open</li>
-                    <li>The final verdict has not yet been delivered</li>
-                </ul>
-
-                <a href="#top" class="back-link">↑ Back to top</a>
-            </section>
-
-            <!-- Story from the Imams -->
-            <section id="story" class="content-block reveal">
-                <h2>Story from the Imams</h2>
-
-                <div class="imam-quote">
-                    <strong>Imam al-Riḍā (عليه السلام):</strong>
-                    "Every Imam grieved for Husayn, and the grief continues until the Mahdi rises."<br>
-                    <em>— Kāmil al-Ziyārāt</em>
-                </div>
-
-                <div class="lesson-box">
-                    <h3>Lesson</h3>
-                    <p>The mission of Karbala is unfinished—and the Mahdi completes it.</p>
-                </div>
-
-                <a href="#top" class="back-link">↑ Back to top</a>
-            </section>
-
-            <!-- Reflection & Engagement -->
-            <section id="engagement" class="content-block reveal">
-                <h2>Reflection</h2>
-
-                <div class="question-box">
-                    Why do you think Karbala still moves hearts after 1400 years?
-                </div>
-
-                <div class="question-box">
-                    What does it mean that Allah never forgets innocent blood?
-                </div>
-
-                <div class="riddle-box">
-                    <h3>🧩 Riddle</h3>
-                    <p>What is never lost, even when buried for centuries?</p>
-                    <div class="riddle-answer">
-                        Answer: The blood of the oppressed.
+                <div class="imam-list">
+                    <div class="imam-card">
+                        <strong>1st</strong>
+                        Imam Ali (ع)
+                    </div>
+                    <div class="imam-card">
+                        <strong>2nd</strong>
+                        Imam Hasan (ع)
+                    </div>
+                    <div class="imam-card">
+                        <strong>3rd</strong>
+                        Imam Husayn (ع)
+                    </div>
+                    <div class="imam-card">
+                        <strong>4th</strong>
+                        Imam Zayn al-Abidin (ع)
+                    </div>
+                    <div class="imam-card">
+                        <strong>5th</strong>
+                        Imam al-Baqir (ع)
+                    </div>
+                    <div class="imam-card">
+                        <strong>6th</strong>
+                        Imam al-Sadiq (ع)
+                    </div>
+                    <div class="imam-card">
+                        <strong>7th</strong>
+                        Imam al-Kadhim (ع)
+                    </div>
+                    <div class="imam-card">
+                        <strong>8th</strong>
+                        Imam al-Ridha (ع)
+                    </div>
+                    <div class="imam-card">
+                        <strong>9th</strong>
+                        Imam al-Jawad (ع)
+                    </div>
+                    <div class="imam-card">
+                        <strong>10th</strong>
+                        Imam al-Hadi (ع)
+                    </div>
+                    <div class="imam-card">
+                        <strong>11th</strong>
+                        Imam al-Askari (ع)
+                    </div>
+                    <div class="imam-card" style="background: linear-gradient(135deg, var(--accent-warm) 0%, var(--accent-coral) 100%); color: white; border-left: 3px solid var(--text-dark);">
+                        <strong style="color: white;">12th</strong>
+                        Imam al-Mahdi (عج)
                     </div>
                 </div>
 
                 <a href="#top" class="back-link">↑ Back to top</a>
             </section>
 
-            <!-- Takeaway -->
-            <section id="takeaway" class="content-block reveal">
-                <h2>Takeaway</h2>
+            <!-- Prophetic Foretelling -->
+            <section id="prophetic-foretelling" class="content-block reveal">
+                <h2>Prophetic Foretelling of Twelve Leaders</h2>
 
                 <p>
-                    Imam Mahdi (عج) is not only the hope of the future.<br>
-                    <strong>He is the answer to the past.</strong>
+                    Prophet Muhammad (ﷺ) explicitly mentioned that there would be twelve successors after him, all from his family.
+                    This hadith is narrated in both Sunni and Shia sources:
                 </p>
+
+                <div class="hadith-box">
+                    <p><strong>Narrated in Sahih al-Bukhari and Sahih Muslim:</strong></p>
+                    <div class="translation-block">
+                        "This religion will continue until there are twelve successors over you, all of them from Quraysh."
+                    </div>
+                </div>
 
                 <p>
-                    Every tear, every ظلم (oppression), every forgotten victim<br>
-                    is remembered—
+                    Shia sources further clarify that these twelve are from the Ahl al-Bayt (the Prophet's family), 
+                    beginning with Imam Ali (ع) and concluding with Imam al-Mahdi (عج).
                 </p>
 
-                <div class="lesson-box" style="text-align: center;">
+                <ul class="highlight-list">
+                    <li>Mentioned explicitly in Sahih al-Bukhari 8/127</li>
+                    <li>Confirmed in Sahih Muslim 6/3</li>
+                    <li>Detailed in Al-Kāfī – Book 4, Chapter 126</li>
+                </ul>
+
+                <a href="#top" class="back-link">↑ Back to top</a>
+            </section>
+
+            <!-- Conclusion -->
+            <section id="conclusion" class="content-block reveal">
+                <h2>Conclusion</h2>
+
+                <p>
+                    The narrations consistently mention twelve divinely appointed leaders from the family of the Prophet ﷺ. 
+                    The first is Imam Ali (ع), and the final is al-Qa'im al-Mahdi (عج), the Seal of the Imams.
+                </p>
+
+                <div class="hadith-box" style="text-align: center;">
                     <p style="font-size: 1.2rem; margin: 0;">
-                        <strong>And none will be left without justice.</strong>
+                        <strong>
+                            Just as prophethood was sealed with Muhammad (ﷺ),<br>
+                            Imamate is sealed with al-Mahdi (عج).
+                        </strong>
                     </p>
                 </div>
 
                 <a href="#top" class="back-link">↑ Back to top</a>
+            </section>
+
+            <!-- FAQ Preview Section -->
+            <section class="content-block reveal" style="background: linear-gradient(135deg, var(--bg-peach) 0%, var(--bg-cream) 100%); border: 2px solid var(--accent-warm);">
+                <h2>Have Questions?</h2>
+                <p>Explore common questions about the Twelve Imams and their significance in Islamic tradition.</p>
+                <p style="margin-top: 1.5rem;">
+                    <a href="faq.html" style="color: var(--accent-coral); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--accent-coral);">
+                        Read FAQ →
+                    </a>
+                </p>
             </section>
 
         </div>
@@ -415,7 +357,8 @@
             <a href="../taha/index.html">The Báb</a>
             <a href="../ali/index.html">NT Critique</a>
             <a href="../amirreza/index.html">Divine Guidance</a>
-            <a href="index.html">Justice & Retribution</a>
+            <a href="../alireza/index.html">Justice & Retribution</a>
+            <a href="index.html">The Twelve Imams</a>
             <a href="../../about.html">About</a>
         </div>
         <p>The Promised Savior — Judaism, Christianity & Islam</p>
@@ -541,4 +484,3 @@
     </script>
 </body>
 </html>
-
