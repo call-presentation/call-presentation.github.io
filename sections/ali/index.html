@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Historical-Critical Notes on New Testament Eschatology — A descriptive critique focused on textual context">
+    <title>NT Eschatology Critique | Ali's Presentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* ===== Ali Section – Page Specific Styles ===== */
+
+        /* Page Hero */
+        .page-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 7rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--bg-peach) 0%, var(--bg-warm) 40%, var(--bg-cream) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23DC8460' stroke-width='0.5' opacity='0.08'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z'/%3E%3Cpath d='M40 10 L70 40 L40 70 L10 40 Z'/%3E%3Ccircle cx='40' cy='40' r='15'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(220, 132, 96, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .hero-inner h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 5vw, 2.6rem);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .hero-inner h1 span {
+            color: var(--accent-coral);
+        }
+
+        .hero-inner p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .presenter-badge {
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            background: var(--accent-coral);
+            color: #fff;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        /* TOC Card */
+        .toc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-warm);
+            border-radius: 14px;
+            padding: 1.8rem 2rem;
+            margin: 2rem auto 0;
+            max-width: 700px;
+            box-shadow: 0 2px 12px var(--shadow-warm);
+        }
+
+        .toc-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--accent-terracotta);
+            margin: 0 0 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--bg-peach);
+        }
+
+        .toc-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-card li {
+            margin-bottom: 0.6rem;
+        }
+
+        .toc-card a {
+            color: var(--text-body);
+            text-decoration: none;
+            display: block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            transition: all var(--transition-base);
+        }
+
+        .toc-card a:hover {
+            background: var(--bg-peach);
+            color: var(--text-dark);
+            padding-left: 1.2rem;
+        }
+
+        /* In-page navigation */
+        .page-nav {
+            background: var(--bg-warm);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-warm);
+        }
+
+        .page-nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+
+        .page-nav a {
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-warm);
+            border-radius: 8px;
+            color: var(--text-body);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all var(--transition-base);
+            box-shadow: 0 1px 4px var(--shadow-warm);
+        }
+
+        .page-nav a:hover {
+            background: var(--bg-peach);
+            border-color: var(--accent-coral);
+            color: var(--text-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Content Sections */
+        .content-area {
+            padding: 3rem 2rem;
+            background: var(--bg-cream);
+        }
+
+        .content-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .content-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border-warm);
+            border-radius: 14px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 2px 12px var(--shadow-warm);
+        }
+
+        .content-block h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--bg-peach);
+        }
+
+        .content-block h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--accent-terracotta);
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        .content-block p {
+            color: var(--text-body);
+            font-size: 1.02rem;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .content-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-block ul, .content-block ol {
+            color: var(--text-body);
+            font-size: 1.02rem;
+            line-height: 1.9;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-block li {
+            margin-bottom: 0.7rem;
+        }
+
+        .content-block strong {
+            color: var(--text-dark);
+        }
+
+        .content-block em {
+            color: var(--accent-coral);
+        }
+
+        /* Blockquote highlighting suggested text */
+        .content-block blockquote {
+            background: linear-gradient(135deg, rgba(220, 132, 96, 0.06) 0%, rgba(220, 132, 96, 0.02) 100%);
+            border-left: 3px solid var(--accent-coral);
+            padding: 1.2rem 1.5rem;
+            border-radius: 0 10px 10px 0;
+            margin: 1.5rem 0;
+        }
+
+        .content-block blockquote p {
+            color: var(--text-body);
+            margin: 0;
+        }
+
+        .back-to-top-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--accent-coral);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: gap var(--transition-base);
+        }
+
+        .back-to-top-link:hover {
+            gap: 0.6rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-block {
+                padding: 1.8rem;
+            }
+
+            .page-hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .toc-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">The Promised Savior</a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../amirhossein/promised-savior.html">The Study</a></li>
+                <li><a href="../amirhossein/references.html">References</a></li>
+                <li><a href="../taha/index.html">The Báb</a></li>
+                <li><a href="index.html" class="active">NT Critique</a></li>
+                <li><a href="../../about.html">About</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-overlay"></div>
+
+    <!-- Page Hero -->
+    <header class="page-hero" id="top">
+        <div class="hero-inner">
+            <span class="presenter-badge">Presented by Ali</span>
+            <div class="hero-icon">📚</div>
+            <h1>Historical-Critical Notes on <span>New Testament Eschatology</span></h1>
+            <p>A descriptive critique focused on textual context, internal tensions, and common scholarly discussion points (no doctrinal claims).</p>
+
+            <div class="toc-card">
+                <h2>Contents</h2>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#issue-1">Issue 1: Selective citation and internal tension</a></li>
+                    <li><a href="#issue-2">Issue 2: "Son of Man" and Daniel 7 as an exegetical crux</a></li>
+                    <li><a href="#issue-3">Issue 3: Over-unified framing and narrower scope</a></li>
+                    <li><a href="#polish">Minor polishing points</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- In-page Nav -->
+    <nav class="page-nav">
+        <div class="page-nav-inner">
+            <a href="#overview">Overview</a>
+            <a href="#issue-1">Issue 1</a>
+            <a href="#issue-2">Issue 2</a>
+            <a href="#issue-3">Issue 3</a>
+            <a href="#polish">Polish</a>
+            <a href="#conclusion">Conclusion</a>
+            <a href="references.html">References</a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="content-area">
+        <div class="content-inner">
+
+            <section id="overview" class="content-block reveal">
+                <h2>Overview</h2>
+                <p>
+                    The material is a model of restraint and methodological clarity: it stays strictly within the explicit wording of the canonical texts,
+                    signals its descriptive limits repeatedly, and correctly identifies the apocalyptic genre and its Second Temple Jewish matrix.
+                    These are strengths that many academic presentations on the topic lack.
+                </p>
+                <p>
+                    From a mainstream historical-critical standpoint (broadly the approach represented in SBL, SNTS, and most university NT departments),
+                    three clusters of issues emerge that affect accuracy and precision without requiring any theological commitment.
+                </p>
+                <a class="back-to-top-link" href="#top">↑ Back to top</a>
+            </section>
+
+            <section id="issue-1" class="content-block reveal">
+                <h2>1) Selective citation that flattens internal textual tension</h2>
+                <p>
+                    The Synoptic "apocalyptic" chapters (Matt 24 // Mark 13 // Luke 21) are composite units that interweave two temporal horizons:
+                </p>
+                <ul>
+                    <li>language that sounds distant and cosmic (e.g., Matt 24:30; Mark 13:26–27), and</li>
+                    <li>language that is explicitly imminent ("this generation will not pass away…": Matt 24:34; Mark 13:30; Luke 21:32; also Matt 16:28; 23:36).</li>
+                </ul>
+                <p>
+                    Quoting only the former and framing the whole as "a future event" with "exact timing explicitly unknown" accurately reports some verses,
+                    but can silently omit the counterbalancing statements in the same context.
+                </p>
+
+                <h3>Suggested rewording (poster §1 / oral "Future Event")</h3>
+                <blockquote>
+                    <p>
+                        "The New Testament texts describe an eschatological 'coming' portrayed in cosmic-apocalyptic terms as visible to 'all the tribes of the earth'
+                        (Matt 24:30; Luke 21:27; cf. Acts 1:11). These descriptions appear in discourses that also contain statements locating the events within
+                        'this generation' (Matt 24:34 par.). Exact timing is declared unknown (Matt 24:36 par.), yet vigilance is enjoined."
+                    </p>
+                </blockquote>
+
+                <a class="back-to-top-link" href="#top">↑ Back to top</a>
+            </section>
+
+            <section id="issue-2" class="content-block reveal">
+                <h2>2) The "Son of Man coming on the clouds" motif: an unacknowledged exegetical crux</h2>
+                <p>
+                    The phrase is not a free-floating eschatological cipher; it directly alludes to Dan 7:13–14, where "one like a son of man" moves with the
+                    clouds toward the Ancient of Days to receive kingdom authority (i.e., toward the throne, not necessarily "descending" to earth).
+                </p>
+                <p>
+                    A substantial body of critical and mainstream Christian scholarship reads NT usage as Jesus applying throne-approach imagery to vindication/exaltation,
+                    with debate about first-century historical referent versus ultimate future fulfillment.
+                </p>
+
+                <h3>Suggested rewording (poster §2 / oral "Son of Man Motif")</h3>
+                <blockquote>
+                    <p>
+                        "The 'Son of Man' motif, alluding to Dan 7:13–14, depicts a figure who comes with the clouds of heaven, is presented before the Ancient of Days,
+                        receives authority, sends angels, and is associated with judgment (Matt 24:30–31; Mark 13:26–27). The direction of movement in the source text is
+                        toward the divine throne; NT application of the image remains a point of scholarly discussion regarding possible first-century historical referent
+                        versus ultimate future fulfillment."
+                    </p>
+                </blockquote>
+
+                <a class="back-to-top-link" href="#top">↑ Back to top</a>
+            </section>
+
+            <section id="issue-3" class="content-block reveal">
+                <h2>3) Over-unified "framework" language and narrower canonical scope than the title suggests</h2>
+                <p>
+                    The conclusion describes "a structured eschatological framework" involving "a future public event." This can be true of selected texts in isolation,
+                    but the broader NT corpus (including canonical texts not foregrounded) is more diverse:
+                </p>
+                <ul>
+                    <li><strong>Revelation</strong> sequences events (e.g., Rev 19:11–16; 20:11–15), not one undifferentiated event.</li>
+                    <li><strong>Pauline letters</strong> tie the parousia closely to resurrection (e.g., 1 Cor 15:23, 51–54; 1 Thess 4:16–17).</li>
+                    <li><strong>Judgment scenes</strong> (Matt 25:31–46; Rev 20:11–15) vary in imagery and framing; collapsing them can smooth over distinctions.</li>
+                </ul>
+
+                <h3>Suggested rewording (Conclusion / oral Closing)</h3>
+                <blockquote>
+                    <p>
+                        "The selected texts outline recurring elements of eschatological expectation: cosmic 'coming' language, a central authoritative figure,
+                        judgment according to deeds, temporal indeterminacy, and warnings against deception. They employ apocalyptic symbolism whose precise historical
+                        or future referent has been debated in scholarship. The presentation makes no claim to exhaust the full range of New Testament eschatological
+                        material (e.g., Pauline resurrection texts or the sequenced events of Revelation 19–22)."
+                    </p>
+                </blockquote>
+
+                <a class="back-to-top-link" href="#top">↑ Back to top</a>
+            </section>
+
+            <section id="polish" class="content-block reveal">
+                <h2>Minor polishing points</h2>
+                <ul>
+                    <li>
+                        "Public, visible, and global" → keep the idea but qualify:
+                        "portrayed with language that evokes a public, visible, universal scope."
+                        Apocalyptic texts often use cosmic imagery for historically located divine acts (cf. Isa 13:10; 34:4; Joel 2:10, 31).
+                    </li>
+                    <li>
+                        "Ethical conduct" → prefer "deeds / works" (Matt 25:31–46; Rev 20:12–13 use <em>ἔργα</em>).
+                        "Ethical conduct" can sound like a later systematic category.
+                    </li>
+                </ul>
+
+                <a class="back-to-top-link" href="#top">↑ Back to top</a>
+            </section>
+
+            <section id="conclusion" class="content-block reveal">
+                <h2>Conclusion</h2>
+                <p>
+                    With these adjustments, the presentation remains fully descriptive, avoids doctrinal or inter-faith moves, becomes more textually comprehensive,
+                    and aligns more closely with common historical-critical discussion. The result should be stronger for a mixed academic audience.
+                </p>
+                <a class="back-to-top-link" href="#top">↑ Back to top</a>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-nav">
+            <a href="../../index.html">Home</a>
+            <a href="../amirhossein/promised-savior.html">The Study</a>
+            <a href="../amirhossein/references.html">References</a>
+            <a href="../taha/index.html">The Báb</a>
+            <a href="index.html">NT Critique</a>
+            <a href="../../about.html">About</a>
+        </div>
+        <p>The Promised Savior — Judaism, Christianity & Islam</p>
+        <p class="footer-subtitle">A study of shared messianic expectations</p>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+
+        function toggleMenu() {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        navToggle.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) toggleMenu();
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Back to top button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 500);
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Reveal animations on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        function checkReveal() {
+            const wh = window.innerHeight;
+            reveals.forEach(el => {
+                if (el.getBoundingClientRect().top < wh - 120) {
+                    el.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('load', checkReveal);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const pos = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: pos, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
