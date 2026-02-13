@@ -52,14 +52,12 @@
         }
 
         .hero-logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
+            height: 100px;
+            width: auto;
+            max-width: 280px;
+            object-fit: contain;
             margin: 0 auto 2rem;
             display: block;
-            border: 3px solid rgba(46, 168, 122, 0.25);
-            box-shadow: 0 0 50px rgba(46, 168, 122, 0.15), 0 0 100px rgba(46, 168, 122, 0.05);
             animation: fadeInUp 0.8s ease-out;
         }
 
@@ -566,11 +564,10 @@
         }
 
         .nav-logo-img {
-            width: 32px;
             height: 32px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1.5px solid var(--border-warm);
+            width: auto;
+            object-fit: contain;
+            border-radius: 6px;
         }
     </style>
 </head>
