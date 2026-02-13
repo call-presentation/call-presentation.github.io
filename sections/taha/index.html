@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Báb: Examining His Claims — A critical overview of the Báb's life, evolving claims, and theological inconsistencies">
+    <title>The Báb: Examining His Claims | Taha's Presentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* ===== Taha Section – Page Specific Styles ===== */
+
+        /* Page Hero */
+        .page-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 7rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--bg-peach) 0%, var(--bg-warm) 40%, var(--bg-cream) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23DC8460' stroke-width='0.5' opacity='0.08'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z'/%3E%3Cpath d='M40 10 L70 40 L40 70 L10 40 Z'/%3E%3Ccircle cx='40' cy='40' r='15'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(220, 132, 96, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 750px;
+        }
+
+        .hero-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .hero-inner h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .hero-inner h1 span {
+            color: var(--accent-coral);
+        }
+
+        .hero-inner p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .presenter-badge {
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            background: var(--accent-coral);
+            color: #fff;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        /* In-page navigation */
+        .page-nav {
+            background: var(--bg-warm);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-warm);
+        }
+
+        .page-nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+
+        .page-nav a {
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-warm);
+            border-radius: 8px;
+            color: var(--text-body);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all var(--transition-base);
+            box-shadow: 0 1px 4px var(--shadow-warm);
+        }
+
+        .page-nav a:hover {
+            background: var(--bg-peach);
+            border-color: var(--accent-coral);
+            color: var(--text-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Content Sections */
+        .content-area {
+            padding: 3rem 2rem;
+            background: var(--bg-cream);
+        }
+
+        .content-inner {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .content-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border-warm);
+            border-radius: 14px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 2px 12px var(--shadow-warm);
+        }
+
+        .content-block h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--bg-peach);
+        }
+
+        .content-block h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--accent-terracotta);
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        .content-block p {
+            color: var(--text-body);
+            font-size: 1.02rem;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .content-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-block ul, .content-block ol {
+            color: var(--text-body);
+            font-size: 1.02rem;
+            line-height: 1.9;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-block li {
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(220, 132, 96, 0.06) 0%, rgba(220, 132, 96, 0.02) 100%);
+            border-left: 3px solid var(--accent-coral);
+            padding: 1.2rem 1.5rem;
+            border-radius: 0 10px 10px 0;
+            margin: 1.5rem 0;
+        }
+
+        .info-box p {
+            color: var(--text-body);
+            font-size: 0.98rem;
+            margin: 0;
+        }
+
+        .info-box em {
+            color: var(--accent-coral);
+        }
+
+        .back-to-top-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--accent-coral);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: gap var(--transition-base);
+        }
+
+        .back-to-top-link:hover {
+            gap: 0.6rem;
+        }
+
+        /* FAQ preview */
+        .faq-preview-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .faq-preview-list li {
+            padding: 0.8rem 1.2rem;
+            background: var(--bg-warm);
+            border: 1px solid var(--border-warm);
+            border-radius: 8px;
+            margin-bottom: 0.6rem;
+            color: var(--text-body);
+            font-size: 0.95rem;
+        }
+
+        .section-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--accent-coral);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+            transition: gap var(--transition-base);
+        }
+
+        .section-link:hover {
+            gap: 0.7rem;
+        }
+
+        .section-link svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 2.5;
+        }
+
+        @media (max-width: 768px) {
+            .content-block {
+                padding: 1.8rem;
+            }
+
+            .page-hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">The Promised Savior</a>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../amirhossein/promised-savior.html">The Study</a></li>
+                <li><a href="../amirhossein/references.html">References</a></li>
+                <li><a href="index.html" class="active">The Báb</a></li>
+                <li><a href="../../about.html">About</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-overlay"></div>
+
+    <!-- Page Hero -->
+    <header class="page-hero" id="top">
+        <div class="hero-inner">
+            <span class="presenter-badge">Presented by Taha</span>
+            <div class="hero-icon">🔍</div>
+            <h1>The Báb: <span>Examining His Claims</span></h1>
+            <p>A critical overview of the Báb's life, evolving claims, and theological inconsistencies — examining whether his assertions align with Islamic criteria for Imam al-Mahdi (عج).</p>
+        </div>
+    </header>
+
+    <!-- In-page Nav -->
+    <nav class="page-nav">
+        <div class="page-nav-inner">
+            <a href="#introduction">Introduction</a>
+            <a href="#background">Background</a>
+            <a href="#mahdi">Who Is the Mahdi?</a>
+            <a href="#key-issues">Key Issues</a>
+            <a href="#escalation">Contradictions</a>
+            <a href="faq.html">FAQ</a>
+            <a href="references.html">References</a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="content-area">
+        <div class="content-inner">
+
+            <section id="introduction" class="content-block reveal">
+                <h2>Introduction</h2>
+                <p>
+                    The Báb was a 19th-century figure from Shiraz, Iran, who initially claimed to be a spiritual
+                    "gate" (Báb) to Imam al-Mahdi (عج). Over time, his claims changed and evolved, eventually leading
+                    many people to believe that he was asserting a divinely appointed role beyond what Shia Islam allows.
+                </p>
+                <a class="back-to-top-link" href="#top">↑ Back to top</a>
+            </section>
+
+            <section id="background" class="content-block reveal">
+                <h2>Who Was the Báb?</h2>
+                <ul>
+                    <li><strong>Name:</strong> Sayyid Ali Muhammad Shirazi (1819–1850)</li>
+                    <li><strong>Origin:</strong> Shiraz, Iran</li>
+                    <li><strong>Initial claim:</strong> The "Báb" (gate) to the Hidden Imam</li>
+                    <li><strong>Later development:</strong> Escalation and change of claims</li>
+                </ul>
+                <a class="back-to-top-link" href="#top">↑ Back to top</a>
+            </section>
+
+            <section id="mahdi" class="content-block reveal">
+                <h2>Who Is the Mahdi?</h2>
+                <p>
+                    In Shia Islam, Imam al-Mahdi (عج) holds a divinely appointed role. Throughout history, some individuals
+                    have claimed to be the Mahdi, but they fail to meet the required criteria.
+                </p>
+                <p>
+                    A divine position granted by Allah (swt) requires consistency, divine knowledge, and the fulfillment
+                    of the mission of justice. According to this analysis, the Báb did not meet these requirements.
+                </p>
+                <a class="back-to-top-link" href="#top">↑ Back to top</a>
+            </section>
+
+            <section id="key-issues" class="content-block reveal">
+                <h2>Key Issues With the Báb's Claims</h2>
+
+                <h3>The Báb's Repentance</h3>
+                <p>
+                    When the Báb claimed to be the Qāʾim, many realized he was asserting something he could not uphold.
+                    He was brought before Iranian authorities, including judges and the crown prince Nasser al-Din Shah
+                    Qajar. During this examination, he repented and begged for mercy.
+                </p>
+                <div class="info-box">
+                    <p>
+                        This repentance is documented within Baha'i sources themselves. In the book
+                        <em>Kashf al-Ghitaʾ ʿan Hiyal al-Aʿdaʾ</em> by Abolfazl Golpaygani, a Baha'i scholar, the repentance
+                        of the Báb is discussed.
+                    </p>
+                </div>
+                <p>
+                    If his claim had true divine legitimacy, he would not have retracted it under pressure. This
+                    demonstrates a major inconsistency.
+                </p>
+
+                <h3>Lack of Divine Knowledge</h3>
+                <p>
+                    The infallible Imams possess divine knowledge and do not require human teachers. However, Babi and
+                    Baha'i sources state that the Báb attended a maktab to learn Arabic and literature.
+                </p>
+                <p>
+                    Requiring formal education from human teachers contradicts the characteristics of Imam al-Mahdi (عج).
+                </p>
+
+                <h3>Lack of Justice and Peace</h3>
+                <p>
+                    Imam Mahdi's (عج) mission is to establish global peace and justice. During the Báb's time, this did
+                    not occur. Instead, Babi followers initiated three wars within Qajar Iran, resulting in the deaths
+                    of many innocent people.
+                </p>
+                <p>
+                    In the Báb's first book, he reportedly instructed followers to kill those who refused to accept his
+                    message and to destroy non-Babi religious texts and sites. This approach directly contradicts the
+                    Mahdi's role of guiding people with justice and mercy.
+                </p>
+
+                <a class="back-to-top-link" href="#top">↑ Back to top</a>
+            </section>
+
+            <section id="escalation" class="content-block reveal">
+                <h2>Escalation and Contradictions</h2>
+                <p>
+                    One of the strongest arguments against the Báb is the inconsistency of his claims. The Imams (as)
+                    were clear, consistent, and divinely designated. The Báb's evolving claims conflict with Islamic
+                    teachings and even with Babi and Baha'i writings.
+                </p>
+                <p>
+                    According to Babi and Baha'i belief, the Báb changed his claim six times:
+                </p>
+                <ol>
+                    <li>Claimed "dikriyat" as sayyid-e-dhikr</li>
+                    <li>Claimed "babiyat" (the Gate)</li>
+                    <li>Claimed Mahdihood</li>
+                    <li>Claimed prophethood</li>
+                    <li>Claimed lordship</li>
+                    <li>Claimed divinity</li>
+                </ol>
+                <p>
+                    These contradictions undermine the credibility of his claims and oppose the finality of Islamic law
+                    and the authority of the Twelve Imams.
+                </p>
+                <a class="back-to-top-link" href="#top">↑ Back to top</a>
+            </section>
+
+            <section class="content-block reveal">
+                <h2>FAQ Preview</h2>
+                <ul class="faq-preview-list">
+                    <li>Who was the Báb?</li>
+                    <li>What is the role of Imam al-Mahdi (عج)?</li>
+                    <li>Why is consistency important for divine claims?</li>
+                    <li>Did the Báb retract his claims?</li>
+                </ul>
+                <a class="section-link" href="faq.html">
+                    Read the full FAQ
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </a>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-nav">
+            <a href="../../index.html">Home</a>
+            <a href="../amirhossein/promised-savior.html">The Study</a>
+            <a href="../amirhossein/references.html">References</a>
+            <a href="index.html">The Báb</a>
+            <a href="../../about.html">About</a>
+        </div>
+        <p>The Promised Savior — Judaism, Christianity & Islam</p>
+        <p class="footer-subtitle">A study of shared messianic expectations</p>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+
+        function toggleMenu() {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        navToggle.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) toggleMenu();
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Back to top button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 500);
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Reveal animations on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        function checkReveal() {
+            const wh = window.innerHeight;
+            reveals.forEach(el => {
+                if (el.getBoundingClientRect().top < wh - 120) {
+                    el.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('load', checkReveal);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const pos = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: pos, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
