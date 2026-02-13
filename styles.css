@@ -1,7 +1,6 @@
 /* ============================================
-   The Promised Savior — Shared Theme
-   Palette inspired by poster.jpg:
-   warm peach, cream, golden, with cool slate accents
+   Imam Mahdi — Shared Theme
+   Elegant teal & slate palette
    ============================================ */
 
 /* Google Fonts loaded in HTML:
@@ -9,36 +8,36 @@
 
 :root {
     /* Backgrounds */
-    --bg-cream: #FFF6EE;
-    --bg-peach: #F8E0CC;
-    --bg-warm: #FCEEE0;
-    --bg-section-alt: #FDF3E8;
+    --bg-cream: #F7F9FA;
+    --bg-peach: #E8F0F2;
+    --bg-warm: #EEF3F5;
+    --bg-section-alt: #F2F6F8;
     --bg-card: #FFFFFF;
-    --bg-dark: #1E1410;
-    --bg-dark-warm: #2C1E14;
+    --bg-dark: #141B22;
+    --bg-dark-warm: #1A2530;
 
     /* Accents */
-    --accent-coral: #DC8460;
-    --accent-coral-light: #F0A880;
-    --accent-gold: #C4A060;
-    --accent-gold-light: #E0C888;
-    --accent-terracotta: #B06A48;
-    --accent-blush: #ECCFBF;
+    --accent-coral: #1B7A5A;
+    --accent-coral-light: #2EA87A;
+    --accent-gold: #B8960F;
+    --accent-gold-light: #D4B43C;
+    --accent-terracotta: #14614A;
+    --accent-blush: #D0E8DE;
 
     /* Text */
-    --text-dark: #2D1F10;
-    --text-body: #5A4030;
-    --text-muted: #8A7060;
-    --text-on-dark: #F5EDE6;
-    --text-on-dark-muted: #C0AFA0;
+    --text-dark: #141B22;
+    --text-body: #3D4F5F;
+    --text-muted: #6B7D8D;
+    --text-on-dark: #E8EFF3;
+    --text-on-dark-muted: #8FA3B0;
 
     /* Utility */
-    --border-warm: rgba(180, 130, 80, 0.18);
-    --border-gold: rgba(196, 160, 96, 0.3);
-    --shadow-warm: rgba(45, 31, 16, 0.08);
-    --shadow-strong: rgba(45, 31, 16, 0.15);
-    --cool-accent: #647191;
-    --overlay-dark: rgba(30, 20, 16, 0.65);
+    --border-warm: rgba(27, 122, 90, 0.12);
+    --border-gold: rgba(184, 150, 15, 0.2);
+    --shadow-warm: rgba(20, 27, 34, 0.06);
+    --shadow-strong: rgba(20, 27, 34, 0.12);
+    --cool-accent: #4A7A8A;
+    --overlay-dark: rgba(20, 27, 34, 0.65);
 
     /* Transitions */
     --transition-base: 0.3s ease;
@@ -117,7 +116,7 @@ p {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(255, 246, 238, 0.92);
+    background: rgba(247, 249, 250, 0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     padding: 1rem 2rem;
@@ -208,6 +207,104 @@ p {
     background: var(--accent-terracotta);
     transition: all var(--transition-base);
     border-radius: 2px;
+}
+
+/* ===================== Nav Dropdown ===================== */
+
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.dropdown-trigger .chevron {
+    width: 12px;
+    height: 12px;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    transition: transform var(--transition-base);
+    flex-shrink: 0;
+}
+
+.nav-dropdown:hover .dropdown-trigger .chevron,
+.nav-dropdown.open .dropdown-trigger .chevron {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 220px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-warm);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px var(--shadow-strong);
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    z-index: 100;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.88rem;
+    color: var(--text-body);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    font-weight: 500;
+}
+
+.dropdown-menu a:hover {
+    background: var(--bg-warm);
+    color: var(--accent-coral);
+}
+
+.dropdown-menu a.active {
+    color: var(--accent-coral);
+    background: var(--bg-warm);
+}
+
+.dropdown-menu a::after {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-dropdown:hover .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .nav-dropdown.open .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding: 0;
+        min-width: auto;
+    }
+
+    .dropdown-menu a {
+        padding: 0.5rem 0;
+        text-align: center;
+        font-size: 0.85rem;
+    }
 }
 
 /* ===================== Shared Section Styles ===================== */
@@ -378,14 +475,14 @@ p {
 .btn-primary {
     background: var(--accent-coral);
     color: #fff;
-    box-shadow: 0 4px 16px rgba(220, 132, 96, 0.3);
+    box-shadow: 0 4px 16px rgba(27, 122, 90, 0.3);
 }
 
 .btn-primary:hover {
     background: var(--accent-terracotta);
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(220, 132, 96, 0.4);
+    box-shadow: 0 6px 24px rgba(27, 122, 90, 0.4);
 }
 
 .btn-outline {
@@ -605,7 +702,7 @@ p {
     visibility: hidden;
     transition: all var(--transition-base);
     z-index: 999;
-    box-shadow: 0 4px 16px rgba(220, 132, 96, 0.3);
+    box-shadow: 0 4px 16px rgba(27, 122, 90, 0.3);
 }
 
 .back-to-top.visible {
@@ -615,7 +712,7 @@ p {
 
 .back-to-top:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(220, 132, 96, 0.4);
+    box-shadow: 0 8px 24px rgba(27, 122, 90, 0.4);
     background: var(--accent-terracotta);
 }
 
@@ -632,7 +729,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(30, 20, 16, 0.45);
+    background: rgba(20, 27, 34, 0.45);
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-base);
@@ -648,7 +745,7 @@ p {
 
 @media (max-width: 768px) {
     .navbar {
-        background: rgba(255, 246, 238, 0.97);
+        background: rgba(247, 249, 250, 0.97);
     }
 
     .nav-menu {
@@ -732,13 +829,13 @@ p {
 
 .section-dark .card {
     background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(240, 168, 128, 0.15);
+    border-color: rgba(46, 168, 122, 0.15);
     box-shadow: none;
 }
 
 .section-dark .card:hover {
     background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(240, 168, 128, 0.3);
+    border-color: rgba(46, 168, 122, 0.3);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
@@ -751,12 +848,12 @@ p {
 }
 
 .section-dark .card-icon {
-    background: linear-gradient(135deg, rgba(240, 168, 128, 0.15), rgba(196, 160, 96, 0.08));
-    border-color: rgba(240, 168, 128, 0.2);
+    background: linear-gradient(135deg, rgba(46, 168, 122, 0.15), rgba(27, 122, 90, 0.08));
+    border-color: rgba(46, 168, 122, 0.2);
 }
 
 .section-dark .highlight-box {
-    background: linear-gradient(135deg, rgba(240, 168, 128, 0.1) 0%, rgba(196, 160, 96, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(46, 168, 122, 0.1) 0%, rgba(27, 122, 90, 0.05) 100%);
     border-left-color: var(--accent-coral-light);
 }
 
@@ -766,7 +863,7 @@ p {
 
 .section-dark .feature-list li {
     color: var(--text-on-dark-muted);
-    border-bottom-color: rgba(240, 168, 128, 0.1);
+    border-bottom-color: rgba(46, 168, 122, 0.1);
 }
 
 .section-dark .feature-list li::before {
