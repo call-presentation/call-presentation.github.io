@@ -586,8 +586,8 @@ p {
 }
 
 .footer-ornament {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     margin: 0 auto 1.5rem;
 }
 
@@ -596,6 +596,14 @@ p {
     opacity: 0.6;
     width: 100%;
     height: 100%;
+}
+
+.footer-ornament .footer-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.85;
+    filter: grayscale(20%);
 }
 
 .footer-nav {
