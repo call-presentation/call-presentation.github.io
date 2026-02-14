@@ -9,103 +9,251 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .arabic-text {
+            font-size: 1.5rem;
+            direction: rtl;
+            text-align: right;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: var(--bg-peach);
+            border-radius: 12px;
+            line-height: 2;
+            font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade', serif;
+        }
+
+        .translation-block {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: var(--bg-cream);
+            border-left: 4px solid var(--accent-coral);
+            border-radius: 8px;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+
+        .key-point {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--bg-peach) 0%, var(--bg-cream) 100%);
+            border-radius: 12px;
+            border: 2px solid var(--accent-warm);
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-coral);
+        }
+
+        .hierarchy-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .hierarchy-list li {
+            padding: 1rem 1rem 1rem 3rem;
+            margin-bottom: 0.8rem;
+            background: var(--bg-cream);
+            border-radius: 8px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .hierarchy-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 1rem;
+            color: var(--accent-coral);
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="../../index.html" class="nav-logo">
-                <span>⚖️</span>
-                <span>Divine Authority</span>
-            </a>
-            <div class="nav-links">
-                <a href="../../index.html">Home</a>
-                <a href="../../about.html">About</a>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
 
-    <!-- Header -->
-    <header class="page-header">
-        <div class="header-content">
-            <div class="breadcrumb">
-                <a href="../../index.html">Home</a>
-                <span>/</span>
-                <span>Divine Authority & Delegation</span>
-            </div>
-            <h1>Divine Authority & Delegation</h1>
-            <p class="lead">Understanding the Imam as "His judge among His creation" — exploring delegated vs. ultimate authority in Shia theology</p>
-            <div class="meta">
-                <span class="presenter">Presented by Mohammad Mahdi</span>
-                <span class="dot">•</span>
-                <span class="tag">Theology</span>
+    <!-- Page Header -->
+    <header class="page-hero" id="top">
+        <div class="container">
+            <div class="presenter-badge">Presented by Mohammad Mahdi</div>
+
+            <h1 class="page-title">Divine Authority & Delegation</h1>
+            <p class="page-subtitle">Understanding the Imam as "His judge among His creation" — exploring delegated vs. ultimate authority in Shia theology</p>
+
+            <!-- Table of Contents Card -->
+            <div class="toc-card">
+                <h3>Contents</h3>
+                <nav class="toc-nav">
+                    <a href="#introduction">Introduction</a>
+                    <a href="#hadith">The Hadith</a>
+                    <a href="#quran">The Qur'anic Principle</a>
+                    <a href="#reconciliation">Reconciling the Two</a>
+                    <a href="#conclusion">Conclusion</a>
+                </nav>
             </div>
         </div>
     </header>
 
+    <!-- In-Page Navigation Pills -->
+    <div class="in-page-nav">
+        <div class="container">
+            <a href="#introduction">Introduction</a>
+            <a href="#hadith">Hadith</a>
+            <a href="#quran">Qur'an</a>
+            <a href="#reconciliation">Reconciliation</a>
+            <a href="#conclusion">Conclusion</a>
+        </div>
+    </div>
+
     <!-- Main Content -->
-    <main class="article-main">
-        <article class="prose">
-            <section>
-                <p>Imagine being told that a human being is described as "His judge among His creation."</p>
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Introduction -->
+            <section id="introduction" class="content-block reveal">
+                <h2>Introduction</h2>
+
+                <p>Imagine being told that a human being is described as <strong>"His judge among His creation."</strong></p>
 
                 <p>At first, that sounds powerful — maybe even controversial. Does that mean a human shares in God's authority? Or does it mean something deeper?</p>
 
                 <p>In Shia Islam, especially within Twelver thought, the Imams are believed to be divinely appointed successors to Prophet Muhammad. They are not prophets, and they are not divine. But they are understood to be chosen by God to guide, interpret, and uphold justice after the Prophet's death.</p>
 
-                <p>So when a Shia hadith describes the Imam as "His judge among His creation," it doesn't mean the Imam replaces God. It means the Imam carries out judgment on God's behalf — applying divine law with knowledge and justice granted by Allah. The authority is delegated, not independent.</p>
+                <a href="#top" class="back-link">↑ Back to top</a>
+            </section>
 
+            <!-- The Hadith -->
+            <section id="hadith" class="content-block reveal">
+                <h2>The Hadith: "His Judge Among His Creation"</h2>
+
+                <p>So when a Shia hadith describes the Imam as <strong>"His judge among His creation,"</strong> it doesn't mean the Imam replaces God. It means the Imam carries out judgment on God's behalf — applying divine law with knowledge and justice granted by Allah.</p>
+
+                <div class="key-point">
+                    The authority is delegated, not independent.
+                </div>
+
+                <a href="#top" class="back-link">↑ Back to top</a>
+            </section>
+
+            <!-- The Qur'anic Principle -->
+            <section id="quran" class="content-block reveal">
                 <h2>The Qur'anic Principle</h2>
 
                 <p>Now let's look at a Qur'anic verse from Surah Hud, verse 86, where Prophet Shuʿayb tells his people:</p>
 
-                <blockquote>
-                    <p>"What remains of Allah's provision is better for you, should you be faithful, and I am not a keeper over you."</p>
-                </blockquote>
+                <div class="translation-block">
+                    "What remains of Allah's provision is better for you, should you be faithful, and I am not a keeper over you."
+                </div>
 
                 <p>Here, the prophet clearly draws a line. He delivers the message, but he does not control people. He is not their ultimate authority. That belongs to Allah alone.</p>
 
+                <a href="#top" class="back-link">↑ Back to top</a>
+            </section>
+
+            <!-- Reconciling the Two -->
+            <section id="reconciliation" class="content-block reveal">
                 <h2>Reconciling the Two</h2>
 
                 <p>So how do these two ideas fit together?</p>
 
                 <p>The key is understanding roles. In Shia theology, God's sovereignty is absolute. But throughout history, God works through chosen representatives — prophets, and after them, Imams. Just as Prophet Shuʿayb guided without claiming divine status, the Imam judges without claiming divine independence.</p>
 
-                <p class="highlight">The Imam is seen as the channel of divine justice — not its source.</p>
+                <div class="key-point">
+                    The Imam is seen as the channel of divine justice — not its source.
+                </div>
 
                 <p>So rather than competing with the Qur'anic principle that God alone has ultimate authority, this hadith reflects a structured hierarchy:</p>
 
-                <ul>
+                <ul class="hierarchy-list">
                     <li>God as the supreme judge</li>
                     <li>The Imam as His appointed executor of justice among people</li>
                 </ul>
 
-                <p>And that distinction — between ultimate authority and delegated authority — is essential to understanding Shia theology.</p>
+                <a href="#top" class="back-link">↑ Back to top</a>
             </section>
-        </article>
 
-        <!-- Navigation -->
-        <nav class="article-nav">
-            <a href="../../index.html" class="nav-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/>
-                </svg>
-                Back to All Topics
-            </a>
-        </nav>
+            <!-- Conclusion -->
+            <section id="conclusion" class="content-block reveal">
+                <h2>Conclusion</h2>
+
+                <p>And that distinction — between <strong>ultimate authority</strong> and <strong>delegated authority</strong> — is essential to understanding Shia theology.</p>
+
+                <p>The Imam does not replace God's sovereignty. Rather, the Imam serves as the appointed vessel through which divine justice is enacted in the world — a role that complements, rather than contradicts, the Qur'anic insistence on God's absolute authority.</p>
+
+                <a href="#top" class="back-link">↑ Back to top</a>
+            </section>
+
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Imam Mahdi Studies. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="../../index.html">Home</a>
-                <a href="../../about.html">About</a>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+        </svg>
+    </button>
+
+    <!-- Load components -->
     <script src="../../js/components.js"></script>
+
+    <script>
+        // Reveal animations on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 100;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#top') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Highlight active in-page nav
+        const inPageNavLinks = document.querySelectorAll('.in-page-nav a');
+        const sections = document.querySelectorAll('.content-block[id]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            inPageNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

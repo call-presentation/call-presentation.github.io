@@ -21,157 +21,345 @@
             line-height: 2;
             font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade', serif;
         }
+
+        .translation-block {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: var(--bg-cream);
+            border-left: 4px solid var(--accent-coral);
+            border-radius: 8px;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+
+        .key-point {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--bg-peach) 0%, var(--bg-cream) 100%);
+            border-radius: 12px;
+            border: 2px solid var(--accent-warm);
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-coral);
+        }
+
+        .hadith-box {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--bg-peach) 0%, var(--bg-cream) 100%);
+            border-radius: 12px;
+            border: 2px solid var(--accent-warm);
+        }
+
+        .hadith-box .arabic-text {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .highlight-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .highlight-list li {
+            padding: 0.8rem 1rem 0.8rem 3rem;
+            margin-bottom: 0.8rem;
+            background: var(--bg-cream);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .highlight-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 1rem;
+            color: var(--accent-coral);
+            font-size: 1.2rem;
+        }
+
+        .riddle-box {
+            margin: 2rem 0;
+            padding: 1.5rem 2rem;
+            background: var(--bg-cream);
+            border-radius: 12px;
+            border: 1px solid var(--border-warm);
+        }
+
+        .riddle-box strong {
+            color: var(--accent-coral);
+        }
+
+        .riddle-box em {
+            display: block;
+            margin-top: 0.5rem;
+            color: var(--text-muted);
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="../../index.html" class="nav-logo">
-                <span>🏰</span>
-                <span>Conqueror of Fortresses</span>
-            </a>
-            <div class="nav-links">
-                <a href="../../index.html">Home</a>
-                <a href="../../about.html">About</a>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
 
-    <!-- Header -->
-    <header class="page-header">
-        <div class="header-content">
-            <div class="breadcrumb">
-                <a href="../../index.html">Home</a>
-                <span>/</span>
-                <span>The Conqueror of Fortresses</span>
-            </div>
-            <h1>The Conqueror of Fortresses</h1>
-            <p class="lead">Imam Mahdi as the one who dismantles systems of tyranny and oppression — not through chaos, but through divine justice</p>
-            <div class="meta">
-                <span class="presenter">Presented by Ehsan</span>
-                <span class="dot">•</span>
-                <span class="tag">Justice & Liberation</span>
+    <!-- Page Header -->
+    <header class="page-hero" id="top">
+        <div class="container">
+            <div class="presenter-badge">Presented by Ehsan</div>
+
+            <h1 class="page-title">The Conqueror of Fortresses</h1>
+            <p class="page-subtitle">Imam Mahdi as the one who dismantles systems of tyranny and oppression — not through chaos, but through divine justice</p>
+
+            <!-- Table of Contents Card -->
+            <div class="toc-card">
+                <h3>Contents</h3>
+                <nav class="toc-nav">
+                    <a href="#introduction">Introduction</a>
+                    <a href="#arabic">Arabic & Translation</a>
+                    <a href="#explanation">Explanation</a>
+                    <a href="#example">Historical Example</a>
+                    <a href="#riddles">Riddles</a>
+                    <a href="#takeaway">Takeaway</a>
+                </nav>
             </div>
         </div>
     </header>
 
+    <!-- In-Page Navigation Pills -->
+    <div class="in-page-nav">
+        <div class="container">
+            <a href="#introduction">Introduction</a>
+            <a href="#arabic">Arabic</a>
+            <a href="#explanation">Explanation</a>
+            <a href="#example">Example</a>
+            <a href="#riddles">Riddles</a>
+            <a href="#takeaway">Takeaway</a>
+        </div>
+    </div>
+
     <!-- Main Content -->
-    <main class="article-main">
-        <article class="prose">
-            <section>
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Introduction -->
+            <section id="introduction" class="content-block reveal">
+                <h2>Introduction</h2>
+
                 <div class="arabic-text">
                     اَلا اِنَّهُ فاتِحُ الْحُصُونِ وَ هادِمُها
                 </div>
 
-                <p class="highlight">"He is the conqueror of fortresses and the destroyer of them."</p>
+                <div class="translation-block">
+                    "He is the conqueror of fortresses and the destroyer of them."
+                </div>
 
-                <h2>Think about this:</h2>
+                <p>Think about this: The strongest prisons today are not made of stone. They are:</p>
 
-                <p>The strongest prisons today are not made of stone. They are:</p>
-
-                <ul>
-                    <li><strong>Fear</strong></li>
-                    <li><strong>Tyranny</strong></li>
-                    <li><strong>Corrupt systems</strong></li>
-                    <li><strong>Lies protected by power</strong></li>
+                <ul class="highlight-list">
+                    <li>Fear</li>
+                    <li>Tyranny</li>
+                    <li>Corrupt systems</li>
+                    <li>Lies protected by power</li>
                 </ul>
 
                 <p>Every tyrant builds fortresses — physical and psychological. And this sentence tells us:</p>
-                <p class="highlight">👉 None of them are permanent.</p>
 
-                <h2>Arabic & Translation</h2>
-
-                <div class="arabic-text">
-                    اَلا اِنَّهُ فاتِحُ الْحُصُونِ وَ هادِمُها
+                <div class="key-point">
+                    👉 None of them are permanent.
                 </div>
 
-                <p><strong>Translation:</strong> Indeed, he is the conqueror of fortresses and the one who demolishes them.</p>
+                <a href="#top" class="back-link">↑ Back to top</a>
+            </section>
 
+            <!-- Arabic & Translation -->
+            <section id="arabic" class="content-block reveal">
+                <h2>Arabic & Translation</h2>
+
+                <div class="hadith-box">
+                    <div class="arabic-text">
+                        اَلا اِنَّهُ فاتِحُ الْحُصُونِ وَ هادِمُها
+                    </div>
+
+                    <div class="translation-block">
+                        Indeed, he is the conqueror of fortresses and the one who demolishes them.
+                    </div>
+                </div>
+
+                <a href="#top" class="back-link">↑ Back to top</a>
+            </section>
+
+            <!-- Explanation -->
+            <section id="explanation" class="content-block reveal">
                 <h2>Explanation</h2>
 
                 <p>In Shia understanding, this is not about random destruction. It is about removing unjust power structures.</p>
 
                 <p>Imam al-Sādiq (عليه السلام) says:</p>
-                <blockquote>
-                    <p>"When al-Qāʾim rises, no fortress of oppression will remain except that Allah destroys it through him."</p>
-                    <footer>📚 Bihar al-Anwār, vol. 52</footer>
-                </blockquote>
+
+                <div class="hadith-box">
+                    <div class="translation-block">
+                        "When al-Qāʾim rises, no fortress of oppression will remain except that Allah destroys it through him."
+                    </div>
+                    <p style="text-align: right; color: var(--text-muted); font-size: 0.9rem;">📚 Bihar al-Anwār, vol. 52</p>
+                </div>
 
                 <p>Fortresses here include:</p>
-                <ul>
+
+                <ul class="highlight-list">
                     <li>Dictatorships</li>
                     <li>Economic oppression</li>
                     <li>Systems that protect ظلم (injustice)</li>
                 </ul>
 
                 <p>The Qur'an echoes this principle:</p>
-                <blockquote>
-                    <p class="arabic-text">﴿وَتِلْكَ الْقُرَىٰ أَهْلَكْنَاهُمْ لَمَّا ظَلَمُوا﴾</p>
-                    <p>(Qur'an 18:59) "Those towns—We destroyed them when they committed oppression."</p>
-                </blockquote>
 
-                <h2>Example</h2>
+                <div class="hadith-box">
+                    <div class="arabic-text">
+                        ﴿وَتِلْكَ الْقُرَىٰ أَهْلَكْنَاهُمْ لَمَّا ظَلَمُوا﴾
+                    </div>
+                    <div class="translation-block">
+                        (Qur'an 18:59) "Those towns—We destroyed them when they committed oppression."
+                    </div>
+                </div>
+
+                <a href="#top" class="back-link">↑ Back to top</a>
+            </section>
+
+            <!-- Historical Example -->
+            <section id="example" class="content-block reveal">
+                <h2>Historical Example</h2>
 
                 <p>👉 Why did the Pharaoh build monuments and walls? Because tyrants fear truth.</p>
 
-                <p class="highlight">Imam Mahdi (عج) does not destroy cities — He destroys the arrogance behind them.</p>
+                <div class="key-point">
+                    Imam Mahdi (عج) does not destroy cities — He destroys the arrogance behind them.
+                </div>
 
                 <p>In the Abbasid era, the rulers imprisoned Imam Musa al-Kāẓim (ع) for years. They thought:</p>
-                <ul>
+
+                <ul class="highlight-list">
                     <li>prison = silence</li>
                     <li>chains = defeat</li>
                 </ul>
 
                 <p>But inside the prison, people converted, guards changed, and the moral authority of the regime collapsed.</p>
-                <p class="highlight">The real fortress fell before the walls ever did.</p>
+
+                <div class="key-point">
+                    The real fortress fell before the walls ever did.
+                </div>
 
                 <p>Imam al-Sādiq (ع):</p>
-                <blockquote>
-                    <p>"No palace of tyranny will remain standing when al-Qāʾim rises."</p>
-                    <footer>📚 Bihar al-Anwār, vol. 52</footer>
-                </blockquote>
 
-                <p><em>Palaces = systems that protect injustice.</em></p>
+                <div class="hadith-box">
+                    <div class="translation-block">
+                        "No palace of tyranny will remain standing when al-Qāʾim rises."
+                    </div>
+                    <p style="text-align: right; color: var(--text-muted); font-size: 0.9rem;">📚 Bihar al-Anwār, vol. 52 — Palaces = systems that protect injustice.</p>
+                </div>
 
-                <h2>Riddle</h2>
+                <a href="#top" class="back-link">↑ Back to top</a>
+            </section>
 
-                <p><strong>What is stronger than stone walls, yet collapses when fear disappears?</strong></p>
-                <p><em>Answer: Tyranny.</em></p>
+            <!-- Riddles -->
+            <section id="riddles" class="content-block reveal">
+                <h2>Riddles</h2>
 
-                <p><strong>What kind of fortress collapses the moment truth is spoken?</strong></p>
-                <p><em>Answer: A fortress built on lies.</em></p>
+                <div class="riddle-box">
+                    <strong>What is stronger than stone walls, yet collapses when fear disappears?</strong>
+                    <em>Answer: Tyranny.</em>
+                </div>
 
+                <div class="riddle-box">
+                    <strong>What kind of fortress collapses the moment truth is spoken?</strong>
+                    <em>Answer: A fortress built on lies.</em>
+                </div>
+
+                <a href="#top" class="back-link">↑ Back to top</a>
+            </section>
+
+            <!-- Takeaway -->
+            <section id="takeaway" class="content-block reveal">
                 <h2>Takeaway</h2>
 
-                <p>Imam Mahdi (عج) is not a symbol of chaos. He is the end of institutional ظلم.</p>
+                <p>Imam Mahdi (عج) is not a symbol of chaos. He is the end of institutional ظلم (oppression).</p>
 
-                <p class="highlight">And the real question is: Are we helping build fortresses of injustice… or preparing the ground for their fall?</p>
+                <div class="key-point">
+                    Are we helping build fortresses of injustice… or preparing the ground for their fall?
+                </div>
+
+                <a href="#top" class="back-link">↑ Back to top</a>
             </section>
-        </article>
 
-        <!-- Navigation -->
-        <nav class="article-nav">
-            <a href="../../index.html" class="nav-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/>
-                </svg>
-                Back to All Topics
-            </a>
-        </nav>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Imam Mahdi Studies. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="../../index.html">Home</a>
-                <a href="../../about.html">About</a>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+        </svg>
+    </button>
+
+    <!-- Load components -->
     <script src="../../js/components.js"></script>
+
+    <script>
+        // Reveal animations on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 100;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#top') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Highlight active in-page nav
+        const inPageNavLinks = document.querySelectorAll('.in-page-nav a');
+        const sections = document.querySelectorAll('.content-block[id]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            inPageNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
